@@ -3,21 +3,24 @@
     <Header />
     <Action />
     <BaseContent v-for="content, index in contents" :head="content.head" :block="content.block" :index="index" />
+    <LastAction />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import Action from '../components/layout/Action.vue';
 import Header from '../components/layout/Header.vue';
+import Action from '../components/layout/Action.vue';
 import BaseContent from '../components/content/BaseContent.vue';
+import LastAction from '@/components/layout/LastAction.vue';
 
 export default {
   name: "Home",
   components: {
-    Action,
     Header,
-    BaseContent
+    Action,
+    BaseContent,
+    LastAction
   },
   props: {},
   data() {
