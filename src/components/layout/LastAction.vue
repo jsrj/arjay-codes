@@ -42,12 +42,18 @@ export default {
 <style lang="sass" scoped>
 .last-action
   border: 2px solid black;
+  display: flex;
+  flex-direction: column;
 
 .la-container
+  border: 2px solid red;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 8px;
 
   .la-panel
+    border: 2px solid blue;
+    margin: 8px;
     padding: 5px;
 </style>

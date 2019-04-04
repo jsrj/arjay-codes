@@ -1,5 +1,5 @@
 <template>
-  <p class="tag">{{tagName}}-{{index || 0}}</p>
+  <div class="tag">{{tagName}}-{{index || 0}}</div>
 </template>
 
 <script>
@@ -16,5 +16,8 @@ export default {
 .tag
   background-color: black;
   color: white;
+  display: block !important;
+  height: min-content !important;
+  width: 100%;
   margin-top: 0px !important;
 </style>
