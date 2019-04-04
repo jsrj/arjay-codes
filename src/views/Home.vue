@@ -13,7 +13,7 @@ import Action from '../components/layout/Action.vue';
 import Header from '../components/layout/Header.vue';
 
 export default {
-  name: "home",
+  name: "Home",
   components: {
     HelloWorld,
     Action,
