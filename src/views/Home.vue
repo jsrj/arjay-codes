@@ -9,8 +9,8 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
-import Action from '../components/Action.vue';
-import Header from '../components/Header.vue';
+import Action from '../components/layout/Action.vue';
+import Header from '../components/layout/Header.vue';
 
 export default {
   name: "home",
