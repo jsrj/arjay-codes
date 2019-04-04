@@ -1,5 +1,6 @@
 <template>
   <div class="navbar">
+    <p>Navbar</p>
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
@@ -13,6 +14,7 @@ export default {
 
 <style lang="sass" scoped>
 .navbar
+  border: 2px solid black;
   padding: 30px;
   a
     font-weight: bold;
