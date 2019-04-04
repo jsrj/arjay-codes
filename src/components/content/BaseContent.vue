@@ -1,15 +1,21 @@
 <template>
   <div class="base-content">
-    <p>BaseContent</p>
+    <DevIdentifierTag tagName="BaseContent" :index="index" />
     <h1>{{ head }}</h1>
     <p>{{ block }}</p>
   </div>
 </template>
 
 <script>
+import DevIdentifierTag from '@/components/DevIdentifierTag.vue';
+
 export default {
   name: "BaseContent",
+  components: {
+    DevIdentifierTag
+  },
   props: {
+    index: Number,
     head: String,
     block: String
   }

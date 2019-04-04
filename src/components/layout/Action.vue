@@ -1,6 +1,6 @@
 <template>
   <div class="action">
-    <p>Action</p>
+    <DevIdentifierTag tagName="Action" />
     <button>I Need A Website</button>
     &nbsp;
     <button>I Need A Developer</button>
@@ -8,14 +8,22 @@
 </template>
 
 <script>
+import DevIdentifierTag from '@/components/DevIdentifierTag.vue';
+
 export default {
-  name: "Action"
+  name: "Action",
+  components: {
+    DevIdentifierTag
+  },
+  props: {},
+  data() {}
 }
 </script>
 
 <style lang="sass" scoped>
 .action
   border: 2px solid black;
-  padding: 1em;
+  padding-bottom: 1em;
+  padding-top: 0px;
 </style>
 

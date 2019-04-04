@@ -1,17 +1,24 @@
 <template>
   <div class="header">
-    <p>Header</p>
+    <DevIdentifierTag tagName="Header" />
     <img alt="Vue logo" src="../../assets/logo.png" />
   </div>
 </template>
 
 <script>
+import DevIdentifierTag from '@/components/DevIdentifierTag.vue';
+
 export default {
-  name: "Header"
+  name: "Header",
+  components: {
+    DevIdentifierTag
+  },
+  props: {},
+  data() {}
 }
 </script>
 
 <style lang="sass" scoped>
 .header
-  border: 2px solid black;
+  :border: 2px solid black;
 </style>

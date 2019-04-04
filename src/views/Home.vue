@@ -2,7 +2,7 @@
   <div class="home">
     <Header />
     <Action />
-    <BaseContent v-for="content in contents" :head="content.head" :block="content.block" />
+    <BaseContent v-for="content, index in contents" :head="content.head" :block="content.block" :index="index" />
   </div>
 </template>
 
