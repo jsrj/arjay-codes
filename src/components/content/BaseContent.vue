@@ -2,13 +2,7 @@
   <div class="base-content">
     <p>BaseContent</p>
     <h1>{{ head }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br />
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener"
-        >vue-cli documentation</a
-      >.
-    </p>
+    <p>{{ block }}</p>
   </div>
 </template>
 
@@ -16,7 +10,8 @@
 export default {
   name: "BaseContent",
   props: {
-    head: String
+    head: String,
+    block: String
   }
 }
 </script>
@@ -35,7 +30,7 @@ ul
 li
   display: inline-block;
   margin: 0 10px;
-  
+
 a
   color: #42b983;
 </style>

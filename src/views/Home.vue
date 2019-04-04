@@ -2,7 +2,7 @@
   <div class="home">
     <Header />
     <Action />
-    <BaseContent head="Welcome to Your Vue.js App"/>
+    <BaseContent v-for="content in contents" :head="content.head" :block="content.block" />
   </div>
 </template>
 
@@ -18,6 +18,25 @@ export default {
     Action,
     Header,
     BaseContent
+  },
+  props: {},
+  data() {
+    return {
+      contents: [
+        {
+          head: 'Selling Points',
+          block: 'List selling points of Arjay Codes here'
+        },
+        {
+          head: 'Marketplace Highlights',
+          block: 'Showcase certain aspects of the Arjay Codes marketplace'
+        },
+        {
+          head: 'Flat Rate Services',
+          block: 'Detail the different types of services that are provided at a flat rate.'
+        }
+      ]
+    }
   }
 };
 </script>
