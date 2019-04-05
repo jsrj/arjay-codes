@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import DevIdentifierTag from '@/components/DevIdentifierTag.vue';
+import DevIdentifierTag from '@/components/helpers/DevIdentifierTag.vue';
 
 export default {
   name: "Header",
