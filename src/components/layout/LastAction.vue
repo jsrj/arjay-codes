@@ -2,26 +2,14 @@
   <div class="last-action">
     <DevIdentifierTag tagName="LastAction" />
     <div class="la-container">
-      <div class="la-panel">
-        <h3>Title</h3>
-        <p>Description</p>
+      <div class="la-panel" v-bind:key="index" v-for="(panel, index) in panels">
+        <h3>{{panel.title}}</h3>
+        <p>{{panel.description}}</p>
         <ul>
-          <li>Feature</li>
-          <li>Feature</li>
-          <li>Feature</li>
+          <li v-bind:key="index" v-for="(feature, index) in panel.features">{{feature}}</li>
         </ul>
-        <button>Call To Action</button>
+        <button>{{panel.actionCall}}</button>
       </div>
-      <div class="la-panel">
-        <h3>Title</h3>
-        <p>Description</p>
-        <ul>
-          <li>Feature</li>
-          <li>Feature</li>
-          <li>Feature</li>
-        </ul>
-        <button>Call To Action</button>
-      </div>  
     </div>  
   </div>  
 </template>
@@ -34,7 +22,9 @@ export default {
   components: {
     DevIdentifierTag
   },
-  props: {},
+  props: {
+    panels: [Object]
+  },
   data() {}
 }
 </script>

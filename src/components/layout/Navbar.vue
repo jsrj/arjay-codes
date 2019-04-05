@@ -14,8 +14,7 @@ export default {
   components: {
     DevIdentifierTag
   },
-  props: {},
-  data() {}
+  props: {}
 }
 </script>
 
