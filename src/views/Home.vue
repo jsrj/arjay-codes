@@ -1,6 +1,11 @@
 <template>
   <div class="home">
-    <vue-headful title="Arjay | Codes" />
+    <Meta 
+      :title="title" 
+      :subTitle="subTitle" 
+      :description="description" 
+    />
+    
     <Header />
     <Action />
     <BaseContent
@@ -20,6 +25,7 @@ import Header from '../components/layout/Header.vue';
 import Action from '../components/layout/Action.vue';
 import BaseContent from '../components/content/BaseContent.vue';
 import LastAction from '@/components/layout/LastAction.vue';
+import Meta from '../components/helpers/Meta.vue';
 
 export default {
   name: "Home",
@@ -27,11 +33,16 @@ export default {
     Header,
     Action,
     BaseContent,
-    LastAction
+    LastAction,
+    Meta
   },
-  props: {},
+  props: {
+    title: String
+  },
   data() {
     return {
+      subTitle: 'Home',
+      description: 'Home of Arjay | Codes',
       contents: [
         {
           head: 'Selling Points',
