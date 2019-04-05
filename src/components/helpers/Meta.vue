@@ -25,6 +25,6 @@ export default {
 
 <style lang="sass" scoped>
 #meta
-  display: block !important;
+  display: none !important;
 </style>
 
