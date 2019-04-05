@@ -53,13 +53,7 @@ export default {
   width: 100%;
 
 #main
-  padding-top: 10vh;
-
-#footer
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  padding: 10vh 0;
 
 #app
   font-family: "Avenir", Helvetica, Arial, sans-serif;
