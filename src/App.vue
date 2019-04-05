@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Navbar />
-    <router-view title="Arjay | Codes" />
-    <Footer :socialLinks="socialLinks" />
+    <Navbar id="nav" />
+    <router-view id="main" title="Arjay | Codes" />
+    <Footer id="footer" :socialLinks="socialLinks" />
   </div>
 </template>
 
@@ -45,16 +45,27 @@ export default {
 </script>
 
 
-<style lang="scss">
-* {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-#app {
+<style lang="sass">
+#nav
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+
+#main
+  padding-top: 10vh;
+
+#footer
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+#app
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
+  height: 100% !important;
 </style>
