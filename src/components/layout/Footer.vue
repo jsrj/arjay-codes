@@ -2,6 +2,15 @@
   <div id="footer">
     <DevIdentifierTag tagName="footer" />
     <div id="footer-content">
+      <div id="social-links">
+        <a 
+          class="social-link" 
+          :key="index" 
+          v-for="(socialLink, index) in socialLinks"
+          :href="socialLink.href"
+          target="_blank"
+        >{{socialLink.name}}</a>
+      </div>
       <small>&copy; {{currentYear}} Arjay Codes, all rights reserved. Powered by〘❤️ && ☕️〙.</small>
     </div>
   </div>
@@ -15,7 +24,9 @@ export default {
   components: {
     DevIdentifierTag
   },
-  props: {},
+  props: {
+    socialLinks: [Object]
+  },
   data() {
     return {
       currentYear: new Date().getFullYear()
@@ -30,11 +41,19 @@ export default {
 
   #footer-content
     display: flex;
-    flex-direction: row;
-    margin-left: 0.35rem;
+    flex-direction: column;
+    align-items: center;
+    #social-links
+      display: flex;
+      flex-direction: row;
+      margin: 0;
 
+      .social-link
+        border: 2px solid red;
+    
     small
       border: 2px solid red;
+      margin: 0px;
 </style>
 
 
