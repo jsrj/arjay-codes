@@ -50,6 +50,7 @@ export default {
 
       .social-link
         border: 2px solid red;
+        margin: 0.25em;
     
     small
       border: 2px solid red;
