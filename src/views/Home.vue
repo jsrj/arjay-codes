@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <vue-headful title="Arjay | Codes" />
     <Header />
     <Action />
     <BaseContent

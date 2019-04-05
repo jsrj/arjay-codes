@@ -20,4 +20,5 @@ export default {
   height: min-content !important;
   width: 100%;
   margin-top: 0px !important;
+  z-index: 1;
 </style>
