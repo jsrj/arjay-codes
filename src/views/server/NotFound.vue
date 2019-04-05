@@ -23,9 +23,11 @@ export default {
   width: min-content;
 
   img
-    margin: 0;
-    border: 6px dashed black;
+    border: 6px solid black;
     border-radius: 100%;
     box-shadow: 0px 0px 0px 6px #87ceeb;
+    height: 100%;
+    margin: 0;
+    width: 20rem;
 </style>
 
