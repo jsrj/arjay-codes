@@ -3,7 +3,10 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import vueHeadful from "vue-headful";
+import AuthPlugin from "./plugins/auth";
 import "./registerServiceWorker";
+
+Vue.use(AuthPlugin);
 
 Vue.config.productionTip = true;
 Vue.component("vue-headful", vueHeadful);
