@@ -10,7 +10,7 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
     "docker-build": "docker build -t jsrj/arjay-codes-client .",
-    "docker-run": "docker run -p 3000:3000 -d jsrj/arjay-codes-client"
+    "docker-run": "docker run -p 8080:8080 -d jsrj/arjay-codes-client"
   },
   "dependencies": {
     "core-js": "^2.6.5",
