@@ -13,7 +13,7 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
     "docker-prune": "docker system prune -a",
-    "docker-build": "npm run build && docker build -t jsrj/arjay-codes-client .",
+    "docker-build": "docker build -t jsrj/arjay-codes-client .",
     "docker-run-local": "docker run -p 8080:8080 -d jsrj/arjay-codes-client",
     "heroku-push": "heroku container:push web -a arjaycodes-client-dev-v0",
     "heroku-release": "npm run heroku-push && heroku container:release web -a arjaycodes-client-dev-v0",
