@@ -1,16 +1,29 @@
 {
   "name": "arjay-codes",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "description": "",
+  "repository": "https://www.github.com/jsrj/arjay-codes.git",
+  "license": "MIT (./LICENSE)",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "start": "node server.js",
     "lint": "vue-cli-service lint",
     "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "docker-prune": "docker system prune -a",
+    "docker-build": "npm run build && docker build -t jsrj/arjay-codes-client .",
+    "docker-run-local": "docker run -p 8080:8080 -d jsrj/arjay-codes-client",
+    "heroku-push": "heroku container:push web -a arjaycodes-client-dev-v0",
+    "heroku-release": "npm run heroku-push && heroku container:release web -a arjaycodes-client-dev-v0",
+    "heroku-containerize": "npm run docker-build && npm run heroku-release"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.6",
     "vue-headful": "^2.0.1",
