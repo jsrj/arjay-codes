@@ -10,5 +10,5 @@ app.use(express.static(join(__dirname, "dist")));
 app.use((_, res) => {
   res.sendFile(join(__dirname, "dist", "index.html"));
 });
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
