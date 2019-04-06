@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
 import Home from "./views/Home.vue";
+import Registration from "./views/auth/Registration.vue";
 import NotFound from "./views/server/NotFound.vue";
 import GeneralError from "./views/server/GeneralError.vue";
 
@@ -24,7 +25,11 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
     },
-
+    {
+      path: "/register",
+      name: "registration",
+      component: Registration
+    },
     // Server/Error Pages
     {
       path: "/unknown-error",

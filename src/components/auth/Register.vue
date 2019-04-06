@@ -1,6 +1,6 @@
 <template>
   <div>
-    
+    <h1>Registration Page</h1>
   </div>
 </template>
 
@@ -13,4 +13,3 @@ export default {
 <style lang="sass" scoped>
 
 </style>
-
