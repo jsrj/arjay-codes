@@ -17,7 +17,7 @@
     "docker-run-local": "docker run -p 8080:8080 -d jsrj/arjay-codes-client",
     "heroku-push": "heroku container:push web -a arjaycodes-client-dev-v0",
     "heroku-release": "npm run heroku-push && heroku container:release web -a arjaycodes-client-dev-v0",
-    "heroku-containerize": "npm run docker-build && npm run heroku-release",
+    "heroku-containerize": "npm run docker-build && npm run heroku-release"
   },
   "dependencies": {
     "core-js": "^2.6.5",
