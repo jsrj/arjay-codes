@@ -4,6 +4,9 @@ import Home from "./views/Home.vue";
 import Registration from "./views/auth/Registration.vue";
 import NotFound from "./views/server/NotFound.vue";
 import GeneralError from "./views/server/GeneralError.vue";
+import Profile from "./views/auth/UserProfile.vue";
+import Callback from "./components/auth/Callback.vue";
+import auth from "./auth/authService";
 
 Vue.use(Router);
 
@@ -11,6 +14,7 @@ export default new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
+    // Public Pages
     {
       path: "/",
       name: "home",
@@ -25,11 +29,24 @@ export default new Router({
       component: () =>
         import(/* webpackChunkName: "about" */ "./views/About.vue")
     },
+
+    // Auth Pages
     {
       path: "/register",
       name: "registration",
       component: Registration
     },
+    {
+      path: "/user",
+      name: "profile",
+      component: Profile
+    },
+    {
+      path: "/callback",
+      name: "callback",
+      component: Callback
+    },
+
     // Server/Error Pages
     {
       path: "/unknown-error",
