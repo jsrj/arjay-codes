@@ -1,7 +1,7 @@
 {
   "name": "arjay-codes",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -10,7 +10,9 @@
     "test:e2e": "vue-cli-service test:e2e",
     "test:unit": "vue-cli-service test:unit",
     "docker-build": "docker build -t jsrj/arjay-codes-client .",
-    "docker-run": "docker run -p 8080:8080 -d jsrj/arjay-codes-client"
+    "docker-run": "docker run -p 8080:8080 -d jsrj/arjay-codes-client",
+    "heroku-push": "heroku container:push web -a auth0-example-dev-v0",
+    "heroku-release": "heroku container:release web -a auth0-example-dev-v0"
   },
   "dependencies": {
     "core-js": "^2.6.5",
