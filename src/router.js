@@ -67,7 +67,7 @@ const authenticatedRoutes = [
 ];
 
 router.beforeEach((to, from, next) => {
-  if (authenticatedRoutes.includes(to.path)) {
+  if (!auth.isAuthenticated() && authenticatedRoutes.includes(to.path)) {
     auth.login({ target: to.path });
   } else {
     return next();
