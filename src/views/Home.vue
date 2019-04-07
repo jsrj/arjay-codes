@@ -14,7 +14,7 @@
       :block="content.block" 
       :index="index"
     />
-    <LastAction :panels="lastActionPanels" />
+    <!-- <LastAction :panels="lastActionPanels" /> -->
   </div>
 </template>
 
