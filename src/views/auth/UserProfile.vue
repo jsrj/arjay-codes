@@ -36,8 +36,8 @@ export default {
       .then(response => (this.info = response))
       .catch(err => console.log(err))
 
-    // Diff user profile data against that provided by Auth0
-    // Auto-update user profile data with Auth0 wherever anything has not been set
+    // TODO: Diff user profile data against that provided by Auth0
+    // TODO: Auto-update user profile data with Auth0 wherever anything has not been set
   },
   data() {
     /** -- Trimmed User Profile Schema --
