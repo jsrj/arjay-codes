@@ -111,8 +111,8 @@ class AuthService extends EventEmitter {
   }
 }
 
-const authService = new AuthService();
+const auth = new AuthService();
 
-authService.setMaxListeners(5);
+auth.setMaxListeners(5);
 
-export default authService;
+export default auth;
