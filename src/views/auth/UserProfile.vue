@@ -18,6 +18,12 @@
       <pre v-if="info" v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(info, null, 2) }}</code></pre>
       <p v-else>Loading User Management Service Info</p>
     </div>
+    <br />
+    <div class="row">
+      <h1>Patched User Profile</h1>
+      <pre v-if="patchedProfile" v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(patchedProfile, null, 2) }}</code></pre>
+      <p v-else>Loading User Management Service Info</p>
+    </div>
   </div>
 </template>
 
@@ -28,6 +34,8 @@ export default {
   name: "profile",
   components: {},
   mounted () {
+
+    const updatedUser = {};
 
     // TODO: Implement JWT security in these calls
     // Get user profile from ac-user-management-svc
@@ -55,7 +63,8 @@ export default {
     */
     return {
       profile: this.$auth.profile,
-      info: this.info
+      info: this.info,
+      patchedProfile: undefined
     };
   },
   methods: {
