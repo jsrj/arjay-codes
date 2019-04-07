@@ -59,24 +59,19 @@ const router = new Router({
 });
 
 const authenticatedRoutes = [
-  "user",
-  "admin",
-  "invoice",
-  "dashboard",
-  "scheduling"
+  "/user",
+  "/admin",
+  "/invoice",
+  "/dashboard",
+  "/scheduling"
 ];
 
 router.beforeEach((to, from, next) => {
-  if (
-    to.path === "/" ||
-    to.path === "/about" ||
-    to.path === "/callback" ||
-    auth.isAuthenticated()
-  ) {
+  if (authenticatedRoutes.includes(to.path)) {
+    auth.login({ target: to.path });
+  } else {
     return next();
   }
-
-  auth.login({ target: to.path });
 });
 
 export default router;
