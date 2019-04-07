@@ -25,7 +25,7 @@ export default {
     DevIdentifierTag
   },
   props: {
-    socialLinks: [Object]
+    socialLinks: Array
   },
   data() {
     return {
@@ -56,5 +56,3 @@ export default {
       border: 2px solid red;
       margin: 0px;
 </style>
-
-
