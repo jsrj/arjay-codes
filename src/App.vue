@@ -2,7 +2,7 @@
   <div id="root">
     <Navbar id="nav" />
     <router-view id="main" title="Arjay | Codes" />
-    <!-- <Footer id="footer" :socialLinks="socialLinks" /> -->
+    <Footer id="footer" :socialLinks="socialLinks" />
   </div>
 </template>
 
