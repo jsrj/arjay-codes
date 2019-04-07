@@ -67,20 +67,16 @@ const authenticatedRoutes = [
 ];
 
 router.beforeEach((to, from, next) => {
-  if (to.path === "/" || to.path === "/about" || to.path === "/callback" || auth.isAuthenticated()) {
+  if (
+    to.path === "/" ||
+    to.path === "/about" ||
+    to.path === "/callback" ||
+    auth.isAuthenticated()
+  ) {
     return next();
   }
 
   auth.login({ target: to.path });
 });
-
-// router.beforeResolve((to, from, next) => {
-//   console.log("before each called");
-//   if (authenticatedRoutes.includes(to.name) && !auth.isAuthenticated()) {
-//     auth.login({ target: to.path });
-//   } else {
-//     return next();
-//   }
-// });
 
 export default router;
