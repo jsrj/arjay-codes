@@ -16,13 +16,13 @@
     <div class="row">
       <h1>User Management Service Info</h1>
       <pre v-if="info" v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(info, null, 2) }}</code></pre>
-      <p v-else>Loading User Management Service Info</p>
+      <p v-else>Loading User Management Service Info...</p>
     </div>
     <br />
     <div class="row">
       <h1>Patched User Profile</h1>
       <pre v-if="patchedProfile" v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(patchedProfile, null, 2) }}</code></pre>
-      <p v-else>Loading User Management Service Info</p>
+      <p v-else>Loading Updated Profile...</p>
     </div>
   </div>
 </template>
@@ -44,7 +44,17 @@ export default {
       .then(response => (this.info = response))
       .catch(err => console.log(err))
 
-    // TODO: Diff user profile data against that provided by Auth0
+    // Diff user profile data against that provided by Auth0
+    if (profile.given_name && (info.data.firstname === 'not-set' || info.data.firstname === 'anonymous')) {
+      updatedUser['firstname'] = profile.given_name;
+    }
+
+    if (profile.family_name && (info.data.lastname === 'not-set' || info.data.lastname === 'anonymous')) {
+      updatedUser['lastname'] = profile.family_name;
+    }
+
+    updatedUser['contactInfo']['email']['isVerified'] = profile.email_verified;
+
     // TODO: Auto-update user profile data with Auth0 wherever anything has not been set
   },
   data() {
@@ -64,7 +74,7 @@ export default {
     return {
       profile: this.$auth.profile,
       info: this.info,
-      patchedProfile: undefined
+      patchedProfile: this.patchedProfile
     };
   },
   methods: {
