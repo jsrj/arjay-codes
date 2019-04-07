@@ -23,9 +23,8 @@ export default {
     DevIdentifierTag
   },
   props: {
-    panels: [Object]
-  },
-  data() {}
+    panels: Array
+  }
 }
 </script>
 
