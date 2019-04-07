@@ -56,5 +56,3 @@ export default {
       border: 2px solid red;
       margin: 0px;
 </style>
-
-
