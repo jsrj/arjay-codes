@@ -26,15 +26,6 @@ const router = new Router({
       name: "about",
       component: About
     },
-    // {
-    //   path: "/about",
-    //   name: "about",
-    //   // route level code-splitting
-    //   // this generates a separate chunk (about.[hash].js) for this route
-    //   // which is lazy-loaded when the route is visited.
-    //   component: () =>
-    //     import(/* webpackChunkName: "about" */ "./views/About.vue")
-    // },
 
     // Auth Pages
     {
@@ -44,7 +35,7 @@ const router = new Router({
     },
     {
       path: "/user",
-      name: "profile",
+      name: "user",
       component: Profile
     },
     {
@@ -68,19 +59,28 @@ const router = new Router({
 });
 
 const authenticatedRoutes = [
-  "/about",
-  "/admin",
-  "/invoice",
-  "/dashboard",
-  "/scheduling"
+  "user",
+  "admin",
+  "invoice",
+  "dashboard",
+  "scheduling"
 ];
 
 router.beforeEach((to, from, next) => {
-  if (authenticatedRoutes.includes(to.path) && !auth.isAuthenticated()) {
-    auth.login({ target: to.path });
-  } else {
+  if (to.path === "/" || to.path === "/about" || to.path === "/callback" || auth.isAuthenticated()) {
     return next();
   }
+
+  auth.login({ target: to.path });
 });
+
+// router.beforeResolve((to, from, next) => {
+//   console.log("before each called");
+//   if (authenticatedRoutes.includes(to.name) && !auth.isAuthenticated()) {
+//     auth.login({ target: to.path });
+//   } else {
+//     return next();
+//   }
+// });
 
 export default router;

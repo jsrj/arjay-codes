@@ -10,8 +10,7 @@ export default {
   name: "Registration",
   components: {
     Register
-  },
-  props: {}
+  }
 }
 </script>
 

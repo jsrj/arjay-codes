@@ -1,14 +1,13 @@
 <template>
   <div class="home">
-    <Meta 
+    <!-- <Meta 
       :title="title" 
       :subTitle="subTitle" 
       :description="description" 
-    />
-    
+    /> -->
     <Header />
     <Action />
-    <BaseContent
+    <BaseContent 
       v-bind:key="index"
       v-for="(content, index) in contents" 
       :head="content.head" 

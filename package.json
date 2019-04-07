@@ -32,6 +32,8 @@
     "vuex": "^3.0.1"
   },
   "devDependencies": {
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-e2e-cypress": "^3.5.0",
     "@vue/cli-plugin-eslint": "^3.5.0",
