@@ -58,5 +58,37 @@
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21",
     "webpack": "^3.0.0"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "semi": true
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true,
+      "browser": true
+    },
+    "plugins": [
+      "vue"
+    ],
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "no-console": [
+        "error",
+        {
+          "allow": [
+            "error",
+            "warn"
+          ]
+        }
+      ]
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
   }
 }
