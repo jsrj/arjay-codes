@@ -45,6 +45,7 @@ export default {
 <style lang="sass" scoped>
 .navbar
   border: 2px solid black;
+  background-color: white;
   
   a
     font-weight: bold;
