@@ -9,6 +9,7 @@ import "./registerServiceWorker";
 Vue.use(AuthPlugin);
 
 Vue.config.productionTip = true;
+
 Vue.component("vue-headful", vueHeadful);
 
 new Vue({

@@ -1,14 +1,14 @@
 <template>
-  <div class="navbar">
+  <div class="navbar" v-cloak>
     <DevIdentifierTag tagName="Navbar" />
-    <router-link to="/">Home</router-link>
-    &nbsp;|&nbsp;
-    <router-link to="/about">About</router-link>
-    &nbsp;|&nbsp;
-    <a href="#" v-if="!isAuthenticated" @click.prevent="login">Log In</a>
-    <router-link v-else to="/user" tag="a" href="#">Profile</router-link>
+
+    <router-link to="/">Home</router-link>&nbsp;|&nbsp;
+    <router-link to="/about">About</router-link>&nbsp;|&nbsp;
+
+    <router-link v-if="isAuthenticated" to="/user" tag="a" href="#">Profile</router-link>
     <span v-if="isAuthenticated">&nbsp;|&nbsp;</span>
     <a href="#" v-if="isAuthenticated" @click.prevent="logout">Log Out</a>
+    <a v-else href="#" @click.prevent="login">Log In</a>
   </div>
 </template>
 
@@ -20,9 +20,7 @@ export default {
   components: {
     DevIdentifierTag
   },
-  props: {
-  },
-    methods: {
+  methods: {
     login() {
       this.$auth.login();
     },
@@ -35,7 +33,7 @@ export default {
       this.profile = data.profile;
     }
   },
-    data() {
+  data() {
     return {
       isAuthenticated: false,
       profile: {}
