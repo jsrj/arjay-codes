@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar" v-cloak>
+  <div class="navbar">
     <DevIdentifierTag tagName="Navbar" />
 
     <router-link to="/">Home</router-link>&nbsp;|&nbsp;
