@@ -4,7 +4,7 @@
   "private": false,
   "description": "",
   "repository": "https://www.github.com/jsrj/arjay-codes.git",
-  "license": "MIT (./LICENSE)",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
