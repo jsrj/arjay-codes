@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <!-- <Meta 
+    <Meta 
       :title="title" 
       :subTitle="subTitle" 
       :description="description" 
-    /> -->
+    />
     <Header />
     <Action />
     <BaseContent 
