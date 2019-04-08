@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar app dense scroll-toolbar-off-screen :scroll-threshold="1" class="navbar">
+  <v-toolbar app dense scroll-off-screen :scroll-threshold="1" class="navbar">
     <router-link tag="v-toolbar-title" to="/">Home</router-link>&nbsp;|&nbsp;
     <router-link to="/about">About</router-link>&nbsp;|&nbsp;
 
