@@ -13,7 +13,7 @@
       <pre v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(profile, null, 2) }}</code></pre>
     </div>
     <br />
-    <div class="row">
+    <!-- <div class="row">
       <h1>User Management Service Info</h1>
       <pre v-if="info" v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(info, null, 2) }}</code></pre>
       <p v-else>Loading User Management Service Info...</p>
@@ -23,7 +23,7 @@
       <h1>Patched User Profile</h1>
       <pre v-if="patchedProfile" v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(patchedProfile, null, 2) }}</code></pre>
       <p v-else>Loading Updated Profile...</p>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -31,31 +31,38 @@
 import axios from 'axios';
 
 export default {
-  name: "profile",
+  name: "user",
   components: {},
   mounted () {
-
-    const updatedUser = {};
-
+    
     // TODO: Implement JWT security in these calls
     // Get user profile from ac-user-management-svc
-    axios
-      .get("https://ac-user-management-dev-v0.herokuapp.com/users?username=newtestguy")
-      .then(response => (this.info = response))
-      .catch(err => console.log(err))
+    // axios
+    //   .get(`https://ac-user-management-dev-v0.herokuapp.com/users?username=${this.$auth.profile.name}`)
+    //   .then(response => {
+        
+    //     const svc = response.data
+    //     this.info = svc
+    //     const updatedUser = {};
 
-    // Diff user profile data against that provided by Auth0
-    if (profile.given_name && (info.data.firstname === 'not-set' || info.data.firstname === 'anonymous')) {
-      updatedUser['firstname'] = profile.given_name;
-    }
+    //     // Diff user profile data against that provided by Auth0
+    //     if (this.$auth.profile.given_name && (svc.firstname === 'not-set' || svc.firstname === 'anonymous')) {
+    //       updatedUser['firstname'] = this.$auth.profile.given_name;
+    //     }
+    //     if (this.$auth.profile.family_name && (response.data.lastname === 'not-set' || svc.lastname === 'anonymous')) {
+    //       updatedUser['lastname'] = this.$auth.profile.family_name;
+    //     }
+    //     if (this.$auth.profile.nickname && svc.displayname === 'not-set') {
+    //       updatedUser['displayname'] = this.$auth.profile.nickname;
+    //     }
 
-    if (profile.family_name && (info.data.lastname === 'not-set' || info.data.lastname === 'anonymous')) {
-      updatedUser['lastname'] = profile.family_name;
-    }
-
-    updatedUser['contactInfo']['email']['isVerified'] = profile.email_verified;
-
-    // TODO: Auto-update user profile data with Auth0 wherever anything has not been set
+    //     // Auto-update user profile data with Auth0 wherever anything has not been set
+    //     axios
+    //       .patch("https://ac-user-management-dev-v0.herokuapp.com/users?username=newtestguy", updatedUser)
+    //       .then(patched => (this.patchedProfile = patched.data))
+    //       .catch(err => console.log(err))
+    //   })
+    //   .catch(err => console.log(err))
   },
   data() {
     /** -- Trimmed User Profile Schema --
