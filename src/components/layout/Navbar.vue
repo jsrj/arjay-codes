@@ -9,11 +9,7 @@
       </v-layout>
     </v-container>
 
-    <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary
-    >
+    <v-navigation-drawer :mini-variant="isMinified" v-model="drawer" absolute temporary>
       <v-list class="pa-1">
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -32,7 +28,6 @@
         <v-list-tile
           v-for="item in items"
           :key="item.title"
-          @click=""
         >
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
@@ -42,7 +37,9 @@
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
+
       </v-list>
+      <v-btn @click="toggleMinify">MINIFY</v-btn>
     </v-navigation-drawer>
   </v-layout>
   <!-- <v-navigation-drawer permanent app :v-model="null" :width="width" height="100vh">
@@ -67,7 +64,6 @@
 
 <script>
 import DevIdentifierTag from '@/components/helpers/DevIdentifierTag.vue';
-import { clearInterval, setInterval } from 'timers';
 
 export default {
   name: "Navbar",
@@ -86,6 +82,9 @@ export default {
     handleLoginEvent(data) {
       this.isAuthenticated = data.loggedIn;
       this.profile = data.profile;
+    },
+    toggleMinify() {
+      this.isMinified = !this.isMinified;
     }
   },
   data() {
@@ -93,6 +92,7 @@ export default {
       isAuthenticated: false,
       profile: {},
       drawer: null,
+      isMinified: true,
         items: [
           { title: 'Home', icon: 'dashboard' },
           { title: 'About', icon: 'question_answer' }
