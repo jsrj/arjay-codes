@@ -2,27 +2,22 @@
   <v-toolbar app dense scroll-off-screen :scroll-threshold="1" class="navbar">
 
     <v-spacer />
-
-    <router-link to="/">
-      <v-btn flat>Home</v-btn>
-    </router-link>
-
-    &nbsp;|&nbsp;
-
-    <router-link to="/about">
-      <v-btn flat>About</v-btn>
-    </router-link>
-
-    &nbsp;|&nbsp;
-
-    <router-link v-if="isAuthenticated" to="/user">
-      <v-btn flat>Profile</v-btn>
-    </router-link>
-
-    <span v-if="isAuthenticated">&nbsp;|&nbsp;</span>
-
-    <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
-    <v-btn flat v-else  @click.prevent="login">Log In</v-btn>
+      <router-link to="/">
+        <v-btn flat>Home</v-btn>
+      </router-link>
+      <span>&nbsp;|&nbsp;</span>
+      <router-link to="/about">
+        <v-btn flat>About</v-btn>
+      </router-link>
+      <span>&nbsp;|&nbsp;</span>
+      <router-link v-if="isAuthenticated" to="/user">
+        <v-btn flat>Profile</v-btn>
+      </router-link>
+      <span v-if="isAuthenticated">&nbsp;|&nbsp;</span>
+      <div>
+        <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
+        <v-btn flat v-else @click.prevent="login">Log In</v-btn>
+      </div>
   </v-toolbar>
 </template>
 
@@ -60,6 +55,9 @@ export default {
   width: 20vw;
   background-color: transparent;
   z-index: 9;
+
+#nav-links
+  ali
 
 .home-icon
   cursor: pointer !important;
