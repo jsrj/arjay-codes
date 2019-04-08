@@ -1,19 +1,25 @@
 <template>
-  <v-layout wrap>
-    <!-- Main Toolbar -->
-    <v-toolbar app dark>
+  <v-layout v-resize="onResize" wrap>
+    <!-- 
+      TODO: Configure so that nav drawer is shown on desktop, but v-toolbar is shown on mobile devices. 
+      DO NOT display both since the page quickly becomes way too crowded. 
+    -->
+    <!-- Nav Drawer -->
+        <!-- Main Toolbar -->
+    <v-toolbar app dark clipped>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Arjay | Codes</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat>Link One</v-btn>
-        <v-btn flat>Link Two</v-btn>
-        <v-btn flat>Link Three</v-btn>
+        <v-tab>
+          <v-btn flat>Link One</v-btn>
+          <v-btn flat>Link Two</v-btn>
+          <v-btn flat>Link Three</v-btn>
+        </v-tab>
       </v-toolbar-items>
     </v-toolbar>
 
-    <!-- Nav Drawer -->
-    <v-navigation-drawer :mini-variant="isMinified" v-model="drawer" absolute temporary dark clipped>
+    <v-navigation-drawer app fixed v-model="drawer" absolute :permanent="this.windowSize.x > 800" dark>
       <v-list class="pa-1">
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -41,9 +47,7 @@
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-
       </v-list>
-      <!-- <v-btn @click="toggleMinify">MINIFY</v-btn> -->
     </v-navigation-drawer>
   </v-layout>
   <!-- <v-navigation-drawer permanent app :v-model="null" :width="width" height="100vh">
@@ -67,13 +71,14 @@
 </template>
 
 <script>
-import DevIdentifierTag from '@/components/helpers/DevIdentifierTag.vue';
-
 export default {
   name: "Navbar",
   components: {},
   props: {
     width: String
+  },
+  mounted() {
+    this.onResize();
   },
   methods: {
     login() {
@@ -87,8 +92,10 @@ export default {
       this.isAuthenticated = data.loggedIn;
       this.profile = data.profile;
     },
-    toggleMinify() {
-      this.isMinified = !this.isMinified;
+    onResize () {
+      this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+      console.log(this.windowSize.x);
+      console.log(this.windowSize.y);
     }
   },
   data() {
@@ -96,11 +103,14 @@ export default {
       isAuthenticated: false,
       profile: {},
       drawer: null,
-      isMinified: false,
-        items: [
-          { title: 'Home', icon: 'dashboard' },
-          { title: 'About', icon: 'question_answer' }
-        ]
+      windowSize: {
+        x: 0,
+        y: 0
+      },
+      items: [
+        { title: 'Home', icon: 'dashboard' },
+        { title: 'About', icon: 'question_answer' }
+      ]
     };
   }
 }
