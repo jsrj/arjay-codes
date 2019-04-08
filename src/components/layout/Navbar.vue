@@ -5,11 +5,9 @@
       <router-link to="/">
         <v-btn flat>Home</v-btn>
       </router-link>
-      <!-- <span>&nbsp;|&nbsp;</span> -->
       <router-link to="/about">
         <v-btn flat>About</v-btn>
       </router-link>
-      <!-- <span>&nbsp;|&nbsp;</span> -->
       <router-link v-if="isAuthenticated" to="/user">
         <v-btn flat>Profile</v-btn>
       </router-link>
