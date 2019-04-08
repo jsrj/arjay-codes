@@ -9,12 +9,9 @@ export default {
   name: 'ViewWrapper',
   props: {
     title: String
-    // offsetLeft: Number
   },
   computed: {
-    style() {
-      // return 'margin-left: '+this.offsetLeft+'px !important';
-    }
+    style() {}
   }
 }
 </script>
