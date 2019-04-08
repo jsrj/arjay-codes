@@ -7,7 +7,7 @@ import vueHeadful from "vue-headful";
 import AuthPlugin from "./plugins/auth";
 import HighlightJs from "./directives/highlight";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { faAngleDown,faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { dom } from "@fortawesome/fontawesome-svg-core";
 
@@ -18,7 +18,7 @@ dom.watch();
 Vue.config.productionTip = true;
 
 // Library additions
-library.add(faCoffee);
+library.add(faAngleDown, faAngleUp);
 
 // Vue Use declarations
 Vue.use(Vuetify);
