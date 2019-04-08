@@ -1,7 +1,7 @@
 <template>
   <div id="root">
-    <Navbar id="nav" />
-    <router-view id="main" title="Arjay | Codes" />
+    <Navbar />
+    <ViewWrapper :title="title" />
     <Footer id="footer" :socialLinks="socialLinks" />
   </div>
 </template>
@@ -9,14 +9,17 @@
 <script>
 import Navbar from './components/layout/Navbar.vue';
 import Footer from './components/layout/Footer.vue';
+import ViewWrapper from './components/layout/ViewWrapper.vue';
 
 export default {
   components: {
     Navbar,
+    ViewWrapper,
     Footer
   },
   data() {
     return {
+      title: "Arjay | Codes",
       socialLinks: [
         {
           name: 'Facebook',
@@ -54,16 +57,6 @@ export default {
 
 
 <style>
-#nav {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-#main {
-  padding: 10vh 0;
-}
-
 #root {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
