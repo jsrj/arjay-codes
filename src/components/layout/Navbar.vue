@@ -4,11 +4,11 @@
     <v-spacer />
       <router-link to="/">
         <v-btn flat v-if="!shrinkNav" @click.prevent="shrinkNav = true">
-          <font-awesome-icon icon="angle-up">
+          <font-awesome-icon icon="lock">
           </font-awesome-icon>
         </v-btn>
         <v-btn flat v-else @click.prevent="shrinkNav = false">
-          <font-awesome-icon icon="angle-down">
+          <font-awesome-icon icon="lock-open">
           </font-awesome-icon>
         </v-btn>
         <v-btn flat>Home</v-btn>
