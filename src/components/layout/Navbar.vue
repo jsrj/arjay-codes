@@ -1,11 +1,11 @@
 <template>
   <v-navigation-drawer :width="menuWidth" :height="menuHeight" app dense class="navbar">
 
-      <v-btn flat v-if="!menuIsMinimized" @click.prevent="minimizeMenu()">
+      <v-btn flat v-if="!menuIsMinimized" @click.prevent="toggleMenu()">
         <font-awesome-icon icon="lock">
         </font-awesome-icon>
       </v-btn>
-      <v-btn flat v-else @click.prevent="expandMenu()">
+      <v-btn flat v-else @click.prevent="toggleMenu()">
         <font-awesome-icon icon="lock-open">
         </font-awesome-icon>
       </v-btn>
@@ -32,6 +32,7 @@
 
 <script>
 import DevIdentifierTag from '@/components/helpers/DevIdentifierTag.vue';
+import { clearInterval, setInterval } from 'timers';
 
 export default {
   name: "Navbar",
@@ -48,13 +49,28 @@ export default {
       this.isAuthenticated = data.loggedIn;
       this.profile = data.profile;
     },
-    minimizeMenu() {
-      this.menuIsMinimized = true;
-      console.log('minimize');
-    },
-    expandMenu() {
-      this.menuIsMinimized = false;
-      console.log('maximize');
+    toggleMenu() {
+      let heightVal = parseInt(this.menuHeight);
+      const decreaseHeight = () => {
+        if (heightVal > this.menuMinHeight) {
+          this.menuHeight = `${heightVal--}%`;
+        }
+        else {
+          clearInterval(animator);
+          this.menuIsMinimized = true;
+        }
+      }
+
+      const increaseHeight = () => {
+        if (heightVal < this.menuMaxHeight) {
+          this.menuHeight = `${heightVal++}%`;
+        } else {
+          clearInterval(animator);
+          this.menuIsMinimized = false;
+        }
+      }
+
+      const animator = setInterval(this.menuIsMinimized ? increaseHeight : decreaseHeight, 5);
     }
   },
   data() {
@@ -62,8 +78,10 @@ export default {
       isAuthenticated: false,
       profile: {},
       menuIsMinimized: false,
-      menuWidth: '60%',
-      menuHeight: '100%'
+      menuWidth: '125%',
+      menuHeight: '100%',
+      menuMinHeight: 25,
+      menuMaxHeight: 100
 
     };
   }
