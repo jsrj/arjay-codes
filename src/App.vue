@@ -1,7 +1,7 @@
 <template>
   <div id="root">
     <Navbar :width="menuWidth" />
-    <router-view id="main" title="Arjay | Codes" />
+    <ViewWrapper :title="title" :offsetLeft="menuWidth" />
     <Footer id="footer" :socialLinks="socialLinks" />
   </div>
 </template>
@@ -9,14 +9,17 @@
 <script>
 import Navbar from './components/layout/Navbar.vue';
 import Footer from './components/layout/Footer.vue';
+import ViewWrapper from './components/layout/ViewWrapper.vue';
 
 export default {
   components: {
     Navbar,
+    ViewWrapper,
     Footer
   },
   data() {
     return {
+      title: "Arjay | Codes",
       menuWidth: 125,
       socialLinks: [
         {
@@ -55,10 +58,6 @@ export default {
 
 
 <style>
-#main {
-  padding: 10vh 0;
-}
-
 #root {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
