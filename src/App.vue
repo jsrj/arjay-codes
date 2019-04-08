@@ -1,6 +1,6 @@
 <template>
   <div id="root">
-    <Navbar id="nav" />
+    <Navbar />
     <router-view id="main" title="Arjay | Codes" />
     <Footer id="footer" :socialLinks="socialLinks" />
   </div>
@@ -54,12 +54,6 @@ export default {
 
 
 <style>
-#nav {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
 #main {
   padding: 10vh 0;
 }
