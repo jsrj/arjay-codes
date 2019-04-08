@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer permanent :width="menuWidth" height="100vh">
+  <v-navigation-drawer permanent app :width="menuWidth" height="100vh">
 
       <v-spacer />
       <router-link to="/">
