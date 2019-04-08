@@ -1,12 +1,28 @@
 <template>
   <v-toolbar app dense scroll-off-screen :scroll-threshold="1" class="navbar">
-    <router-link tag="v-toolbar-title" to="/">Home</router-link>&nbsp;|&nbsp;
-    <router-link to="/about">About</router-link>&nbsp;|&nbsp;
 
-    <router-link v-if="isAuthenticated" to="/user" tag="a" href="#">Profile</router-link>
+    <v-spacer />
+
+    <router-link to="/">
+      <v-btn flat>Home</v-btn>
+    </router-link>
+
+    &nbsp;|&nbsp;
+
+    <router-link to="/about">
+      <v-btn flat>About</v-btn>
+    </router-link>
+
+    &nbsp;|&nbsp;
+
+    <router-link v-if="isAuthenticated" to="/user">
+      <v-btn flat>Profile</v-btn>
+    </router-link>
+
     <span v-if="isAuthenticated">&nbsp;|&nbsp;</span>
-    <a href="#" v-if="isAuthenticated" @click.prevent="logout">Log Out</a>
-    <a v-else href="#" @click.prevent="login">Log In</a>
+
+    <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
+    <v-btn flat v-else  @click.prevent="login">Log In</v-btn>
   </v-toolbar>
 </template>
 
