@@ -1,9 +1,9 @@
 <template>
-  <div class="base-content">
+  <section class="base-content">
     <DevIdentifierTag tagName="BaseContent" :index="index" />
     <h1>{{ head }}</h1>
     <p>{{ block }}</p>
-  </div>
+  </section>
 </template>
 
 <script>
