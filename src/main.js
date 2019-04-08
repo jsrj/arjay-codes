@@ -7,6 +7,7 @@ import vueHeadful from "vue-headful";
 import AuthPlugin from "./plugins/auth";
 import HighlightJs from "./directives/highlight";
 import "./registerServiceWorker";
+import "vuetify/dist/vuetify.min.css";
 
 Vue.config.productionTip = true;
 
