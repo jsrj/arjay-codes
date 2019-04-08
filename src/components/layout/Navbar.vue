@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer permanent :width="menuWidth" :height="menuHeight">
+  <v-navigation-drawer permanent :width="menuWidth" height="100vh">
 
       <v-spacer />
       <router-link to="/">
@@ -68,11 +68,7 @@ export default {
       isAuthenticated: false,
       profile: {},
       menuIsMinimized: false,
-      menuWidth: '125%',
-      menuHeight: '100%',
-      menuMinHeight: 25,
-      menuMaxHeight: 125
-
+      menuWidth: '125%'
     };
   }
 }
