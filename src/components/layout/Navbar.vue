@@ -1,6 +1,5 @@
 <template>
-  <div class="navbar">
-    <DevIdentifierTag tagName="Navbar" />
+  <v-toolbar class="navbar">
 
     <router-link to="/">Home</router-link>&nbsp;|&nbsp;
     <router-link to="/about">About</router-link>&nbsp;|&nbsp;
@@ -9,7 +8,7 @@
     <span v-if="isAuthenticated">&nbsp;|&nbsp;</span>
     <a href="#" v-if="isAuthenticated" @click.prevent="logout">Log Out</a>
     <a v-else href="#" @click.prevent="login">Log In</a>
-  </div>
+  </v-toolbar>
 </template>
 
 <script>
@@ -45,7 +44,8 @@ export default {
 <style lang="sass" scoped>
 .navbar
   border: 2px solid black;
-  background-color: white;
+  background-color: transparent;
+  z-index: 9;
   
   a
     font-weight: bold;
