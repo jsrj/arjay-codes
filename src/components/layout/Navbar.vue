@@ -1,15 +1,26 @@
 <template>
   <v-layout wrap>
+    <!-- Main Toolbar -->
+    <v-toolbar dark>
+      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <!-- <v-container>
+        <v-layout justify-center>
+          <v-btn color="orange" dark @click.stop="drawer = !drawer">
+            <font-awesome-icon icon="bars"></font-awesome-icon>
+          </v-btn>
+        </v-layout>
+      </v-container> -->
+      <v-toolbar-title>Arjay | Codes</v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat>Link One</v-btn>
+        <v-btn flat>Link Two</v-btn>
+        <v-btn flat>Link Three</v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
 
-    <v-container>
-      <v-layout justify-center>
-        <v-btn color="orange" dark @click.stop="drawer = !drawer">
-          <font-awesome-icon icon="bars"></font-awesome-icon>
-        </v-btn>
-      </v-layout>
-    </v-container>
-
-    <v-navigation-drawer :mini-variant="isMinified" v-model="drawer" absolute temporary>
+    <!-- Nav Drawer -->
+    <v-navigation-drawer :mini-variant="isMinified" v-model="drawer" absolute temporary clipped-left>
       <v-list class="pa-1">
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -39,7 +50,7 @@
         </v-list-tile>
 
       </v-list>
-      <v-btn @click="toggleMinify">MINIFY</v-btn>
+      <!-- <v-btn @click="toggleMinify">MINIFY</v-btn> -->
     </v-navigation-drawer>
   </v-layout>
   <!-- <v-navigation-drawer permanent app :v-model="null" :width="width" height="100vh">
@@ -92,7 +103,7 @@ export default {
       isAuthenticated: false,
       profile: {},
       drawer: null,
-      isMinified: true,
+      isMinified: false,
         items: [
           { title: 'Home', icon: 'dashboard' },
           { title: 'About', icon: 'question_answer' }
