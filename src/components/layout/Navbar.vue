@@ -1,13 +1,10 @@
 <template>
   <v-layout wrap>
+
     <v-container>
       <v-layout justify-center>
-        <v-btn
-          color="pink"
-          dark
-          @click.stop="drawer = !drawer"
-        >
-          Menu
+        <v-btn color="orange" dark @click.stop="drawer = !drawer">
+          <font-awesome-icon icon="bars"></font-awesome-icon>
         </v-btn>
       </v-layout>
     </v-container>
