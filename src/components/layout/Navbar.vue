@@ -1,23 +1,24 @@
 <template>
-  <v-toolbar app dense :scroll-off-screen="shrinkNav" :scroll-threshold="1" class="navbar">
+  <v-navigation-drawer :width="menuWidth" :height="menuHeight" app dense class="navbar">
 
-    <v-spacer />
+      <v-btn flat v-if="!menuIsMinimized" @click.prevent="minimizeMenu()">
+        <font-awesome-icon icon="lock">
+        </font-awesome-icon>
+      </v-btn>
+      <v-btn flat v-else @click.prevent="expandMenu()">
+        <font-awesome-icon icon="lock-open">
+        </font-awesome-icon>
+      </v-btn>
+
+      <v-spacer />
       <router-link to="/">
-        <v-btn flat v-if="!shrinkNav" @click.prevent="shrinkNav = true">
-          <font-awesome-icon icon="lock">
-          </font-awesome-icon>
-        </v-btn>
-        <v-btn flat v-else @click.prevent="shrinkNav = false">
-          <font-awesome-icon icon="lock-open">
-          </font-awesome-icon>
-        </v-btn>
         <v-btn flat>Home</v-btn>
       </router-link>
-      <span>&nbsp;|&nbsp;</span>
+      <!-- <span>&nbsp;|&nbsp;</span> -->
       <router-link to="/about">
         <v-btn flat>About</v-btn>
       </router-link>
-      <span>&nbsp;|&nbsp;</span>
+      <!-- <span>&nbsp;|&nbsp;</span> -->
       <router-link v-if="isAuthenticated" to="/user">
         <v-btn flat>Profile</v-btn>
       </router-link>
@@ -26,7 +27,7 @@
         <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
         <v-btn flat v-else @click.prevent="login">Log In</v-btn>
       </div>
-  </v-toolbar>
+  </v-navigation-drawer>
 </template>
 
 <script>
@@ -46,13 +47,24 @@ export default {
     handleLoginEvent(data) {
       this.isAuthenticated = data.loggedIn;
       this.profile = data.profile;
+    },
+    minimizeMenu() {
+      this.menuIsMinimized = true;
+      console.log('minimize');
+    },
+    expandMenu() {
+      this.menuIsMinimized = false;
+      console.log('maximize');
     }
   },
   data() {
     return {
       isAuthenticated: false,
       profile: {},
-      shrinkNav: false
+      menuIsMinimized: false,
+      menuWidth: '60%',
+      menuHeight: '100%'
+
     };
   }
 }
