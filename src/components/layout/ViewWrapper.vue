@@ -1,13 +1,25 @@
 <template>
+  <div id="view-wrapper">
+    <router-view id="view" :title="title" :style="style" />
+  </div>
 </template>
 
 <script>
 export default {
-  
+  name: 'ViewWrapper',
+  props: {
+    title: String,
+    offsetLeft: Number
+  },
+  computed: {
+    style() {
+      return 'margin-left: '+this.offsetLeft+'px !important';
+    }
+  }
 }
 </script>
 
-<style lang="sass" scoped>
+<style scoped>
 </style>
 
 
