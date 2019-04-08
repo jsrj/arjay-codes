@@ -1,15 +1,8 @@
 <template>
   <v-layout wrap>
     <!-- Main Toolbar -->
-    <v-toolbar dark>
+    <v-toolbar app dark>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <!-- <v-container>
-        <v-layout justify-center>
-          <v-btn color="orange" dark @click.stop="drawer = !drawer">
-            <font-awesome-icon icon="bars"></font-awesome-icon>
-          </v-btn>
-        </v-layout>
-      </v-container> -->
       <v-toolbar-title>Arjay | Codes</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
@@ -20,7 +13,7 @@
     </v-toolbar>
 
     <!-- Nav Drawer -->
-    <v-navigation-drawer :mini-variant="isMinified" v-model="drawer" absolute temporary clipped-left>
+    <v-navigation-drawer :mini-variant="isMinified" v-model="drawer" absolute temporary dark clipped>
       <v-list class="pa-1">
         <v-list-tile avatar>
           <v-list-tile-avatar>
@@ -114,21 +107,21 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-.navbar
-  clear: both;
-  border: 4px solid orange;
-  margin-right: 250px;
+// .navbar
+//   clear: both;
+//   border: 4px solid orange;
+//   margin-right: 250px;
 
-#nav-links
-  ali
+// #nav-links
+//   ali
 
-.home-icon
-  cursor: pointer !important;
+// .home-icon
+//   cursor: pointer !important;
   
-  v-btn
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active
-      color: #42b983;
+//   v-btn
+//     font-weight: bold;
+//     color: #2c3e50;
+//     &.router-link-exact-active
+//       color: #42b983;
 </style>
 
