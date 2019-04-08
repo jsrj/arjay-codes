@@ -6,10 +6,19 @@ import Vuetify from "vuetify";
 import vueHeadful from "vue-headful";
 import AuthPlugin from "./plugins/auth";
 import HighlightJs from "./directives/highlight";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faCoffee } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import { dom } from "@fortawesome/fontawesome-svg-core";
+
 import "./registerServiceWorker";
 import "vuetify/dist/vuetify.min.css";
 
+dom.watch();
 Vue.config.productionTip = true;
+
+// Library additions
+library.add(faCoffee);
 
 // Vue Use declarations
 Vue.use(Vuetify);
@@ -20,6 +29,7 @@ Vue.directive("highlightjs", HighlightJs);
 
 // Vue Global Component declarations
 Vue.component("vue-headful", vueHeadful);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 new Vue({
   router,
