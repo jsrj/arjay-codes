@@ -1,5 +1,5 @@
 <template>
-  <v-navigation-drawer permanent app :width="menuWidth" height="100vh">
+  <v-navigation-drawer permanent app :width="width" height="100vh">
 
       <v-spacer />
       <router-link to="/">
@@ -26,6 +26,9 @@ import { clearInterval, setInterval } from 'timers';
 export default {
   name: "Navbar",
   components: {},
+  props: {
+    width: String
+  },
   methods: {
     login() {
       this.$auth.login();
@@ -37,38 +40,13 @@ export default {
     handleLoginEvent(data) {
       this.isAuthenticated = data.loggedIn;
       this.profile = data.profile;
-    },
-    // toggleMenu() {
-    //   let heightVal = parseInt(this.menuHeight);
-
-    //   const decreaseHeight = () => {
-    //     if (heightVal != this.menuMinHeight) {
-    //       this.menuHeight = `${heightVal--}%`;
-    //     }
-    //     else {
-    //       clearInterval(animator);
-    //       this.menuIsMinimized = true;
-    //     }
-    //   }
-
-    //   const increaseHeight = () => {
-    //     if (heightVal != this.menuMaxHeight) {
-    //       this.menuHeight = `${heightVal++}%`;
-    //     } else {
-    //       clearInterval(animator);
-    //       this.menuIsMinimized = false;
-    //     }
-    //   }
-
-    //   const animator = setInterval(this.menuIsMinimized ? increaseHeight : decreaseHeight, 0.2);
-    // }
+    }
   },
   data() {
     return {
       isAuthenticated: false,
       profile: {},
-      menuIsMinimized: false,
-      menuWidth: '125%'
+      menuIsMinimized: false
     };
   }
 }
@@ -76,8 +54,9 @@ export default {
 
 <style lang="sass" scoped>
 .navbar
+  clear: both;
   border: 4px solid orange;
-  z-index: 9;
+  margin-right: 250px;
 
 #nav-links
   ali

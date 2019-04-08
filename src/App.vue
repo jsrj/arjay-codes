@@ -1,6 +1,6 @@
 <template>
   <div id="root">
-    <Navbar />
+    <Navbar :width="menuWidth" />
     <router-view id="main" title="Arjay | Codes" />
     <Footer id="footer" :socialLinks="socialLinks" />
   </div>
@@ -17,6 +17,7 @@ export default {
   },
   data() {
     return {
+      menuWidth: 125,
       socialLinks: [
         {
           name: 'Facebook',
