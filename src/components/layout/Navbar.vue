@@ -1,8 +1,16 @@
 <template>
-  <v-toolbar app dense scroll-off-screen :scroll-threshold="1" class="navbar">
+  <v-toolbar app dense :scroll-off-screen="shrinkNav" :scroll-threshold="1" class="navbar">
 
     <v-spacer />
       <router-link to="/">
+        <v-btn flat v-if="!shrinkNav" @click.prevent="shrinkNav = true">
+          <font-awesome-icon icon="angle-up">
+          </font-awesome-icon>
+        </v-btn>
+        <v-btn flat v-else @click.prevent="shrinkNav = false">
+          <font-awesome-icon icon="angle-down">
+          </font-awesome-icon>
+        </v-btn>
         <v-btn flat>Home</v-btn>
       </router-link>
       <span>&nbsp;|&nbsp;</span>
@@ -43,7 +51,8 @@ export default {
   data() {
     return {
       isAuthenticated: false,
-      profile: {}
+      profile: {},
+      shrinkNav: false
     };
   }
 }
@@ -51,9 +60,7 @@ export default {
 
 <style lang="sass" scoped>
 .navbar
-  border: 2px solid black;
-  width: 20vw;
-  background-color: transparent;
+  border: 4px solid orange;
   z-index: 9;
 
 #nav-links
@@ -62,7 +69,7 @@ export default {
 .home-icon
   cursor: pointer !important;
   
-  a
+  v-btn
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active
