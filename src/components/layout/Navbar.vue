@@ -1,14 +1,5 @@
 <template>
-  <v-navigation-drawer :width="menuWidth" :height="menuHeight" app dense class="navbar">
-
-      <v-btn flat v-if="!menuIsMinimized" @click.prevent="toggleMenu()">
-        <font-awesome-icon icon="lock">
-        </font-awesome-icon>
-      </v-btn>
-      <v-btn flat v-else @click.prevent="toggleMenu()">
-        <font-awesome-icon icon="lock-open">
-        </font-awesome-icon>
-      </v-btn>
+  <v-navigation-drawer permanent :width="menuWidth" :height="menuHeight">
 
       <v-spacer />
       <router-link to="/">
@@ -49,29 +40,30 @@ export default {
       this.isAuthenticated = data.loggedIn;
       this.profile = data.profile;
     },
-    toggleMenu() {
-      let heightVal = parseInt(this.menuHeight);
-      const decreaseHeight = () => {
-        if (heightVal > this.menuMinHeight) {
-          this.menuHeight = `${heightVal--}%`;
-        }
-        else {
-          clearInterval(animator);
-          this.menuIsMinimized = true;
-        }
-      }
+    // toggleMenu() {
+    //   let heightVal = parseInt(this.menuHeight);
 
-      const increaseHeight = () => {
-        if (heightVal < this.menuMaxHeight) {
-          this.menuHeight = `${heightVal++}%`;
-        } else {
-          clearInterval(animator);
-          this.menuIsMinimized = false;
-        }
-      }
+    //   const decreaseHeight = () => {
+    //     if (heightVal != this.menuMinHeight) {
+    //       this.menuHeight = `${heightVal--}%`;
+    //     }
+    //     else {
+    //       clearInterval(animator);
+    //       this.menuIsMinimized = true;
+    //     }
+    //   }
 
-      const animator = setInterval(this.menuIsMinimized ? increaseHeight : decreaseHeight, 5);
-    }
+    //   const increaseHeight = () => {
+    //     if (heightVal != this.menuMaxHeight) {
+    //       this.menuHeight = `${heightVal++}%`;
+    //     } else {
+    //       clearInterval(animator);
+    //       this.menuIsMinimized = false;
+    //     }
+    //   }
+
+    //   const animator = setInterval(this.menuIsMinimized ? increaseHeight : decreaseHeight, 0.2);
+    // }
   },
   data() {
     return {
@@ -81,7 +73,7 @@ export default {
       menuWidth: '125%',
       menuHeight: '100%',
       menuMinHeight: 25,
-      menuMaxHeight: 100
+      menuMaxHeight: 125
 
     };
   }
