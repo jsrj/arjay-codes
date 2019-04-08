@@ -1,7 +1,6 @@
 <template>
-  <v-toolbar class="navbar">
-
-    <router-link to="/">Home</router-link>&nbsp;|&nbsp;
+  <v-toolbar app dense scroll-toolbar-off-screen :scroll-threshold="1" class="navbar">
+    <router-link tag="v-toolbar-title" to="/">Home</router-link>&nbsp;|&nbsp;
     <router-link to="/about">About</router-link>&nbsp;|&nbsp;
 
     <router-link v-if="isAuthenticated" to="/user" tag="a" href="#">Profile</router-link>
@@ -16,9 +15,7 @@ import DevIdentifierTag from '@/components/helpers/DevIdentifierTag.vue';
 
 export default {
   name: "Navbar",
-  components: {
-    DevIdentifierTag
-  },
+  components: {},
   methods: {
     login() {
       this.$auth.login();
@@ -44,8 +41,12 @@ export default {
 <style lang="sass" scoped>
 .navbar
   border: 2px solid black;
+  width: 20vw;
   background-color: transparent;
   z-index: 9;
+
+.home-icon
+  cursor: pointer !important;
   
   a
     font-weight: bold;
