@@ -1,12 +1,31 @@
 <template>
-  <v-toolbar app dense scroll-off-screen :scroll-threshold="1" class="navbar">
-    <router-link tag="v-toolbar-title" to="/">Home</router-link>&nbsp;|&nbsp;
-    <router-link to="/about">About</router-link>&nbsp;|&nbsp;
+  <v-toolbar app dense :scroll-off-screen="shrinkNav" :scroll-threshold="1" class="navbar">
 
-    <router-link v-if="isAuthenticated" to="/user" tag="a" href="#">Profile</router-link>
-    <span v-if="isAuthenticated">&nbsp;|&nbsp;</span>
-    <a href="#" v-if="isAuthenticated" @click.prevent="logout">Log Out</a>
-    <a v-else href="#" @click.prevent="login">Log In</a>
+    <v-spacer />
+      <router-link to="/">
+        <v-btn flat v-if="!shrinkNav" @click.prevent="shrinkNav = true">
+          <font-awesome-icon icon="angle-up">
+          </font-awesome-icon>
+        </v-btn>
+        <v-btn flat v-else @click.prevent="shrinkNav = false">
+          <font-awesome-icon icon="angle-down">
+          </font-awesome-icon>
+        </v-btn>
+        <v-btn flat>Home</v-btn>
+      </router-link>
+      <span>&nbsp;|&nbsp;</span>
+      <router-link to="/about">
+        <v-btn flat>About</v-btn>
+      </router-link>
+      <span>&nbsp;|&nbsp;</span>
+      <router-link v-if="isAuthenticated" to="/user">
+        <v-btn flat>Profile</v-btn>
+      </router-link>
+      <span v-if="isAuthenticated">&nbsp;|&nbsp;</span>
+      <div>
+        <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
+        <v-btn flat v-else @click.prevent="login">Log In</v-btn>
+      </div>
   </v-toolbar>
 </template>
 
@@ -32,7 +51,8 @@ export default {
   data() {
     return {
       isAuthenticated: false,
-      profile: {}
+      profile: {},
+      shrinkNav: false
     };
   }
 }
@@ -40,15 +60,16 @@ export default {
 
 <style lang="sass" scoped>
 .navbar
-  border: 2px solid black;
-  width: 20vw;
-  background-color: transparent;
+  border: 4px solid orange;
   z-index: 9;
+
+#nav-links
+  ali
 
 .home-icon
   cursor: pointer !important;
   
-  a
+  v-btn
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active
