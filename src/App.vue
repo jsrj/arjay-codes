@@ -1,7 +1,7 @@
 <template>
   <div id="root">
-    <Navbar :width="menuWidth" />
-    <ViewWrapper :title="title" :offsetLeft="menuWidth" />
+    <Navbar />
+    <ViewWrapper :title="title" />
     <Footer id="footer" :socialLinks="socialLinks" />
   </div>
 </template>
@@ -20,7 +20,6 @@ export default {
   data() {
     return {
       title: "Arjay | Codes",
-      menuWidth: 125,
       socialLinks: [
         {
           name: 'Facebook',
