@@ -1,5 +1,54 @@
 <template>
-  <v-navigation-drawer permanent app :width="width" height="100vh">
+  <v-layout wrap>
+    <v-container>
+      <v-layout justify-center>
+        <v-btn
+          color="pink"
+          dark
+          @click.stop="drawer = !drawer"
+        >
+          Menu
+        </v-btn>
+      </v-layout>
+    </v-container>
+
+    <v-navigation-drawer
+      v-model="drawer"
+      absolute
+      temporary
+    >
+      <v-list class="pa-1">
+        <v-list-tile avatar>
+          <v-list-tile-avatar>
+            <img src="https://randomuser.me/api/portraits/men/85.jpg">
+          </v-list-tile-avatar>
+
+          <v-list-tile-content>
+            <v-list-tile-title>John Leider</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+
+      <v-list class="pt-0" dense>
+        <v-divider></v-divider>
+
+        <v-list-tile
+          v-for="item in items"
+          :key="item.title"
+          @click=""
+        >
+          <v-list-tile-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+
+          <v-list-tile-content>
+            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list>
+    </v-navigation-drawer>
+  </v-layout>
+  <!-- <v-navigation-drawer permanent app :v-model="null" :width="width" height="100vh">
 
       <v-spacer />
       <router-link to="/">
@@ -16,7 +65,7 @@
         <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
         <v-btn flat v-else @click.prevent="login">Log In</v-btn>
       </div>
-  </v-navigation-drawer>
+  </v-navigation-drawer> -->
 </template>
 
 <script>
@@ -46,7 +95,11 @@ export default {
     return {
       isAuthenticated: false,
       profile: {},
-      menuIsMinimized: false
+      drawer: null,
+        items: [
+          { title: 'Home', icon: 'dashboard' },
+          { title: 'About', icon: 'question_answer' }
+        ]
     };
   }
 }
