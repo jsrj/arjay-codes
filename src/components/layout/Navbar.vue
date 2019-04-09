@@ -4,15 +4,12 @@
         <!-- Main Toolbar -->
     <v-toolbar app dark>
       <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon> -->
-      <v-toolbar-title>
-        <Logo />
-      </v-toolbar-title>
-      
+      <Logo :loading="isLoading" />
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <router-link tag="v-btn" flat to="/">Home</router-link>
         <router-link tag="v-btn" flat to="/about">About</router-link>
-        <v-btn  color="orange" @click.prevent="login"> Login - Register</v-btn>
+        <v-btn color="orange" @click.prevent="login"> Login - Register</v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </v-layout>
@@ -38,6 +35,7 @@
 
 <script>
 import Logo from '../content/Logo.vue';
+import { setTimeout } from 'timers';
 
 export default {
   name: "Navbar",
@@ -49,6 +47,9 @@ export default {
   },
   mounted() {
     this.onResize();
+    // TODO: Remove these before deploying
+    this.isLoading = true;
+    setTimeout(() => {this.isLoading = false}, 1000);
   },
   methods: {
     login() {
@@ -71,6 +72,7 @@ export default {
   data() {
     return {
       isAuthenticated: false,
+      isLoading: false,
       profile: {},
       drawer: null,
       windowSize: {

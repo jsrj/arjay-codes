@@ -1,33 +1,53 @@
 <template>
-  <div class="outer-border">
-    <div class="logo-content">
-      A|C
+  <v-btn fab large absolute bottom :loading="loading" class="outer-border" to="/">
+    <div id="inner-wrapper">
+      <div id="hemi-top">
+        <span>Arjay</span>
+      </div>
+      <div id="hemi-bot">
+        <span>Codes</span>
+      </div>
     </div>
-  </div>
+  </v-btn>
 </template>
 
 <script>
 export default {
-  name: 'Logo'
+  name: 'Logo',
+  props: {
+    loading: Boolean
+  },
+  data() {
+    return { showLoadingAnim: this.loading }
+  }
 }
 </script>
 
 <style lang="sass" scoped>
 .outer-border
-  border: 3px solid black;
-  border-radius: 100%;
-  box-shadow: 0px 0px 0px 3px orange;
-  margin: 1rem;
+  border: 6px solid orange;
+  box-shadow: 0px 0px 2px 2px black;
+  overflow: hidden;
+  padding: 0px;
 
-  .logo-content
-    align-items: center;
-    background-color: white;
-    border-radius: 100%;
-    color: black;
+  #inner-wrapper
+    height: 100%;
+
+  #hemi-top
     display: flex;
-    height: 2em;
-    justify-content: center;
-    padding: 1rem;
-    width: 2em;
-</style>
+    flex-direction: column-reverse;
+    background-color: #ffffff;
+    color: black;
+    width: auto;
+    height: 50%;
 
+  #hemi-bot
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: #212121;
+    color: white;
+    width: 100%;
+    height: 50%;
+    span
+      margin: 1rem;
+</style>
