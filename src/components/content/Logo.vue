@@ -1,13 +1,19 @@
 <template>
   <v-btn fab large :loading="contentLoading" class="outer-border">
-      <div>Arjay</div>
-      <div>Codes</div>
+      <span>Arjay</span>
+      <span>Codes</span>
   </v-btn>
 </template>
 
 <script>
 export default {
-  name: 'Logo'
+  name: 'Logo',
+  props: {
+    loading: Boolean
+  },
+  data() {
+    return { contentLoading: this.loading || false}
+  }
 }
 </script>
 
@@ -17,6 +23,7 @@ export default {
   box-shadow: 0px 0px 2px 2px black;
   margin-top: 12.4vh;
   overflow: hidden;
+  padding: 8px;
 
   #logo-content-top
     background-color: white !important;
