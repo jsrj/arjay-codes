@@ -6,39 +6,30 @@
     -->
     <!-- Nav Drawer -->
         <!-- Main Toolbar -->
-    <v-toolbar app dark clipped>
+    <v-toolbar app dark>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>Arjay | Codes</v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-tab>
-          <v-btn flat>Link One</v-btn>
-          <v-btn flat>Link Two</v-btn>
-          <v-btn flat>Link Three</v-btn>
-        </v-tab>
+        <router-link active tag="v-btn" flat to="/">Home</router-link>
+        <router-link tag="v-btn" flat to="/about">About</router-link>
+        <v-btn  color="orange" @click.prevent="login"> Login - Register</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
-    <v-navigation-drawer app fixed v-model="drawer" absolute :permanent="this.windowSize.x > 800" dark>
-      <v-list class="pa-1">
-        <v-list-tile avatar>
-          <v-list-tile-avatar>
-            <img src="https://randomuser.me/api/portraits/men/85.jpg">
+    <v-navigation-drawer app dark :width="(this.windowSize.x < 800) ? this.windowSize.x : 125" v-model="drawer">
+      <v-list class="pa-1" centered>
+        <v-list-tile avatar centered>
+          <v-list-tile-avatar centered>
+            <img src="https://randomuser.me/api/portraits/men/85.jpg" centered>
           </v-list-tile-avatar>
-
-          <v-list-tile-content>
-            <v-list-tile-title>John Leider</v-list-tile-title>
-          </v-list-tile-content>
         </v-list-tile>
       </v-list>
 
       <v-list class="pt-0" dense>
         <v-divider></v-divider>
 
-        <v-list-tile
-          v-for="item in items"
-          :key="item.title"
-        >
+        <router-link tag="v-list-tile" v-for="item in items" :key="item.title" :to="item.target">
           <v-list-tile-action>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-tile-action>
@@ -46,7 +37,7 @@
           <v-list-tile-content>
             <v-list-tile-title>{{ item.title }}</v-list-tile-title>
           </v-list-tile-content>
-        </v-list-tile>
+        </router-link>
       </v-list>
     </v-navigation-drawer>
   </v-layout>
@@ -108,8 +99,16 @@ export default {
         y: 0
       },
       items: [
-        { title: 'Home', icon: 'dashboard' },
-        { title: 'About', icon: 'question_answer' }
+        { 
+          title: 'Home', 
+          icon: 'dashboard',
+          target: '/'
+        },
+        { 
+          title: 'About', 
+          icon: 'question_answer',
+          target: 'about'
+        }
       ]
     };
   }
