@@ -34,18 +34,20 @@ export default {
     height: 100%;
 
   #hemi-top
+    display: flex;
+    flex-direction: column-reverse;
     background-color: white;
     color: black;
-    width: 100%;
+    width: auto;
     height: 50%;
-    span
-      margin-top: 50%;
 
   #hemi-bot
-    background-color: black important;
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: black;
     color: white;
     width: 100%;
     height: 50%;
     span
-      margin: 20px;
+      margin: 1rem;
 </style>
