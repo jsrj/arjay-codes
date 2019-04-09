@@ -1,5 +1,5 @@
 <template>
-  <v-btn fab large absolute bottom :loading="loading" class="outer-border">
+  <v-btn fab large absolute bottom :loading="loading" class="outer-border" to="/">
     <div id="inner-wrapper">
       <div id="hemi-top">
         <span>Arjay</span>
