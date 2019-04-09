@@ -36,7 +36,7 @@ export default {
   #hemi-top
     display: flex;
     flex-direction: column-reverse;
-    background-color: white;
+    background-color: #ffffff;
     color: black;
     width: auto;
     height: 50%;
@@ -44,7 +44,7 @@ export default {
   #hemi-bot
     display: flex;
     flex-direction: column-reverse;
-    background-color: black;
+    background-color: #212121;
     color: white;
     width: 100%;
     height: 50%;
