@@ -4,7 +4,7 @@
         <!-- Main Toolbar -->
     <v-toolbar app dark>
       <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon> -->
-      <Logo />
+      <Logo :loading="false" />
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <router-link tag="v-btn" flat to="/">Home</router-link>
