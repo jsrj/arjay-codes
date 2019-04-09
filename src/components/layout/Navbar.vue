@@ -1,54 +1,20 @@
 <template>
   <v-layout v-resize="onResize" wrap>
-    <!-- 
-      TODO: Configure so that nav drawer is shown on desktop, but v-toolbar is shown on mobile devices. 
-      DO NOT display both since the page quickly becomes way too crowded. 
-    -->
     <!-- Nav Drawer -->
         <!-- Main Toolbar -->
-    <v-toolbar app dark clipped>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>Arjay | Codes</v-toolbar-title>
+    <v-toolbar app dark>
+      <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon> -->
+      <v-toolbar-title>
+        <Logo />
+      </v-toolbar-title>
+      
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-tab>
-          <v-btn flat>Link One</v-btn>
-          <v-btn flat>Link Two</v-btn>
-          <v-btn flat>Link Three</v-btn>
-        </v-tab>
+        <router-link tag="v-btn" flat to="/">Home</router-link>
+        <router-link tag="v-btn" flat to="/about">About</router-link>
+        <v-btn  color="orange" @click.prevent="login"> Login - Register</v-btn>
       </v-toolbar-items>
     </v-toolbar>
-
-    <v-navigation-drawer app fixed v-model="drawer" absolute :permanent="this.windowSize.x > 800" dark>
-      <v-list class="pa-1">
-        <v-list-tile avatar>
-          <v-list-tile-avatar>
-            <img src="https://randomuser.me/api/portraits/men/85.jpg">
-          </v-list-tile-avatar>
-
-          <v-list-tile-content>
-            <v-list-tile-title>John Leider</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-
-      <v-list class="pt-0" dense>
-        <v-divider></v-divider>
-
-        <v-list-tile
-          v-for="item in items"
-          :key="item.title"
-        >
-          <v-list-tile-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-tile-action>
-
-          <v-list-tile-content>
-            <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
   </v-layout>
   <!-- <v-navigation-drawer permanent app :v-model="null" :width="width" height="100vh">
 
@@ -71,9 +37,13 @@
 </template>
 
 <script>
+import Logo from '../content/Logo.vue';
+
 export default {
   name: "Navbar",
-  components: {},
+  components: {
+    Logo
+  },
   props: {
     width: String
   },
@@ -108,8 +78,16 @@ export default {
         y: 0
       },
       items: [
-        { title: 'Home', icon: 'dashboard' },
-        { title: 'About', icon: 'question_answer' }
+        { 
+          title: 'Home', 
+          icon: 'dashboard',
+          target: '/'
+        },
+        { 
+          title: 'About', 
+          icon: 'question_answer',
+          target: 'about'
+        }
       ]
     };
   }
@@ -117,21 +95,4 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-// .navbar
-//   clear: both;
-//   border: 4px solid orange;
-//   margin-right: 250px;
-
-// #nav-links
-//   ali
-
-// .home-icon
-//   cursor: pointer !important;
-  
-//   v-btn
-//     font-weight: bold;
-//     color: #2c3e50;
-//     &.router-link-exact-active
-//       color: #42b983;
 </style>
-
