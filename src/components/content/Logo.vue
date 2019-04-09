@@ -1,5 +1,5 @@
 <template>
-  <v-btn fab large absolute bottom :loading="contentLoading" class="outer-border">
+  <v-btn fab large absolute bottom :loading="loading" class="outer-border">
     <div id="inner-wrapper">
       <div id="hemi-top">
         <span>Arjay</span>
@@ -18,7 +18,7 @@ export default {
     loading: Boolean
   },
   data() {
-    return { contentLoading: this.loading || false}
+    return { showLoadingAnim: this.loading }
   }
 }
 </script>
