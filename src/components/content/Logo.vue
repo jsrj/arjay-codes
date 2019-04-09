@@ -1,7 +1,13 @@
 <template>
   <v-btn fab large :loading="contentLoading" class="outer-border">
-      <span>Arjay</span>
-      <span>Codes</span>
+    <div id="inner-wrapper">
+      <div id="hemi-top">
+        <span>Arjay</span>
+      </div>
+      <div id="hemi-bot">
+        <span>Codes</span>
+      </div>
+    </div>
   </v-btn>
 </template>
 
@@ -23,18 +29,23 @@ export default {
   box-shadow: 0px 0px 2px 2px black;
   margin-top: 12.4vh;
   overflow: hidden;
-  padding: 8px;
+  padding: 0px;
 
-  #logo-content-top
-    background-color: white !important;
-    border-top-left-radius: 100rem;
-    border-top-right-radius: 100rem;
+  #inner-wrapper
+    margin: 0px;
+    padding: 0px;
+
+  #hemi-top
+    background-color: white;
+    border-radius: 100em 100em 0 0;
     color: black;
+    margin: 0px;
+    width: 100%;
+    height: 50%;
 
-  #logo-content-bot
+  #hemi-bot
     background-color: black important;
-    border-bottom-left-radius: 100rem;
-    border-bottom-right-radius: 100rem;
     color: white;
+    width: 100%;
+    height: 50%;
 </style>
-
