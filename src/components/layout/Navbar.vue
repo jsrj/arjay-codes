@@ -116,21 +116,5 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-// .navbar
-//   clear: both;
-//   border: 4px solid orange;
-//   margin-right: 250px;
-
-// #nav-links
-//   ali
-
-// .home-icon
-//   cursor: pointer !important;
-  
-//   v-btn
-//     font-weight: bold;
-//     color: #2c3e50;
-//     &.router-link-exact-active
-//       color: #42b983;
 </style>
 
