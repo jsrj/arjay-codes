@@ -50,8 +50,6 @@ export default {
     },
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
-      console.log(this.windowSize.x);
-      console.log(this.windowSize.y);
     }
   },
   data() {
