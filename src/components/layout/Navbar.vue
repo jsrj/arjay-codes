@@ -35,6 +35,7 @@
 
 <script>
 import Logo from '../content/Logo.vue';
+import { setTimeout } from 'timers';
 
 export default {
   name: "Navbar",
@@ -46,6 +47,9 @@ export default {
   },
   mounted() {
     this.onResize();
+    // TODO: Remove these before deploying
+    this.isLoading = true;
+    setTimeout(() => {this.isLoading = false}, 1000);
   },
   methods: {
     login() {
