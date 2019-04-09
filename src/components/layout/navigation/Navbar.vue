@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import Logo from '@/components/content/Logo.vue';
+import Logo from '@/components/content/images/Logo.vue';
 import { setTimeout } from 'timers';
 
 export default {
