@@ -4,12 +4,12 @@
         <!-- Main Toolbar -->
     <v-toolbar app dark>
       <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon> -->
-      <Logo :loading="false" />
+      <Logo :loading="isLoading" />
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
         <router-link tag="v-btn" flat to="/">Home</router-link>
         <router-link tag="v-btn" flat to="/about">About</router-link>
-        <v-btn  color="orange" @click.prevent="login"> Login - Register</v-btn>
+        <v-btn color="orange" @click.prevent="login"> Login - Register</v-btn>
       </v-toolbar-items>
     </v-toolbar>
   </v-layout>
@@ -68,6 +68,7 @@ export default {
   data() {
     return {
       isAuthenticated: false,
+      isLoading: false,
       profile: {},
       drawer: null,
       windowSize: {
