@@ -1,11 +1,10 @@
 <template>
   <v-layout v-resize="onResize" wrap>
-    <!-- Nav Drawer -->
-        <!-- Main Toolbar -->
     <v-toolbar app dark>
-      <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon> -->
+      <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"> -->
       <Logo :loading="isLoading" />
-      <v-spacer></v-spacer>
+      <!-- </v-toolbar-side-icon> -->
+      <v-spacer />
       <v-toolbar-items class="hidden-sm-and-down">
         <router-link tag="v-btn" flat to="/">Home</router-link>
         <router-link tag="v-btn" flat to="/about">About</router-link>
@@ -13,34 +12,20 @@
       </v-toolbar-items>
     </v-toolbar>
   </v-layout>
-  <!-- <v-navigation-drawer permanent app :v-model="null" :width="width" height="100vh">
-
-      <v-spacer />
-      <router-link to="/">
-        <v-btn flat>Home</v-btn>
-      </router-link>
-      <router-link to="/about">
-        <v-btn flat>About</v-btn>
-      </router-link>
-      <router-link v-if="isAuthenticated" to="/user">
-        <v-btn flat>Profile</v-btn>
-      </router-link>
-      <span v-if="isAuthenticated">&nbsp;|&nbsp;</span>
-      <div>
-        <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
-        <v-btn flat v-else @click.prevent="login">Log In</v-btn>
-      </div>
-  </v-navigation-drawer> -->
 </template>
 
 <script>
 import Logo from '@/components/content/images/Logo.vue';
+import NaviLinks from './NaviLinks.vue';
+import AuthLinks from './AuthLinks.vue';
 import { setTimeout } from 'timers';
 
 export default {
   name: "Navbar",
   components: {
-    Logo
+    Logo,
+    NaviLinks,
+    AuthLinks
   },
   props: {
     width: String
