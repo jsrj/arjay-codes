@@ -3,10 +3,9 @@
     <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
 
   <!-- IF user is not logged in, THEN display login - register button -->
-    <v-btn flat v-else-if="isAuthenticated" color="orange" @click.prevent="login">
+    <v-btn flat v-else color="orange" @click.prevent="login">
       Log In&nbsp;&#5867;&nbsp;Sign Up
     </v-btn>
-    <v-btn flat v-else color="orange" @click="sendLoadingSignal">Toggle Loading Animation</v-btn>
   <!-- <router-link v-if="isAuthenticated" to="/user">
     <v-btn flat>Profile</v-btn>
   </router-link> -->
@@ -37,6 +36,7 @@ export default {
     handleLoginEvent(data) {
       this.isAuthenticated = data.loggedIn;
       this.profile = data.profile;
+      this.$emit('user-profile', this.profile);
     },
     sendLoadingSignal() {
       this.$emit('profile-loading', this.profileIsLoading);
