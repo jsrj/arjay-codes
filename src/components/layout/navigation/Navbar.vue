@@ -41,10 +41,9 @@ export default {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
     },
     getUserProfile(user) {
-      this.profile = user.profile;
+      this.profile = user;
     },
     toggleLoadingAnimation(showAnim) {
-      console.log(`toggleLoadingAnimation called in parent with value of ${showAnim}`);
       this.isLoading = showAnim;
     }
   },
