@@ -8,8 +8,7 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <router-link tag="v-btn" flat to="/">Home</router-link>
         <router-link tag="v-btn" flat to="/about">About</router-link>
-        <AuthLinks />
-        <v-btn color="orange" @click.prevent="login"> Login - Register</v-btn>
+        <AuthLinks @profile-loading="toggleLoadingAnimation" />
       </v-toolbar-items>
     </v-toolbar>
   </v-layout>
@@ -51,6 +50,10 @@ export default {
     },
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+    },
+    toggleLoadingAnimation(showAnim) {
+      console.log(`toggleLoadingAnimation called in parent with value of ${showAnim}`);
+      this.isLoading = showAnim;
     }
   },
   data() {
