@@ -31,7 +31,7 @@ export default {
 .outer-border
   border: 6px solid orange;
   box-shadow: 0px 0px 2px 2px black;
-  // overflow: hidden;
+  overflow: hidden;
   padding: 0px;
 
   #inner-wrapper
