@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Navbar from './components/layout/Navbar.vue';
+import Navbar from './components/layout/navigation/Navbar.vue';
 import Footer from './components/layout/Footer.vue';
 import ViewWrapper from './components/layout/ViewWrapper.vue';
 
