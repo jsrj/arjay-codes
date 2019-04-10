@@ -8,7 +8,7 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <router-link tag="v-btn" flat to="/">Home</router-link>
         <router-link tag="v-btn" flat to="/about">About</router-link>
-        <AuthLinks @profile-loading="toggleLoadingAnimation" />
+        <AuthLinks @profile-loading="toggleLoadingAnimation" @user-profile="loadUserProfile" />
       </v-toolbar-items>
     </v-toolbar>
   </v-layout>
@@ -37,19 +37,11 @@ export default {
     setTimeout(() => {this.isLoading = false}, 1000);
   },
   methods: {
-    login() {
-      this.$auth.login();
-    },
-    logout() {
-      this.$auth.logOut();
-      this.$router.push({ path: "/" });
-    },
-    handleLoginEvent(data) {
-      this.isAuthenticated = data.loggedIn;
-      this.profile = data.profile;
-    },
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+    },
+    getUserProfile(user) {
+      this.profile = user.profile;
     },
     toggleLoadingAnimation(showAnim) {
       console.log(`toggleLoadingAnimation called in parent with value of ${showAnim}`);
