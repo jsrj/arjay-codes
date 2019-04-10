@@ -2,14 +2,13 @@
   <v-layout v-resize="onResize" wrap>
     <v-toolbar app dark>
       <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"> -->
-      <Logo :loading="isLoading" />
+      <Logo :loading="isLoading" :profileImageURL="profile && profile.picture" />
       <!-- </v-toolbar-side-icon> -->
       <v-spacer />
       <v-toolbar-items class="hidden-sm-and-down">
         <router-link tag="v-btn" flat to="/">Home</router-link>
         <router-link tag="v-btn" flat to="/about">About</router-link>
-        <AuthLinks />
-        <v-btn color="orange" @click.prevent="login"> Login - Register</v-btn>
+        <AuthLinks @profile-loading="toggleLoadingAnimation" @user-profile="getUserProfile" />
       </v-toolbar-items>
     </v-toolbar>
   </v-layout>
@@ -38,19 +37,14 @@ export default {
     setTimeout(() => {this.isLoading = false}, 1000);
   },
   methods: {
-    login() {
-      this.$auth.login();
-    },
-    logout() {
-      this.$auth.logOut();
-      this.$router.push({ path: "/" });
-    },
-    handleLoginEvent(data) {
-      this.isAuthenticated = data.loggedIn;
-      this.profile = data.profile;
-    },
     onResize () {
       this.windowSize = { x: window.innerWidth, y: window.innerHeight }
+    },
+    getUserProfile(user) {
+      this.profile = user;
+    },
+    toggleLoadingAnimation(showAnim) {
+      this.isLoading = showAnim;
     }
   },
   data() {

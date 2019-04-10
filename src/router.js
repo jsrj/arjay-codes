@@ -7,7 +7,7 @@ import NotFound from "./views/server/NotFound.vue";
 import GeneralError from "./views/server/GeneralError.vue";
 import Profile from "./views/auth/UserProfile.vue";
 import Callback from "./components/auth/Callback.vue";
-import auth from "./auth/authService";
+import auth from "./service/auth/authService";
 
 Vue.use(Router);
 
