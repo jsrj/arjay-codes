@@ -1,12 +1,15 @@
 <template>
   <v-btn fab large absolute bottom :loading="loading" class="outer-border" to="/">
-    <div id="inner-wrapper">
+    <div v-if="!profileImageURL" id="inner-wrapper">
       <div id="hemi-top">
         <span>Arjay</span>
       </div>
       <div id="hemi-bot">
         <span>Codes</span>
       </div>
+    </div>
+    <div v-else id="inner-wrapper">
+      <img :src="profileImageURL">
     </div>
   </v-btn>
 </template>
@@ -19,7 +22,7 @@ export default {
     profileImageURL: String
   },
   data() {
-    return { showLoadingAnim: this.loading }
+    return {}
   }
 }
 </script>
