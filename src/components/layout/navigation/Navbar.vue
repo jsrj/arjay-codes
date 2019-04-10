@@ -2,7 +2,7 @@
   <v-layout v-resize="onResize" wrap>
     <v-toolbar app dark>
       <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"> -->
-      <Logo :loading="isLoading" />
+      <Logo :loading="isLoading" :profileImageURL="profile.picture" />
       <!-- </v-toolbar-side-icon> -->
       <v-spacer />
       <v-toolbar-items class="hidden-sm-and-down">

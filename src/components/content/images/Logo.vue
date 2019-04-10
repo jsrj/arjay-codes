@@ -15,7 +15,8 @@
 export default {
   name: 'Logo',
   props: {
-    loading: Boolean
+    loading: Boolean,
+    profileImageURL: String
   },
   data() {
     return { showLoadingAnim: this.loading }
