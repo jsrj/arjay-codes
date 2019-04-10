@@ -3,10 +3,10 @@
   <!-- <router-link v-if="isAuthenticated" to="/user">
     <v-btn flat>Profile</v-btn>
   </router-link> -->
-  <div>
+  <section>
     <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
     <v-btn flat v-else @click.prevent="login">Log In&#5867;Sign Up</v-btn>
-  </div>
+  </section>
   <!-- IF user is logged in, THEN do not display login - register button -->
 </template>
 

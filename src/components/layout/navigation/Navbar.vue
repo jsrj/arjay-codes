@@ -8,6 +8,7 @@
       <v-toolbar-items class="hidden-sm-and-down">
         <router-link tag="v-btn" flat to="/">Home</router-link>
         <router-link tag="v-btn" flat to="/about">About</router-link>
+        <AuthLinks />
         <v-btn color="orange" @click.prevent="login"> Login - Register</v-btn>
       </v-toolbar-items>
     </v-toolbar>
