@@ -1,6 +1,6 @@
 <template>
   <v-layout v-resize="onResize" wrap>
-    <v-toolbar app dark>
+    <v-toolbar app dark dense>
       <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"> -->
       <Logo :loading="isLoading" :profileImageURL="profile && profile.picture" />
       <!-- </v-toolbar-side-icon> -->
