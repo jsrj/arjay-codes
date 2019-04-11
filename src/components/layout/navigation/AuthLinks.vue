@@ -1,11 +1,11 @@
 <template>
   <!-- IF user is logged in, THEN display logout button -->
-    <v-btn flat v-if="isAuthenticated" @click.prevent="logout">Log Out</v-btn>
+    <v-btn flat v-if="isAuthenticated" @click.prevent="logout">
+      <img id="profile-image" :src="profile.picture">
+    </v-btn>
 
   <!-- IF user is not logged in, THEN display login - register button -->
-    <v-btn flat v-else color="orange" @click.prevent="login">
-      Log In&nbsp;&#5867;&nbsp;Sign Up
-    </v-btn>
+    <v-btn flat v-else color="orange" @click.prevent="login">Get Started</v-btn>
   <!-- <router-link v-if="isAuthenticated" to="/user">
     <v-btn flat>Profile</v-btn>
   </router-link> -->
@@ -48,5 +48,7 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+#profile-image
+  border-radius: 100%;
 </style>
 

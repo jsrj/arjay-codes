@@ -1,13 +1,13 @@
 <template>
   <v-layout v-resize="onResize" wrap>
-    <v-toolbar app dark>
+    <v-toolbar app dark dense>
       <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"> -->
       <Logo :loading="isLoading" :profileImageURL="profile && profile.picture" />
       <!-- </v-toolbar-side-icon> -->
       <v-spacer />
       <v-toolbar-items class="hidden-sm-and-down">
-        <router-link tag="v-btn" flat to="/">Home</router-link>
-        <router-link tag="v-btn" flat to="/about">About</router-link>
+        <v-btn append flat to="/">Home</v-btn>
+        <v-btn append flat to="/about">About</v-btn>
         <AuthLinks @profile-loading="toggleLoadingAnimation" @user-profile="getUserProfile" />
       </v-toolbar-items>
     </v-toolbar>

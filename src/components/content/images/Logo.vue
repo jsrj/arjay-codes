@@ -1,15 +1,12 @@
 <template>
-  <v-btn fab large absolute bottom :loading="loading" class="outer-border" to="/">
-    <div v-if="!profileImageURL" id="inner-wrapper">
+  <v-btn fab large left absolute bottom :loading="loading" class="outer-border" to="/">
+    <div id="inner-wrapper">
       <div id="hemi-top">
         <span>Arjay</span>
       </div>
       <div id="hemi-bot">
         <span>Codes</span>
       </div>
-    </div>
-    <div v-else id="image-wrapper">
-      <img :src="profileImageURL">
     </div>
   </v-btn>
 </template>
@@ -37,15 +34,19 @@ export default {
   #inner-wrapper
     height: 100%;
 
-  #image-wrapper
-    border-radius: 100%;
-    box-shadow: 0px 0px 2px 7px white;
-    display: flex;
-    justify-content: center;
-    img
+    #default-image > img
       border-radius: 100%;
-      box-shadow: 0px 0px 0px 6px black;
       width: 100%;
+
+    #image-wrapper
+      border-radius: 100%;
+      box-shadow: 0px 0px 2px 7px white;
+      display: flex;
+      justify-content: center;
+      img
+        border-radius: 100%;
+        box-shadow: 0px 0px 0px 6px black;
+        width: 100%;
 
 
   #hemi-top

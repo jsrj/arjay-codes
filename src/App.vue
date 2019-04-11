@@ -1,9 +1,9 @@
 <template>
-  <div id="root">
+  <v-app id="root">
     <Navbar />
     <ViewWrapper :title="title" />
     <Footer id="footer" :socialLinks="socialLinks" />
-  </div>
+  </v-app>
 </template>
 
 <script>
