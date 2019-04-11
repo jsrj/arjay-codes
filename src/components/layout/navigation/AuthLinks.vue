@@ -4,7 +4,7 @@
 
   <!-- IF user is not logged in, THEN display login - register button -->
     <v-btn flat v-else color="orange" @click.prevent="login">
-      Log In&nbsp;&#5867;&nbsp;Sign Up
+      Get Started
     </v-btn>
   <!-- <router-link v-if="isAuthenticated" to="/user">
     <v-btn flat>Profile</v-btn>
