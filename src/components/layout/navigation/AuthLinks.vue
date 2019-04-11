@@ -1,7 +1,7 @@
 <template>
   <!-- IF user is logged in, THEN display logout button -->
     <!-- <v-btn append flat v-if="isAuthenticated" @click.prevent="logout"> -->
-    <v-btn append flat v-if="isAuthenticated" to="/user">
+    <v-btn append flat icon v-if="isAuthenticated" to="/user">
       <img id="profile-image" :src="profile.picture">
     </v-btn>
 
@@ -50,7 +50,6 @@ export default {
   border: 2px solid black;
   border-radius: 100%;
   box-shadow: 0px 0px 0px 2px white;
-  width: 65%;
-  height: 50%;
+  width: 100%;
 </style>
 
