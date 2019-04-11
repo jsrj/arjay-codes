@@ -1,14 +1,11 @@
 <template>
   <v-btn fab large absolute bottom :loading="loading" class="outer-border" to="/">
     <div v-if="!profileImageURL" id="inner-wrapper">
-      <!-- <div id="hemi-top">
+      <div id="hemi-top">
         <span>Arjay</span>
       </div>
       <div id="hemi-bot">
         <span>Codes</span>
-      </div> -->
-      <div id="default-image">
-        <img src="@/components/content/images/static/arjaycodes.png">
       </div>
     </div>
     <div v-else id="image-wrapper">
