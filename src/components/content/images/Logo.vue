@@ -59,11 +59,11 @@ export default {
 
   #hemi-bot
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     background-color: #212121;
     color: white;
-    width: 100%;
+    width: auto;
     height: 50%;
     span
-      margin: 1rem;
+      margin: 0rem 1rem;
 </style>
