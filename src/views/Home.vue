@@ -5,7 +5,7 @@
       :subTitle="subTitle" 
       :description="description" 
     />
-    <Header />
+    <!-- <Header /> -->
     <Action />
     <BaseContent 
       v-bind:key="index"
