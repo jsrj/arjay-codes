@@ -1,15 +1,13 @@
 <template>
-  <v-content class="fdb-block">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h1>I Already Know What I Want</h1>
-          <p class="lead">
-            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by
-            their place and supplies it with the necessary regelialia.
-          </p>
-        </div>
-      </div>
+  <v-content>
+    <v-container grid-list-sm>
+      <v-layout column wrap>
+        <v-flex text-lg-left class="display-1 font-weight-bold">I Know What I Want</v-flex>
+        <v-flex text-md-left class="blockquote">
+          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live theblind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large languageocean. A small river named Duden flows by
+          their place and supplies it with the necessary regelialia.
+        </v-flex>
+      </v-layout>
 
       <div class="row justify-content-center align-items-center pt-5">
         <div class="col-8 col-sm-3">
@@ -25,7 +23,7 @@
           <p class="h5"><em>Some foo text</em></p>
         </div>
       </div>
-    </div>
+    </v-container>
   </v-content>
 </template>
 
