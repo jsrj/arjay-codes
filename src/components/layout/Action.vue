@@ -12,6 +12,8 @@
       </v-layout>
       {{ /* TOP SECTION - END */  }}
 
+      <v-divider></v-divider>
+      
       {{ /* BOTTOM SECTION - START */  }}
       <v-layout row wrap ma-1 pa-1>
         <v-flex>
