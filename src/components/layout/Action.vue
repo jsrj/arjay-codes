@@ -1,6 +1,6 @@
 <template>
   <v-content>
-    <v-container grid-list-sm>
+    <v-container grid-list-sm mx-5 my-3 px-5>
       <v-layout column wrap>
         <v-flex text-lg-left class="display-1 font-weight-bold">I Know What I Want</v-flex>
         <v-flex text-md-left class="blockquote">
@@ -9,20 +9,25 @@
         </v-flex>
       </v-layout>
 
-      <div class="row justify-content-center align-items-center pt-5">
-        <div class="col-8 col-sm-3">
-          <img alt="image" class="img-fluid" src="/imgs/draws/code.svg">
-        </div>
-        <div class="col-12 col-sm-6 m-auto pt-4 pt-sm-0">
-          <h2><strong>Bootstrap</strong></h2>
+      <v-layout row wrap ma-1 pa-1>
+        <v-flex>
+          <img alt="image" class="img-fluid" src="http://lorempixel.com/g/200/200/business/">
+        </v-flex>
+
+        <v-flex>
+          <h2><strong>Sub-Title</strong></h2>
           <p class="lead">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life.</p>
-        </div>
-        <div class="col-12 col-sm-3 text-center pt-4 pt-sm-0">
-          <p><a class="btn btn-outline-primary" href="https://www.froala.com">Take a Tour</a></p>
-          <p><a class="btn btn-primary" href="https://www.froala.com">Start Now</a></p>
-          <p class="h5"><em>Some foo text</em></p>
-        </div>
-      </div>
+        </v-flex>
+
+        <v-flex>
+          <v-list>
+            <v-list-tile><v-btn append to="#">I Need A Website</v-btn></v-list-tile>
+            <v-list-tile><v-btn append to="#">I Need A Developer</v-btn></v-list-tile>
+            <v-list-tile><em>Some foo text</em></v-list-tile>
+          </v-list>
+        </v-flex>
+        
+      </v-layout>
     </v-container>
   </v-content>
 </template>
