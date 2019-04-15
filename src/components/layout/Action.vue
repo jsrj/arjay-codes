@@ -1,6 +1,8 @@
 <template>
   <v-content>
     <v-container grid-list-sm mx-5 my-3 px-5>
+
+      {{ /* TOP SECTION - START */  }}
       <v-layout column wrap>
         <v-flex text-lg-left class="display-1 font-weight-bold">I Know What I Want</v-flex>
         <v-flex text-md-left class="blockquote">
@@ -8,10 +10,12 @@
           their place and supplies it with the necessary regelialia.
         </v-flex>
       </v-layout>
+      {{ /* TOP SECTION - END */  }}
 
+      {{ /* BOTTOM SECTION - START */  }}
       <v-layout row wrap ma-1 pa-1>
         <v-flex>
-          <img alt="image" class="img-fluid" src="http://lorempixel.com/g/200/200/business/">
+          <v-img alt="image" src="http://lorempixel.com/g/200/200/business/" />
         </v-flex>
 
         <v-flex>
@@ -26,8 +30,9 @@
             <v-list-tile><em>Some foo text</em></v-list-tile>
           </v-list>
         </v-flex>
-        
       </v-layout>
+      {{ /* BOTTOM SECTION - END */  }}
+
     </v-container>
   </v-content>
 </template>
