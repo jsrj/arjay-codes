@@ -29,6 +29,7 @@
     "path": "^0.12.7",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.6",
+    "vue-chartist": "^2.2.0",
     "vue-headful": "^2.0.1",
     "vue-router": "^3.0.1",
     "vuetify": "^1.5.9",
