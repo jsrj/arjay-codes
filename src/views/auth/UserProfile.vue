@@ -12,27 +12,18 @@
       <h1>Auth0 Profile</h1>
       <pre v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(profile, null, 2) }}</code></pre>
     </div>
-    <br />
-    <!-- <div class="row">
-      <h1>User Management Service Info</h1>
-      <pre v-if="info" v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(info, null, 2) }}</code></pre>
-      <p v-else>Loading User Management Service Info...</p>
-    </div>
-    <br />
-    <div class="row">
-      <h1>Patched User Profile</h1>
-      <pre v-if="patchedProfile" v-highlightjs class="rounded"><code class="json">{{ JSON.stringify(patchedProfile, null, 2) }}</code></pre>
-      <p v-else>Loading Updated Profile...</p>
-    </div> -->
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import Drawer from '@/components/auth/Drawer.vue';
 
 export default {
   name: "user",
-  components: {},
+  components: {
+    Drawer
+  },
   mounted () {
     
     // TODO: Implement JWT security in these calls
