@@ -1,6 +1,5 @@
 <template>
   <div id="social-links">
-    <!-- ... -->
     <v-icon class="brand" id="facebook"  name="brands/facebook"       />
     <v-icon class="brand" id="twitter"   name="brands/twitter-square" />
     <v-icon class="brand" id="instagram" name="brands/instagram"      />
