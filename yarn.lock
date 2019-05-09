@@ -8972,6 +8972,10 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-awesome@^3.5.2:
+  version "3.5.2"
+  resolved "https://registry.yarnpkg.com/vue-awesome/-/vue-awesome-3.5.2.tgz#d9cf3780884790b83075f8a2703ecec2f217ad9f"
+
 vue-chartist@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/vue-chartist/-/vue-chartist-2.2.0.tgz#08a05cb0bc1fc629befe3ca503a9af2d6def1ce7"
