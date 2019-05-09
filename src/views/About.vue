@@ -17,15 +17,17 @@ export default {
 
 <style lang="less" scoped>
 /* Page-global Variables */
-  @primary: rgba(0, 0, 0, 1);
+  @primary: rgba(51, 51, 51, 1);
   @secondary: rgba(255, 166, 0, 1);
   @centered: 0 auto;
+  @backgroundImage: url('');
 
   /* Headshot Image */
   @innerPadding: 0px;
+  @outerPadding: 0px;
   @headshotWidth: 12em;
-  @innerBorderWidth: 2px;
-  @outerBorderWidth: 8px;
+  @innerBorderWidth: 3px;
+  @outerBorderWidth: 6px;
 
   /* Styles by Element */
   /* Styles by Class   */
@@ -33,18 +35,20 @@ export default {
   #headshot {
     display: flex;
     height: 100%;
-    margin: @centered;
     width: @headshotWidth;
+
+    margin: @centered;
+    padding: @outerPadding;
 
     overflow: hidden;
     border-radius: 100%;
     border: @outerBorderWidth solid @secondary;
   }
   #headshot > img {
+    padding: @innerPadding;
+
     border-radius: 100%;
     border: @innerBorderWidth solid @primary;
-
-    padding: @innerPadding;
   }
 </style>
 
