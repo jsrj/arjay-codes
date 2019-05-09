@@ -3,31 +3,42 @@
     <div id="headshot">
       <img src="@/components/content/images/static/headshot.jpg">
     </div>
+    <SocialLinks />
   </div>
 </template>
 
 <script>
+import SocialLinks from '@/components/layout/navigation/SocialLinks.vue';
+
 export default {
-  name: 'about',
+  name: "about",
+  components: {
+    SocialLinks
+  },
+  props: {},
+  methods: {},
+  mounted() {},
   data() {
-    return {};
+    return {}
   }
 }
 </script>
 
 <style lang="less" scoped>
-/* Page-global Variables */
+  /* Page-global Variables */
   @primary: rgba(51, 51, 51, 1);
   @secondary: rgba(255, 166, 0, 1);
   @centered: 0 auto;
   @backgroundImage: url('');
 
-  /* Headshot Image */
+  /* Headshot Image        */
   @innerPadding: 0px;
   @outerPadding: 0px;
   @headshotWidth: 12em;
   @innerBorderWidth: 3px;
   @outerBorderWidth: 6px;
+
+  /*-----------------------*/
 
   /* Styles by Element */
   /* Styles by Class   */
