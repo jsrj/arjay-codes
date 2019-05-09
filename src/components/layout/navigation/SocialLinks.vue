@@ -33,10 +33,32 @@ export default {
 
 <style lang="less" scoped>
   /* Page-global Variables  */
+  @primary: rgba(255, 255, 255, 1);
+  @secondary: rgba(0, 0, 0, 1);
+  @noPadding: 0px !important;
+  @lightPadding: 2px;
+  @mediumPadding: @lightPadding * 2;
+  @heavyPadding: @mediumPadding * 2;
+
   /* Sub-component Variables*/
+
   /*------------------------*/
+
   /* Styles by Element */
+  a {
+    padding: @mediumPadding;
+  }
   /* Styles by Class   */
+  .brand {
+    padding: @lightPadding;
+
+    color: @primary;
+    background-color: @secondary;
+  }
+  .brand#instagram {
+    color: @secondary;
+    background-color: @primary;
+  }
   /* Styles by ID      */
 </style>
 
