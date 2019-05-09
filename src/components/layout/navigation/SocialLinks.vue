@@ -5,6 +5,7 @@
     <v-icon class="brand" id="twitter"   name="brands/twitter-square" />
     <v-icon class="brand" id="instagram" name="brands/instagram"      />
     <v-icon class="brand" id="github"    name="brands/github-square"  />
+    <v-icon class="brand" id="linkedin"  name="brands/linkedin"       />
   </div>
 </template>
 
