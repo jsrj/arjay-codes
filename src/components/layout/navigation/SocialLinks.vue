@@ -1,6 +1,7 @@
 <template>
   <div id="social-links">
     <!-- ... -->
+    <v-icon name="brands/facebook" />
   </div>
 </template>
 
