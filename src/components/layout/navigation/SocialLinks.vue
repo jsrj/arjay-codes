@@ -2,6 +2,7 @@
   <div id="social-links">
     <!-- ... -->
     <v-icon name="brands/facebook" />
+    <v-icon name="brands/twitter-square" />
   </div>
 </template>
 
