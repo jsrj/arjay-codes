@@ -17,13 +17,10 @@
 
 <script>
 import axios from 'axios';
-import Drawer from '@/components/auth/Drawer.vue';
 
 export default {
   name: "user",
-  components: {
-    Drawer
-  },
+  components: {},
   mounted () {
     
     // TODO: Implement JWT security in these calls
