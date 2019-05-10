@@ -1,10 +1,15 @@
 <template>
   <div id="portfolio-sublinks">
     <!-- ... -->
+    <v-btn append flat class="link" v-for="(link, index) in dummyLinks" :key="index" tag="a" :to="link.routeTo">
+      <span>{{link.name}}</span>
+    </v-btn>
   </div>
 </template>
 
 <script>
+
+
 export default {
   name: "PortfolioSublinks",
   components: {},
@@ -12,7 +17,26 @@ export default {
   methods: {},
   mounted() {},
   data() {
-    return {}
+    return {
+      dummyLinks: [
+        {
+          name: "one link",
+          routeTo: "#"
+        },
+        {
+          name: "two link",
+          routeTo: "#"
+        },
+        {
+          name: "red link",
+          routeTo: "#"
+        },
+        {
+          name: "blu link",
+          routeTo: "#"
+        }
+      ]
+    }
   }
 }
 </script>
@@ -23,6 +47,9 @@ export default {
   /*------------------------*/
   /* Styles by Element */
   /* Styles by Class   */
+  .link {
+    color: limegreen;
+  }
   /* Styles by ID      */
 </style>
 
