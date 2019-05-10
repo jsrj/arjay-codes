@@ -7,9 +7,7 @@
       <v-icon id="twitter" name="brands/twitter-square" />
     </a>
     <a class="brand" href="#" target="_blank">
-      <div id="instagram-wrapper">
-        <v-icon id="instagram" name="brands/instagram" />
-      </div>
+      <v-icon id="instagram" name="brands/instagram" />
     </a>
     <a class="brand" href="#" target="_blank">
       <v-icon id="github" name="brands/github-square" />
@@ -35,12 +33,13 @@ export default {
 
 <style lang="less" scoped>
   /* Page-global Variables  */
+  @iconSize: 20px;
   @primary: rgba(255, 255, 255, 1);
   @secondary: rgba(0, 0, 0, 1);
-  @noPadding: 0px !important;
-  @lightPadding: 2px;
-  @mediumPadding: @lightPadding * 2;
-  @heavyPadding: @mediumPadding * 2;
+  @noSpacing: 0px !important;
+  @lightSpacing: 2px;
+  @mediumSpacing: @lightSpacing * 2;
+  @heavySpacing: @mediumSpacing * 2;
 
   /* Sub-component Variables*/
 
@@ -48,29 +47,39 @@ export default {
 
   /* Styles by Element */
   a {
-    padding: @noPadding @mediumPadding;
+    display: inline-flex;
+    flex-direction: column;
+    margin: @mediumSpacing;
   }
   /* Styles by Class   */
   .brand {
-    padding: @lightPadding;
+    height: @iconSize;
+    width: @iconSize;
+
+    padding: @lightSpacing;
 
     color: @primary;
     background-color: @secondary;
   }
-  .brand#instagram-wrapper {
-    // padding: @lightPadding;
 
-    background-color: @primary;
-  }
   /* Styles by ID      */
   #social-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
     height: 100%;
-
-    padding: @heavyPadding;
+  }
+  #facebook {
+    align-self: center;
+  }
+  #twitter {
+    align-self: center;
+  }
+  #instagram {
+    align-self: center;
+  }
+  #github {
+    align-self: center;
+  }
+  #linkedin {
+    align-self: center;
   }
 </style>
 
