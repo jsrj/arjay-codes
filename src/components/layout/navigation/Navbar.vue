@@ -1,6 +1,5 @@
 <template>
   <v-layout v-resize="onResize" wrap>
-    <Drawer :profileIcon="profile.picture" />
     <v-toolbar app dark dense>
       <!-- <v-toolbar-side-icon @click.stop="drawer = !drawer"> -->
       <Logo :loading="isLoading" :profileImageURL="profile && profile.picture" />
@@ -17,7 +16,6 @@
 
 <script>
 import Logo from '@/components/content/images/Logo.vue';
-import Drawer from '@/components/auth/Drawer.vue';
 import NaviLinks from './NaviLinks.vue';
 import AuthLinks from './AuthLinks.vue';
 import { setTimeout } from 'timers';
@@ -26,7 +24,6 @@ export default {
   name: "Navbar",
   components: {
     Logo,
-    Drawer,
     NaviLinks,
     AuthLinks
   },
