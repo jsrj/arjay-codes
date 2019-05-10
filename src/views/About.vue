@@ -1,23 +1,25 @@
 <template>
   <div class="about">
     <div id="column-container">
-      <div id="headshot">
+      <div id="headshot" class="component">
         <img src="@/components/content/images/static/headshot.jpg">
       </div>
-      <SocialLinks />
+      <SocialLinks class="component" />
       <hr />
-      <!-- Portfolio sub-links -->
+      <PortfolioLinks class="component" />
     </div>
   </div>
 </template>
 
 <script>
 import SocialLinks from '@/components/layout/navigation/SocialLinks.vue';
+import PortfolioLinks from "@/components/layout/navigation/sublinks/PortfolioSublinks.vue";
 
 export default {
   name: "about",
   components: {
-    SocialLinks
+    SocialLinks,
+    PortfolioLinks
   },
   props: {},
   methods: {},
@@ -48,6 +50,9 @@ export default {
 
   /* Styles by Element */
   /* Styles by Class   */
+  .component {
+    margin: (@outerBorderWidth*2) 0;
+  }
   /* Styles by ID      */
   #column-container {
     margin: @centered;
