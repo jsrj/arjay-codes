@@ -1,9 +1,13 @@
 <template>
   <div class="about">
-    <div id="headshot">
-      <img src="@/components/content/images/static/headshot.jpg">
+    <div id="column-container">
+      <div id="headshot">
+        <img src="@/components/content/images/static/headshot.jpg">
+      </div>
+      <SocialLinks />
+      <hr />
+      <!-- Portfolio sub-links -->
     </div>
-    <SocialLinks />
   </div>
 </template>
 
@@ -29,6 +33,7 @@ export default {
   @primary: rgba(51, 51, 51, 1);
   @secondary: rgba(255, 166, 0, 1);
   @centered: 0 auto;
+  @spaceCentered: 6px auto;
   @backgroundImage: url('');
 
   /* Headshot Image        */
@@ -37,12 +42,18 @@ export default {
   @headshotWidth: 12em;
   @innerBorderWidth: 3px;
   @outerBorderWidth: 6px;
+  @innerContentWidth: 60%;
 
   /*-----------------------*/
 
   /* Styles by Element */
   /* Styles by Class   */
   /* Styles by ID      */
+  #column-container {
+    margin: @centered;
+    width: @innerContentWidth;
+  }
+
   #headshot {
     display: flex;
     height: 100%;
@@ -60,6 +71,12 @@ export default {
 
     border-radius: 100%;
     border: @innerBorderWidth solid @primary;
+  }
+
+  #horizontal-break {
+    height: 1px;
+    margin: @spaceCentered;
+    border: 1px solid black;
   }
 </style>
 
