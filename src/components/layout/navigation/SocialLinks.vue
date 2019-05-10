@@ -1,21 +1,21 @@
 <template>
   <div id="social-links">
-    <a href="#" target="_blank">
-      <v-icon class="brand" id="facebook"  name="brands/facebook"       />
+    <a class="brand" href="#" target="_blank">
+      <v-icon id="facebook" name="brands/facebook" />
     </a>
-    <a href="#" target="_blank">
-      <v-icon class="brand" id="twitter"   name="brands/twitter-square" />
+    <a class="brand" href="#" target="_blank">
+      <v-icon id="twitter" name="brands/twitter-square" />
     </a>
-    <a href="#" target="_blank">
+    <a class="brand" href="#" target="_blank">
       <div id="instagram-wrapper">
-        <v-icon class="brand" id="instagram" name="brands/instagram"      />
+        <v-icon id="instagram" name="brands/instagram" />
       </div>
     </a>
-    <a href="#" target="_blank">
-      <v-icon class="brand" id="github"    name="brands/github-square"  />
+    <a class="brand" href="#" target="_blank">
+      <v-icon id="github" name="brands/github-square" />
     </a>
-    <a href="#" target="_blank">
-      <v-icon class="brand" id="linkedin"  name="brands/linkedin"       />
+    <a class="brand" href="#" target="_blank">
+      <v-icon id="linkedin" name="brands/linkedin" />
     </a>
   </div>
 </template>
