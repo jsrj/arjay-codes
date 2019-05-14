@@ -61,11 +61,12 @@ export default {
     color: transparent;
   }
   .link:hover {
-    background-color: @secondary;
+    color: @secondary;
+    background-color: @primary;
   }
   .btn-active {
+    color: @primary;
     background-color: @secondary;
-    color: orange @primary;
   }
   /* Styles by ID      */
 </style>
