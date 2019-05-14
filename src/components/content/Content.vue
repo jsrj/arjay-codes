@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "Content",
   components: {},
@@ -12,14 +14,25 @@ export default {
     populateWith: String
   },
   methods: {
-    getCatIpsum() {
-      return "";
+    getBaconIpsum: async () => {
+      try {
+        let baconIpsum = await axios.get('https://baconipsum.com/api/?type=meat-and-filler?paras=1');
+        return baconIpsum.data[0];
+      } catch (e) {
+        console.error(e);
+      }
     }
   },
-  mounted() {
-    console.log(this.populateWith);
-    this.contentText = this.populateWith && this.populateWith || this.getCatIpsum();
+  beforeMount() {
+    if (!this.populateWith) {
+      this.getBaconIpsum().then(content => {
+        this.contentText = content;
+      });
+    } else {
+      this.contentText = this.populateWith;
+    }
   },
+  mounted() {},
   data() {
     return {
       contentText: null
