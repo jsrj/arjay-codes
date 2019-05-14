@@ -3,8 +3,6 @@
     <h1>SKILLS</h1>
     <v-divider></v-divider>
     <br>
-    <!-- TODO: Build a Google charts graph to display wakatime metrics -->
-    <!-- TODO: Make chart container clickable to navigate to wakatime profile -->
     <h3 id="technologies">TECHNOLOGIES</h3>
     <v-timeline>
       <!-- TODO: Populate skills from CMS service profile data -->
@@ -103,7 +101,8 @@ export default {
             "...\""
           ]
         }
-      ]
+      ],
+      education: []
     }
   }
 }
@@ -118,7 +117,6 @@ export default {
   /* Styles by Element */
   /* Styles by Class   */
   .skill-icon-wrapper {
-    overflow: hidden;
 
     width: min-content;
     margin: 0 auto;
