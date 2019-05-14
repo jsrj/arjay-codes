@@ -26,7 +26,7 @@
           <h2>{{skill.name}}</h2>
           <blockquote
             v-for="(block, index) in skill.descriptionText"
-            :key="`${skill.name}-${index}`"
+            :key="`${skill.name.split(' ').join('-')}-${index}`"
           >
             <br>
             {{block}}
