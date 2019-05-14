@@ -24,9 +24,14 @@
         </template>
         <div class="py-3">
           <h2>HTML 5</h2>
-          <div>
-            Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
-          </div>
+          <blockquote>
+            <br>
+            "Hypertext Markup Language revision 5 (HTML5) is markup language for the structure and presentation of World Wide Web contents. 
+            <br>
+            <br>
+            HTML5 supports the traditional HTML and XHTML-style syntax and other new features in its markup, New APIs, XHTML and error handling."
+            <br>
+          </blockquote>
         </div>
       </v-timeline-item>
     </v-timeline>
@@ -58,7 +63,13 @@ export default {
   mounted() {},
   data() {
     return {
-      loadingMetrics: true
+      skills: [
+        {
+          name: "HTML 5",
+          logoSrc: "",
+          descriptionBlocks: []
+        }
+      ]
     }
   }
 }
