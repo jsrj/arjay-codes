@@ -8,28 +8,28 @@
       <v-timeline-item fill-dot
         color="rgba(255, 166, 0, 1)"
         class="skill-item"
-        v-for="n in 8"
-        :key="n"
+        v-for="skill in skills"
+        :key="skill.name"
       >
         <template v-slot:opposite>
           <!-- Skill/Technology Icon -->
           <div class="skill-icon-wrapper">
             <v-img
               class="skill-logo"
-              src="http://arjaycodes.com/assets/img/logos/HTML5.jpg"
-              alt="SKILL_NAME"
+              :src="skill.logoSrc"
+              :alt="skill.name"
               :aspect-ratio="1"
             />
           </div>
         </template>
         <div class="py-3">
-          <h2>HTML 5</h2>
-          <blockquote>
+          <h2>{{skill.name}}</h2>
+          <blockquote
+            v-for="(block, index) in skill.descriptionText"
+            :key="`${skill.name}-${index}`"
+          >
             <br>
-            "Hypertext Markup Language revision 5 (HTML5) is markup language for the structure and presentation of World Wide Web contents. 
-            <br>
-            <br>
-            HTML5 supports the traditional HTML and XHTML-style syntax and other new features in its markup, New APIs, XHTML and error handling."
+            {{block}}
             <br>
           </blockquote>
         </div>
@@ -66,8 +66,12 @@ export default {
       skills: [
         {
           name: "HTML 5",
-          logoSrc: "",
-          descriptionBlocks: []
+          logoSrc: "http://arjaycodes.com/assets/img/logos/HTML5.jpg",
+          descriptionText: [
+            "\"Hypertext Markup Language revision 5 (HTML5) is markup language for the structure and presentation of World Wide Web contents.",
+
+            "HTML5 supports the traditional HTML and XHTML-style syntax and other new features in its markup, New APIs, XHTML and error handling.\""
+          ]
         }
       ]
     }
