@@ -1,4 +1,4 @@
-<template :extends="About">
+<template>
   <div id="about-bio">
     <Content />
     <Content />
@@ -18,7 +18,9 @@ export default {
     // TODO: Add method to fetch content data blocks from CMS service
   },
   created() {},
-  mounted() {},
+  mounted() {
+    this.heading = "BIO";
+  },
   data() {
     return {}
   }
