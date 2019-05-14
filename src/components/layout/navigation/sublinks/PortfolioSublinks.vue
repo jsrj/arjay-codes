@@ -20,19 +20,27 @@ export default {
     return {
       dummyLinks: [
         {
-          name: "one link",
+          name: "BIO",
           routeTo: "#"
         },
         {
-          name: "two link",
+          name: "PROJECTS",
           routeTo: "#"
         },
         {
-          name: "red link",
+          name: "DESIGN PORTFOLIO",
           routeTo: "#"
         },
         {
-          name: "blu link",
+          name: "SKILLS",
+          routeTo: "#"
+        },
+        {
+          name: "CONTACT",
+          routeTo: "#"
+        },
+        {
+          name: "BLOG",
           routeTo: "#"
         }
       ]
