@@ -15,10 +15,18 @@ export default {
   components: {},
   props: {},
   methods: {
-    wakatime_getCodingActivity: async () => {},
-    wakatime_getLanguages: async () => {},
-    wakatime_getEditors: async () => {},
-    wakatime_getOperatingSystems: async () => {}
+    wakatime_getCodingActivity: async () => {
+      let URL =  'https://wakatime.com/share/@arjay_jones/ae241bca-8e25-4e99-87cd-4d2791748b4a.json';
+    },
+    wakatime_getLanguages: async () => {
+      let URL = 'https://wakatime.com/share/@arjay_jones/303efa31-5b2c-4f7b-9e0f-04af8dc8b782.json';
+    },
+    wakatime_getEditors: async () => {
+      let URL = 'https://wakatime.com/share/@arjay_jones/2ba5f8c7-fe98-43a3-8917-fe201020d32b.json';
+    },
+    wakatime_getOperatingSystems: async () => {
+      let URL = 'https://wakatime.com/share/@arjay_jones/d784ff4e-9bb5-41ed-8e0d-3972d0965872.json';
+    }
   },
   mounted() {},
   data() {
