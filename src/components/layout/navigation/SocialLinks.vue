@@ -36,6 +36,7 @@ export default {
   @iconSize: 20px;
   @primary: rgba(255, 255, 255, 1);
   @secondary: rgba(0, 0, 0, 1);
+  @tertiary: rgb(145, 198, 250);
   @noSpacing: 0px !important;
   @lightSpacing: 2px;
   @mediumSpacing: @lightSpacing * 2;
@@ -61,6 +62,9 @@ export default {
     color: @primary;
     background-color: @secondary;
     border-radius: 3px;
+  }
+  .brand:hover {
+    color: @tertiary;
   }
 
   /* Styles by ID      */
