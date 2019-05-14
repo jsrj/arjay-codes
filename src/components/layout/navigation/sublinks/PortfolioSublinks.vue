@@ -1,6 +1,5 @@
 <template>
   <div id="portfolio-sublinks">
-    <!-- ... -->
     <v-btn append flat :ripple="false" :value="1" class="link" active-class="link btn-active" v-for="(link, index) in dummyLinks" :key="index" tag="a" :to="link.routeTo">
       <span>{{link.name}}</span>
     </v-btn>
