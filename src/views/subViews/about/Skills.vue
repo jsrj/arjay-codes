@@ -5,7 +5,14 @@
     <!-- TODO: Make chart container clickable to navigate to wakatime profile -->
     <v-timeline>
       <!-- TODO: Populate skills from CMS service profile data -->
-      <v-timeline-item></v-timeline-item>
+      <v-timeline-item fill-dot large
+        color="rgba(255, 166, 0, 1)"
+        class="skill-item"
+        v-for="n in 8"
+        :key="n"
+      >
+
+      </v-timeline-item>
     </v-timeline>
   </div>
 </template>
@@ -43,12 +50,15 @@ export default {
 
 <style lang="less" scoped>
   /* Page-global Variables  */
-  @primary: rgba(33, 33, 33, 1);
-  @secondary: rgba(255, 166, 0, 1);
+  @primary: rgba(33, 33, 33, 1) !important;
+  @secondary: rgba(255, 166, 0, 1) !important;
   /* Sub-component Variables*/
   /*------------------------*/
   /* Styles by Element */
   /* Styles by Class   */
+  .skill-item {
+    margin: 200px 0px 12px;
+  }
   /* Styles by ID      */
   #about-skills {
     margin-bottom: 12px;
