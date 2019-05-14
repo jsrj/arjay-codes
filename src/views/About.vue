@@ -1,7 +1,6 @@
 <template>
   <div class="about">
     <div id="column-container">
-      <h1>ABOUT ME</h1>
       <router-view />
       <div id="headshot" class="component">
         <img src="@/components/content/images/static/headshot.jpg">
@@ -25,14 +24,14 @@ export default {
     SocialLinks,
     PortfolioLinks
   },
-  props: {
-    heading: String
-  },
+  props: [ 'heading' ],
   methods: {},
   created() {},
   mounted() {},
   data() {
-    return {}
+    return {
+      subViewTitle: null
+    }
   }
 }
 </script>
