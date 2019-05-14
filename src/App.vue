@@ -2,7 +2,6 @@
   <v-app id="root">
     <Navbar />
     <ViewWrapper :title="title" />
-    <Footer id="footer" :socialLinks="socialLinks" />
   </v-app>
 </template>
 
