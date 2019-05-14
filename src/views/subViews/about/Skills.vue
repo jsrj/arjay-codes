@@ -3,6 +3,10 @@
     <h1>SKILLS</h1>
     <!-- TODO: Build a Google charts graph to display wakatime metrics -->
     <!-- TODO: Make chart container clickable to navigate to wakatime profile -->
+    <v-timeline>
+      <!-- TODO: Populate skills from CMS service profile data -->
+      <v-timeline-item></v-timeline-item>
+    </v-timeline>
   </div>
 </template>
 
@@ -16,7 +20,7 @@ export default {
   props: {},
   methods: {
     wakatime_getCodingActivity: async () => {
-      let URL =  'https://wakatime.com/share/@arjay_jones/ae241bca-8e25-4e99-87cd-4d2791748b4a.json';
+      let URL = 'https://wakatime.com/share/@arjay_jones/a3e58169-f85a-4547-8418-14b129a1c0c3.json';
     },
     wakatime_getLanguages: async () => {
       let URL = 'https://wakatime.com/share/@arjay_jones/303efa31-5b2c-4f7b-9e0f-04af8dc8b782.json';
@@ -30,13 +34,17 @@ export default {
   },
   mounted() {},
   data() {
-    return {}
+    return {
+      loadingMetrics: true
+    }
   }
 }
 </script>
 
 <style lang="less" scoped>
   /* Page-global Variables  */
+  @primary: rgba(33, 33, 33, 1);
+  @secondary: rgba(255, 166, 0, 1);
   /* Sub-component Variables*/
   /*------------------------*/
   /* Styles by Element */
