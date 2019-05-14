@@ -1,6 +1,6 @@
 <template>
   <div id="content">
-    <!-- ... -->
+    <p>{{contentText}}</p>
   </div>
 </template>
 
@@ -8,11 +8,22 @@
 export default {
   name: "Content",
   components: {},
-  props: {},
-  methods: {},
-  mounted() {},
+  props: {
+    populateWith: String
+  },
+  methods: {
+    getCatIpsum() {
+      return "";
+    }
+  },
+  mounted() {
+    console.log(this.populateWith);
+    this.contentText = this.populateWith && this.populateWith || this.getCatIpsum();
+  },
   data() {
-    return {}
+    return {
+      contentText: null
+    }
   }
 }
 </script>
