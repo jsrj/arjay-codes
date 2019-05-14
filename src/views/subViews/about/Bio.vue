@@ -1,5 +1,6 @@
 <template>
   <div id="about-bio">
+    <h1>ABOUT ME</h1>
     <Content />
     <Content />
   </div>
@@ -18,9 +19,7 @@ export default {
     // TODO: Add method to fetch content data blocks from CMS service
   },
   created() {},
-  mounted() {
-    this.heading = "BIO";
-  },
+  mounted() {},
   data() {
     return {}
   }
