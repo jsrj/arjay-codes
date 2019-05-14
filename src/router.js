@@ -31,6 +31,7 @@ const router = new Router({
     },
     {
       path: "/about",
+      redirect: "/about/bio",
       name: "About",
       component: About,
       children: [
