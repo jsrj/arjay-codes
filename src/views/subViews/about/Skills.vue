@@ -5,7 +5,7 @@
     <!-- TODO: Make chart container clickable to navigate to wakatime profile -->
     <v-timeline>
       <!-- TODO: Populate skills from CMS service profile data -->
-      <v-timeline-item fill-dot large
+      <v-timeline-item fill-dot
         color="rgba(255, 166, 0, 1)"
         class="skill-item"
         v-for="n in 8"
