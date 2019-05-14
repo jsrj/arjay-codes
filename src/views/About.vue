@@ -36,7 +36,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
   /* Page-global Variables */
   @primary: rgba(51, 51, 51, 1);
   @secondary: rgba(255, 166, 0, 1);
@@ -59,6 +59,8 @@ export default {
     padding: 0px;
     margin: 0px;
     margin-bottom: @outerBorderWidth;
+
+    border: 6px solid black;
 
     font-size: 22pt;
   }
