@@ -9,6 +9,7 @@
       <hr />
       <PortfolioLinks class="component" />
     </div>
+    <TopReturnButton />
   </div>
 </template>
 
@@ -16,13 +17,15 @@
 import Content from "@/components/content/Content.vue";
 import SocialLinks from "@/components/layout/navigation/SocialLinks.vue";
 import PortfolioLinks from "@/components/layout/navigation/sublinks/PortfolioSublinks.vue";
+import TopReturnButton from "@/components/layout/navigation/TopReturn.vue";
 
 export default {
   name: "About",
   components: {
     Content,
     SocialLinks,
-    PortfolioLinks
+    PortfolioLinks,
+    TopReturnButton
   },
   props: [ 'heading' ],
   methods: {},
