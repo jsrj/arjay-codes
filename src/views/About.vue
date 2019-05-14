@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div id="column-container">
-      <h1>ARJAY | JONES</h1>
+      <h1>ABOUT ME</h1>
       <Content />
       <Content />
       <div id="headshot" class="component">
