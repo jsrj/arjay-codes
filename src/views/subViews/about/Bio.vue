@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import About from "@views/About.vue";
+import About from "@/views/About.vue";
 
 export default {
   extends: About,
