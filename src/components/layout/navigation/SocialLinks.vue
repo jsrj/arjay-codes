@@ -1,21 +1,19 @@
 <template>
   <div id="social-links">
-    <a href="#" target="_blank">
-      <v-icon class="brand" id="facebook"  name="brands/facebook"       />
+    <a class="brand" href="#" target="_blank">
+      <v-icon id="facebook" name="brands/facebook" />
     </a>
-    <a href="#" target="_blank">
-      <v-icon class="brand" id="twitter"   name="brands/twitter-square" />
+    <a class="brand" href="#" target="_blank">
+      <v-icon id="twitter" name="brands/twitter-square" />
     </a>
-    <a href="#" target="_blank">
-      <div id="instagram-wrapper">
-        <v-icon class="brand" id="instagram" name="brands/instagram"      />
-      </div>
+    <a class="brand" href="#" target="_blank">
+      <v-icon id="instagram" name="brands/instagram" />
     </a>
-    <a href="#" target="_blank">
-      <v-icon class="brand" id="github"    name="brands/github-square"  />
+    <a class="brand" href="#" target="_blank">
+      <v-icon id="github" name="brands/github-square" />
     </a>
-    <a href="#" target="_blank">
-      <v-icon class="brand" id="linkedin"  name="brands/linkedin"       />
+    <a class="brand" href="#" target="_blank">
+      <v-icon id="linkedin" name="brands/linkedin" />
     </a>
   </div>
 </template>
@@ -35,12 +33,14 @@ export default {
 
 <style lang="less" scoped>
   /* Page-global Variables  */
+  @iconSize: 20px;
   @primary: rgba(255, 255, 255, 1);
   @secondary: rgba(0, 0, 0, 1);
-  @noPadding: 0px !important;
-  @lightPadding: 2px;
-  @mediumPadding: @lightPadding * 2;
-  @heavyPadding: @mediumPadding * 2;
+  @tertiary: rgb(145, 198, 250);
+  @noSpacing: 0px !important;
+  @lightSpacing: 2px;
+  @mediumSpacing: @lightSpacing * 2;
+  @heavySpacing: @mediumSpacing * 2;
 
   /* Sub-component Variables*/
 
@@ -48,29 +48,43 @@ export default {
 
   /* Styles by Element */
   a {
-    padding: @noPadding @mediumPadding;
+    display: inline-flex;
+    flex-direction: column;
+    margin: @mediumSpacing;
   }
   /* Styles by Class   */
   .brand {
-    padding: @lightPadding;
+    height: @iconSize;
+    width: @iconSize;
+
+    padding: @lightSpacing;
 
     color: @primary;
     background-color: @secondary;
+    border-radius: 3px;
   }
-  .brand#instagram-wrapper {
-    // padding: @lightPadding;
+  .brand:hover {
+    color: @tertiary;
+  }
 
-    background-color: @primary;
-  }
   /* Styles by ID      */
   #social-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-
     height: 100%;
-
-    padding: @heavyPadding;
+  }
+  #facebook {
+    align-self: center;
+  }
+  #twitter {
+    align-self: center;
+  }
+  #instagram {
+    align-self: center;
+  }
+  #github {
+    align-self: center;
+  }
+  #linkedin {
+    align-self: center;
   }
 </style>
 
