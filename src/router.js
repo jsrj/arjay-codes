@@ -9,6 +9,14 @@ import Profile from "./views/auth/UserProfile.vue";
 import Callback from "./components/auth/Callback.vue";
 import auth from "./service/auth/authService";
 
+// About - Children
+import Bio from "./views/subViews/about/Bio.vue";
+import Blog from "./views/subViews/about/Blog.vue";
+import Contact from "./views/subViews/about/Contact.vue";
+import DesignPortfolio from "./views/subViews/about/DesignPortfolio.vue";
+import Projects from "./views/subViews/about/Projects.vue";
+import Skills from "./views/subViews/about/Skills.vue";
+
 Vue.use(Router);
 
 const router = new Router({
@@ -23,8 +31,41 @@ const router = new Router({
     },
     {
       path: "/about",
-      name: "about",
-      component: About
+      redirect: "/about/bio",
+      name: "About",
+      component: About,
+      children: [
+        {
+          path: "bio",
+          name: "About-Bio",
+          component: Bio
+        },
+        {
+          path: "blog",
+          name: "About-Blog",
+          component: Blog
+        },
+        {
+          path: "contact",
+          name: "About-Contact",
+          component: Contact
+        },
+        {
+          path: "design",
+          name: "About-DesignPortfolio",
+          component: DesignPortfolio
+        },
+        {
+          path: "projects",
+          name: "About-Projects",
+          component: Projects
+        },
+        {
+          path: "skills",
+          name: "About-Skills",
+          component: Skills
+        }
+      ]
     },
 
     // Auth Pages

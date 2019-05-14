@@ -1,18 +1,24 @@
 <template>
-  <div id="COMPONENT_NAME">
-    <!-- ... -->
+  <div id="about-bio">
+    <h1>ABOUT ME</h1>
+    <Content />
+    <Content />
   </div>
 </template>
 
 <script>
-// import ... from "@/";
+import About from "@/views/About.vue";
+import Content from "@/components/content/Content.vue";
+
 export default {
-  // extends: ...,
-  name: "COMPONENT_NAME",
-  mixins: [],
+  extends: About,
+  name: "About-Bio",
   components: {},
   props: {},
-  methods: {},
+  methods: {
+    // TODO: Add method to fetch content data blocks from CMS service
+  },
+  created() {},
   mounted() {},
   data() {
     return {}

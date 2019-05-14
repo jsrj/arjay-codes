@@ -1,6 +1,5 @@
 <template>
   <div id="portfolio-sublinks">
-    <!-- ... -->
     <v-btn append flat :ripple="false" :value="1" class="link" active-class="link btn-active" v-for="(link, index) in dummyLinks" :key="index" tag="a" :to="link.routeTo">
       <span>{{link.name}}</span>
     </v-btn>
@@ -21,27 +20,27 @@ export default {
       dummyLinks: [
         {
           name: "BIO",
-          routeTo: "/about"
+          routeTo: "/about/bio"
         },
         {
           name: "PROJECTS",
-          routeTo: "#"
+          routeTo: "/about/projects"
         },
-        {
-          name: "DESIGN PORTFOLIO",
-          routeTo: "#"
-        },
+        // {
+        //   name: "DESIGN PORTFOLIO",
+        //   routeTo: "#"
+        // },
         {
           name: "SKILLS",
-          routeTo: "#"
+          routeTo: "/about/skills"
         },
         {
           name: "CONTACT",
-          routeTo: "#"
+          routeTo: "/about/contact"
         },
         {
           name: "BLOG",
-          routeTo: "#"
+          routeTo: "/about/blog"
         }
       ]
     }
@@ -53,6 +52,7 @@ export default {
   /* Page-global Variables  */
   @primary: rgba(51, 51, 51, 1) !important;
   @secondary: rgba(255, 166, 0, 1) !important;
+  @tertiary: rgba(145, 198, 250,1 ) !important;
   /* Sub-component Variables*/
   /*------------------------*/
   /* Styles by Element */
@@ -61,7 +61,7 @@ export default {
     color: transparent;
   }
   .link:hover {
-    color: @secondary;
+    color: @tertiary;
     background-color: @primary;
   }
   .btn-active {

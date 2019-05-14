@@ -1,15 +1,15 @@
 <template>
-  <div id="COMPONENT_NAME">
-    <!-- ... -->
+  <div id="about-blog">
+    <h1>BLOG</h1>
   </div>
 </template>
 
 <script>
-// import ... from "@/";
+import About from "@/views/About.vue";
+
 export default {
-  // extends: ...,
-  name: "COMPONENT_NAME",
-  mixins: [],
+  extends: About,
+  name: "About-Blog",
   components: {},
   props: {},
   methods: {},
