@@ -1,8 +1,11 @@
 <template>
   <div id="about-skills">
     <h1>SKILLS</h1>
+    <v-divider></v-divider>
+    <br>
     <!-- TODO: Build a Google charts graph to display wakatime metrics -->
     <!-- TODO: Make chart container clickable to navigate to wakatime profile -->
+    <h3 id="technologies">TECHNOLOGIES</h3>
     <v-timeline>
       <!-- TODO: Populate skills from CMS service profile data -->
       <v-timeline-item fill-dot
