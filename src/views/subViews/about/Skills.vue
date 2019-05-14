@@ -72,6 +72,15 @@ export default {
 
             "HTML5 supports the traditional HTML and XHTML-style syntax and other new features in its markup, New APIs, XHTML and error handling.\""
           ]
+        },
+        {
+          name: "CSS 3",
+          logoSrc: "http://arjaycodes.com/assets/img/logos/CSS3.jpg",
+          descriptionText: [
+            "\"CSS (Cascading Style Sheets) consist of a group of formatting rules that you use to control the layout and appearance of the content on a web page.",
+
+            "Cascading Style Sheets Level 3 (CSS3) is the iteration of the CSS standard used in the styling and formatting of Web pages. CSS3 incorporates the CSS2 standard with some changes and improvements.\""
+          ]
         }
       ]
     }
