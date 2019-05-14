@@ -60,6 +60,7 @@ export default {
 
     color: @primary;
     background-color: @secondary;
+    border-radius: 3px;
   }
 
   /* Styles by ID      */
