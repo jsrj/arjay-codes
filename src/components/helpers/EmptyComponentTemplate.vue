@@ -5,8 +5,11 @@
 </template>
 
 <script>
+// import ... from "@/";
 export default {
+  // extends: ...,
   name: "COMPONENT_NAME",
+  mixins: [],
   components: {},
   props: {},
   methods: {},
