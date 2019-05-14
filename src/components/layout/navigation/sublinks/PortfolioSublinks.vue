@@ -27,10 +27,10 @@ export default {
           name: "PROJECTS",
           routeTo: "#"
         },
-        {
-          name: "DESIGN PORTFOLIO",
-          routeTo: "#"
-        },
+        // {
+        //   name: "DESIGN PORTFOLIO",
+        //   routeTo: "#"
+        // },
         {
           name: "SKILLS",
           routeTo: "#"
@@ -53,6 +53,7 @@ export default {
   /* Page-global Variables  */
   @primary: rgba(51, 51, 51, 1) !important;
   @secondary: rgba(255, 166, 0, 1) !important;
+  @tertiary: rgba(145, 198, 250,1 ) !important;
   /* Sub-component Variables*/
   /*------------------------*/
   /* Styles by Element */
@@ -61,7 +62,7 @@ export default {
     color: transparent;
   }
   .link:hover {
-    color: @secondary;
+    color: @tertiary;
     background-color: @primary;
   }
   .btn-active {
