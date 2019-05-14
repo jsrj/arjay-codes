@@ -2,8 +2,7 @@
   <div class="about">
     <div id="column-container">
       <h1>ABOUT ME</h1>
-      <Content />
-      <Content />
+      <router-view />
       <div id="headshot" class="component">
         <img src="@/components/content/images/static/headshot.jpg">
       </div>
@@ -26,8 +25,11 @@ export default {
     SocialLinks,
     PortfolioLinks
   },
-  props: {},
+  props: {
+    heading: String
+  },
   methods: {},
+  created() {},
   mounted() {},
   data() {
     return {}
@@ -68,6 +70,7 @@ export default {
   /* Styles by ID      */
   #column-container {
     margin: @centered;
+    padding: 0px 6vw;
     width: @innerContentWidth;
   }
 
