@@ -60,8 +60,6 @@ export default {
     margin: 0px;
     margin-bottom: @outerBorderWidth;
 
-    border: 6px solid black;
-
     font-size: 22pt;
   }
   /* Styles by Class   */
