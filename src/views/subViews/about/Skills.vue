@@ -1,6 +1,8 @@
 <template>
   <div id="about-skills">
     <h1>SKILLS</h1>
+    <!-- TODO: Build a Google charts graph to display wakatime metrics -->
+    <!-- TODO: Make chart container clickable to navigate to wakatime profile -->
   </div>
 </template>
 
@@ -12,7 +14,12 @@ export default {
   name: "About-Skills",
   components: {},
   props: {},
-  methods: {},
+  methods: {
+    wakatime_getCodingActivity: async () => {},
+    wakatime_getLanguages: async () => {},
+    wakatime_getEditors: async () => {},
+    wakatime_getOperatingSystems: async () => {}
+  },
   mounted() {},
   data() {
     return {}
