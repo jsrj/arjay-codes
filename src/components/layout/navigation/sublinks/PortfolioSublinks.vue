@@ -60,9 +60,6 @@ export default {
   .link::before {
     color: transparent;
   }
-  .link {
-    color: limegreen;
-  }
   .link:hover {
     background-color: @secondary;
   }
