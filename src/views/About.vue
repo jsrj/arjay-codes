@@ -59,7 +59,7 @@ export default {
     margin: 0px;
     margin-bottom: @outerBorderWidth;
 
-    font-size: 4vw;
+    font-size: 22pt;
   }
   /* Styles by Class   */
   .component {
