@@ -21,11 +21,11 @@ export default {
       dummyLinks: [
         {
           name: "BIO",
-          routeTo: "/about"
+          routeTo: "/about/bio"
         },
         {
           name: "PROJECTS",
-          routeTo: "#"
+          routeTo: "/about/projects"
         },
         // {
         //   name: "DESIGN PORTFOLIO",
@@ -33,15 +33,15 @@ export default {
         // },
         {
           name: "SKILLS",
-          routeTo: "#"
+          routeTo: "/about/skills"
         },
         {
           name: "CONTACT",
-          routeTo: "#"
+          routeTo: "/about/contact"
         },
         {
           name: "BLOG",
-          routeTo: "#"
+          routeTo: "/about/blog"
         }
       ]
     }
