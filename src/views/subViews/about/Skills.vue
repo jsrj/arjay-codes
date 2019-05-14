@@ -116,7 +116,7 @@ export default {
     border: 3px solid black;
     border-radius: 100%;
 
-    filter: grayscale(100%);
+    // filter: grayscale(100%);
     transition: filter 0.5s;
   }
   .skill-logo:hover {
