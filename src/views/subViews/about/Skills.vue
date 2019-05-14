@@ -23,7 +23,7 @@
           </div>
         </template>
         <div class="py-3">
-          <h2>[SKILL_NAME]</h2>
+          <h2>HTML 5</h2>
           <div>
             Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
           </div>
@@ -79,14 +79,25 @@ export default {
     margin: 0 auto;
 
     background-color: black;
+    border: 6px solid orange;
     border-radius: 100%;
   }
   .skill-item {
     margin: 6rem 0px 12px;
   }
   .skill-logo {
-    width: 6rem;
+    width: 8rem;
     height: 100%;
+
+    border: 3px solid black;
+    border-radius: 100%;
+
+    filter: grayscale(100%);
+    transition: filter 0.5s;
+  }
+  .skill-logo:hover {
+    filter: none;
+    transition: filter 0.5s;
   }
   /* Styles by ID      */
   #about-skills {
