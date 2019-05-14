@@ -1,6 +1,6 @@
 <template>
   <div id="about-skills">
-    <!-- ... -->
+    <h1>SKILLS</h1>
   </div>
 </template>
 
