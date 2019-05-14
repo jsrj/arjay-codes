@@ -55,7 +55,11 @@ export default {
 
   /* Styles by Element */
   h1 {
-    font-size: 7vw;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: @outerBorderWidth;
+
+    font-size: 4vw;
   }
   /* Styles by Class   */
   .component {
