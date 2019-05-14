@@ -12,12 +12,15 @@ import { dom } from "@fortawesome/fontawesome-svg-core";
 import "vue-awesome/icons";
 import "./registerServiceWorker";
 import "vuetify/dist/vuetify.min.css";
+import "@mdi/font/css/materialdesignicons.css";
 
 dom.watch();
 Vue.config.productionTip = true;
 
 // Vue Use declarations
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+  iconfont: "mdi"
+});
 Vue.use(AuthPlugin);
 
 // Vue Directive declarations
