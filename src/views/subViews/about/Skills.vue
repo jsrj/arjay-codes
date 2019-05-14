@@ -13,6 +13,14 @@
       >
         <template v-slot:opposite>
           <!-- Skill/Technology Icon -->
+          <div class="skill-icon-wrapper">
+            <v-img
+              class="skill-logo"
+              src="http://arjaycodes.com/assets/img/logos/HTML5.jpg"
+              alt="SKILL_NAME"
+              :aspect-ratio="1"
+            />
+          </div>
         </template>
         <div class="py-3">
           <h2>[SKILL_NAME]</h2>
@@ -64,8 +72,21 @@ export default {
   /*------------------------*/
   /* Styles by Element */
   /* Styles by Class   */
+  .skill-icon-wrapper {
+    overflow: hidden;
+
+    width: min-content;
+    margin: 0 auto;
+
+    background-color: black;
+    border-radius: 100%;
+  }
   .skill-item {
     margin: 6rem 0px 12px;
+  }
+  .skill-logo {
+    width: 6rem;
+    height: 100%;
   }
   /* Styles by ID      */
   #about-skills {
