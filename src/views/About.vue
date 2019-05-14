@@ -2,7 +2,7 @@
   <div class="about">
     <div id="column-container">
       <h1>ARJAY | JONES</h1>
-      <Content populateWith="adsfadsfasdfasdf" />
+      <Content />
       <Content />
       <div id="headshot" class="component">
         <img src="@/components/content/images/static/headshot.jpg">
