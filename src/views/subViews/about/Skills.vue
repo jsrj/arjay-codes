@@ -8,8 +8,8 @@
       <v-timeline-item fill-dot
         color="rgba(255, 166, 0, 1)"
         class="skill-item"
-        v-for="skill in skills"
-        :key="skill.name"
+        v-for="(skill, index) in skills"
+        :key="`${skill.name.split(' ').join('-')}-${index}`"
       >
         <template v-slot:opposite>
           <!-- Skill/Technology Icon -->
