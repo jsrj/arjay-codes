@@ -1,6 +1,9 @@
 <template>
   <div class="about">
     <div id="column-container">
+      <h1>ARJAY | JONES</h1>
+      <Content populateWith="adsfadsfasdfasdf" />
+      <Content />
       <div id="headshot" class="component">
         <img src="@/components/content/images/static/headshot.jpg">
       </div>
@@ -12,12 +15,14 @@
 </template>
 
 <script>
-import SocialLinks from '@/components/layout/navigation/SocialLinks.vue';
+import Content from "@/components/content/Content.vue";
+import SocialLinks from "@/components/layout/navigation/SocialLinks.vue";
 import PortfolioLinks from "@/components/layout/navigation/sublinks/PortfolioSublinks.vue";
 
 export default {
   name: "about",
   components: {
+    Content,
     SocialLinks,
     PortfolioLinks
   },
@@ -49,6 +54,9 @@ export default {
   /*-----------------------*/
 
   /* Styles by Element */
+  h1 {
+    font-size: 7vw;
+  }
   /* Styles by Class   */
   .component {
     margin: (@outerBorderWidth*2) 0;
