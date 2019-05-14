@@ -20,7 +20,7 @@ import SocialLinks from "@/components/layout/navigation/SocialLinks.vue";
 import PortfolioLinks from "@/components/layout/navigation/sublinks/PortfolioSublinks.vue";
 
 export default {
-  name: "about",
+  name: "About",
   components: {
     Content,
     SocialLinks,

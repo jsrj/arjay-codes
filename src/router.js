@@ -23,7 +23,7 @@ const router = new Router({
     },
     {
       path: "/about",
-      name: "about",
+      name: "About",
       component: About
     },
 
