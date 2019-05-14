@@ -81,6 +81,24 @@ export default {
 
             "Cascading Style Sheets Level 3 (CSS3) is the iteration of the CSS standard used in the styling and formatting of Web pages. CSS3 incorporates the CSS2 standard with some changes and improvements.\""
           ]
+        },
+        {
+          name: "Javascript (ES7)",
+          logoSrc: "http://arjaycodes.com/assets/img/logos/javascript.jpg",
+          descriptionText: [
+            "\"...",
+
+            "...\""
+          ]
+        },
+        {
+          name: "And many more!",
+          logoSrc: "https://media.giphy.com/media/qKltgF7Aw515K/giphy.gif",
+          descriptionText: [
+            "\"...",
+
+            "...\""
+          ]
         }
       ]
     }
