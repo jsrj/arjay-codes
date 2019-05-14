@@ -1,14 +1,20 @@
 <template>
 <v-container>
-    <v-btn fab small flat
-      id="back-to-top"
-      :fixed="true"
-      :right="true"
-      :bottom="true"
-      v-on:click.native="scrollToTop"
-    >
-      <v-icon name="chevron-up" />
-    </v-btn>
+      <v-tooltip left>
+      <template v-slot:activator="{ on }">
+        <v-btn fab small flat
+          id="back-to-top"
+          :fixed="true"
+          :right="true"
+          :bottom="true"
+          v-on="on"
+          v-on:click.native="scrollToTop"
+        >
+          <v-icon name="chevron-up" />
+        </v-btn>
+      </template>
+      <span>Back To Top</span>
+    </v-tooltip>
 </v-container>
 </template>
 
