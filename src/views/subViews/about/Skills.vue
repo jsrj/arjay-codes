@@ -27,6 +27,9 @@ export default {
   /* Styles by Element */
   /* Styles by Class   */
   /* Styles by ID      */
+  #about-skills {
+    margin-bottom: 12px;
+  }
 </style>
 
 
