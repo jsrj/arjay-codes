@@ -11,7 +11,15 @@
         v-for="n in 8"
         :key="n"
       >
-
+        <template v-slot:opposite>
+          <!-- Skill/Technology Icon -->
+        </template>
+        <div class="py-3">
+          <h2>[SKILL_NAME]</h2>
+          <div>
+            Lorem ipsum dolor sit amet, no nam oblique veritus. Commune scaevola imperdiet nec ut, sed euismod convenire principes at. Est et nobis iisque percipit, an vim zril disputando voluptatibus, vix an salutandi sententiae.
+          </div>
+        </div>
       </v-timeline-item>
     </v-timeline>
   </div>
@@ -57,7 +65,7 @@ export default {
   /* Styles by Element */
   /* Styles by Class   */
   .skill-item {
-    margin: 200px 0px 12px;
+    margin: 6rem 0px 12px;
   }
   /* Styles by ID      */
   #about-skills {
