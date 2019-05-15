@@ -89,14 +89,17 @@ export default {
   #menu-icon {
     display: flex;
     flex-direction: column;
+    background-color: @tertiary;
 
     .h-bar {
-      margin: 0px;
-      padding: 0px;
-      
-      width: 10px;
+      width: 3rem;
       height: 1px;
-      border: 2px solid black;
+      
+      margin: 2px;
+      padding: 0px;
+
+      border: 4px solid black;
+      border-radius: 1em;
     }
   }
 </style>
