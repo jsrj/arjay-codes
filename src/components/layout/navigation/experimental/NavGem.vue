@@ -9,7 +9,7 @@
     >
       <!-- NavGem primary display element -->
       <template v-slot:activator>
-        <v-btn large fab id="main-badge" color="rgba(255, 166, 0, 1)">
+        <v-btn small fab id="main-badge" color="rgba(255, 166, 0, 1)">
           <v-sheet id="menu-icon" flat>
             <div class="h-bar"></div>
             <div class="h-bar"></div>
@@ -70,7 +70,7 @@ export default {
   @scaleX: 100%;
   @scaleY: 10vh;
   #container {
-    padding: 8px;
+    padding: 3px;
     background-color: @primary;
     border-radius: 100%;
   }
@@ -92,13 +92,13 @@ export default {
     background-color: @tertiary;
 
     .h-bar {
-      width: 3rem;
+      width: 1.25rem;
       height: 1px;
-      
-      margin: 2px;
+
+      margin: 1px;
       padding: 0px;
 
-      border: 4px solid black;
+      border: 2px solid black;
       border-radius: 1em;
     }
   }
