@@ -10,6 +10,12 @@
       <!-- NavGem primary display element -->
       <template v-slot:activator>
         <Logo id="ac-logo" />
+        
+        <!-- Purely Aesthetic element group -->
+        <Droplet :top-margin="0" />
+        <Droplet large secondary />
+        <Droplet :bottom-margin="0" />
+        <!-- Purely Aesthetic element group -->
         <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)">
           <v-sheet id="menu-icon" flat>
             <div class="h-bar"></div>
@@ -34,11 +40,13 @@
 
 <script>
 import Logo from "@/components/content/images/Logo.vue";
+import Droplet from "@/components/content/images/Droplet.vue";
 
 export default {
   name: "NavGem",
   components: {
-    Logo
+    Logo,
+    Droplet
   },
   props: {},
   methods: {},
@@ -61,15 +69,12 @@ export default {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-
-    background-color: lime;
   }
-
   #menu-badge {
     overflow: hidden;
     background-color: @secondary;
 
-    margin: 10px 0px;
+    margin: 0px;
 
     border: 3px solid black;
     border-radius: 100%;
