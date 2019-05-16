@@ -1,8 +1,16 @@
 <template>
-  <div v-if="large" class="droplet large"></div>
+    <!-- Large w/ Applied colors -->
+    <div v-if="large && primary" class="droplet large primary"></div>
+    <div v-else-if="large && secondary" class="droplet large secondary"></div>
 
-  <!-- Default droplet -->
-  <div v-else class="droplet"></div>
+    <!-- Large w/out applied colors -->
+    <div v-else-if="large" class="droplet large"></div>
+
+    <div v-else-if="primary && !secondary" class="droplet primary"></div>
+    <div v-else-if="secondary && !primary" class="droplet secondary"></div>
+
+    <!-- Default droplet -->
+    <div v-else class="droplet"></div>
 </template>
 
 <script>
@@ -22,6 +30,8 @@ export default {
 <style lang="less" scoped>
   @spacingScale: 2px;
   @spacingMultiplier: 2;
+  @primary: rgba(255, 166, 0, 1) !important;
+  @secondary: rgba(145, 198, 250,1 ) !important;
 
   .droplet {
     width: @spacingScale;
@@ -32,11 +42,18 @@ export default {
     background-color: black;
     border: @spacingScale solid black;
     border-radius: 100%;
+  }
 
-
-    .large {
-      padding: 4px !important;
-    }
+  .large {
+    padding: @spacingScale * @spacingMultiplier;
+  }
+  .primary {
+    border-color: black !important;
+    background-color: @primary !important;
+  }
+  .secondary {
+    border-color: black !important;
+    background-color: @secondary !important;
   }
 </style>
 
