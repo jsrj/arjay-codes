@@ -10,7 +10,7 @@
       <!-- NavGem primary display element -->
       <template v-slot:activator>
         <Logo id="ac-logo" />
-        <v-btn small fab flat id="main-badge" color="rgba(255, 166, 0, 1)">
+        <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)">
           <v-sheet id="menu-icon" flat>
             <div class="h-bar"></div>
             <div class="h-bar"></div>
@@ -65,17 +65,15 @@ export default {
     background-color: lime;
   }
 
-  #main-badge {
+  #menu-badge {
     overflow: hidden;
     background-color: @secondary;
+
+    margin: 10px 0px;
 
     border: 3px solid black;
     border-radius: 100%;
   }
-  // #ac-logo {
-  //   z-index: 0;
-  //   border: 3px solid @primary;
-  // }
   #menu-icon::before{
     color: transparent;
     background-color: transparent;
