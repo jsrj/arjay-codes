@@ -2,6 +2,7 @@
     <!-- Large w/ Applied colors -->
     <div v-if="large && primary" class="droplet large primary"></div>
     <div v-else-if="large && secondary" class="droplet large secondary"></div>
+    <div v-else-if="large && transparent" class="droplet large transparent"></div>
 
     <!-- Large w/out applied colors -->
     <div v-else-if="large" class="droplet large"></div>
@@ -54,6 +55,10 @@ export default {
   .secondary {
     border-color: black !important;
     background-color: @secondary !important;
+  }
+  .transparent {
+    border-color: black !important;
+    background-color: transparent !important;
   }
 </style>
 
