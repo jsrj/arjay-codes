@@ -1,6 +1,6 @@
 <template>
   <div id="logo">
-    <v-btn fab large left absolute bottom :loading="loading" class="outer-border" to="/">
+    <v-btn fab large :loading="loading" class="outer-border" to="/">
       <div id="inner-wrapper">
         <div id="hemi-top">
           <span>Arjay</span>
