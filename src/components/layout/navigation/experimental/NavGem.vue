@@ -1,7 +1,7 @@
 <template>
   <div id="nav-gem">
     <!-- Positioning and behavior element -->
-    <v-speed-dial large fixed top left
+    <v-speed-dial fixed top left
       id="container"
       direction="right"
       transition="slide-x"
@@ -9,7 +9,8 @@
     >
       <!-- NavGem primary display element -->
       <template v-slot:activator>
-        <v-btn small fab id="main-badge" color="rgba(255, 166, 0, 1)">
+        <Logo id="ac-logo" />
+        <v-btn small fab flat id="main-badge" color="rgba(255, 166, 0, 1)">
           <v-sheet id="menu-icon" flat>
             <div class="h-bar"></div>
             <div class="h-bar"></div>
@@ -18,41 +19,27 @@
         </v-btn>
       </template>
 
-
-          <!-- NavGem menu items #START -->
-          <v-btn
-            fab
-            dark
-            small
-            color="green"
-          >
-            <v-icon>edit</v-icon>
-          </v-btn>
-          <v-btn
-            fab
-            dark
-            small
-            color="indigo"
-          >
-            <v-icon>add</v-icon>
-          </v-btn>
-          <v-btn
-            fab
-            dark
-            small
-            color="red"
-          >
-        <v-icon>delete</v-icon>
-      </v-btn>
+      <!-- NavGem menu items #START -->
+      <!-- <v-btn
+        color="rgba(255, 166, 0, 1)"
+        v-for="n in 4" 
+        :key="n"
+      >
+        <v-icon>ICON_NAME</v-icon>
+      </v-btn> -->
       <!-- NavGem menu items #END -->
     </v-speed-dial>
   </div>
 </template>
 
 <script>
+import Logo from "@/components/content/images/Logo.vue";
+
 export default {
   name: "NavGem",
-  components: {},
+  components: {
+    Logo
+  },
   props: {},
   methods: {},
   data () {
@@ -69,19 +56,26 @@ export default {
   @tertiary: rgba(145, 198, 250,1 ) !important;
   @scaleX: 100%;
   @scaleY: 10vh;
+
   #container {
-    padding: 3px;
-    background-color: @primary;
-    border-radius: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: lime;
   }
 
   #main-badge {
     overflow: hidden;
-    background-color: @tertiary;
+    background-color: @secondary;
 
-    // border-radius: 100%;
+    border: 3px solid black;
+    border-radius: 100%;
   }
-
+  // #ac-logo {
+  //   z-index: 0;
+  //   border: 3px solid @primary;
+  // }
   #menu-icon::before{
     color: transparent;
     background-color: transparent;
@@ -89,7 +83,8 @@ export default {
   #menu-icon {
     display: flex;
     flex-direction: column;
-    background-color: @tertiary;
+    background-color: @secondary;
+    z-index: 1 !important;
 
     .h-bar {
       width: 1.25rem;
