@@ -1,14 +1,16 @@
 <template>
-  <v-btn fab large left absolute bottom :loading="loading" class="outer-border" to="/">
-    <div id="inner-wrapper">
-      <div id="hemi-top">
-        <span>Arjay</span>
+  <div id="logo">
+    <v-btn fab large left absolute bottom :loading="loading" class="outer-border" to="/">
+      <div id="inner-wrapper">
+        <div id="hemi-top">
+          <span>Arjay</span>
+        </div>
+        <div id="hemi-bot">
+          <span>Codes</span>
+        </div>
       </div>
-      <div id="hemi-bot">
-        <span>Codes</span>
-      </div>
-    </div>
-  </v-btn>
+    </v-btn>
+  </div>
 </template>
 
 <script>
@@ -24,46 +26,42 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.outer-border
-  border: 6px solid orange;
-  box-shadow: 0px 0px 2px 2px black;
-  overflow: hidden;
-  padding: 0px;
+<style lang="less" scoped>
+  @primary: rgba(33, 33, 33, 1) !important;
+  @secondary: rgba(255, 166, 0, 1) !important;
+  @tertiary: rgba(145, 198, 250,1 ) !important;
 
-  #inner-wrapper
-    height: 100%;
+  .outer-border {
+    overflow: hidden;
+    padding: 0px;
+    margin: 0px;
+    border: 3px solid @primary;
 
-    #default-image > img
-      border-radius: 100%;
-      width: 100%;
+    #inner-wrapper {
+      height: 100%;
+    }
 
-    #image-wrapper
-      border-radius: 100%;
-      box-shadow: 0px 0px 2px 7px white;
+    #hemi-top {
       display: flex;
-      justify-content: center;
-      img
-        border-radius: 100%;
-        box-shadow: 0px 0px 0px 6px black;
-        width: 100%;
+      flex-direction: column-reverse;
 
+      width: auto;
+      height: 50%;
 
-  #hemi-top
-    display: flex;
-    flex-direction: column-reverse;
-    background-color: #ffffff;
-    color: black;
-    width: auto;
-    height: 50%;
+      background-color: @secondary;
+      color: white;
+    }
 
-  #hemi-bot
-    display: flex;
-    flex-direction: column;
-    background-color: #212121;
-    color: white;
-    width: auto;
-    height: 50%;
-    span
-      margin: 0rem 1rem;
+    #hemi-bot {
+      display: flex;
+      flex-direction: column;
+      background-color: @primary;
+      color: @secondary;
+      width: auto;
+      height: 50%;
+      span {
+        margin: 0rem 1rem;
+      }
+    }
+  }
 </style>
