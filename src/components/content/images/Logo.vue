@@ -1,6 +1,6 @@
 <template>
   <div id="logo">
-    <v-btn fab large :loading="loading" class="outer-border" to="/">
+    <v-btn fab large flat :loading="loading" class="outer-border" to="/">
       <div id="inner-wrapper">
         <div id="hemi-top">
           <span>Arjay</span>
@@ -27,6 +27,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
+  @neutral: rgba(255, 255, 255, 1) !important;
   @primary: rgba(33, 33, 33, 1) !important;
   @secondary: rgba(255, 166, 0, 1) !important;
   @tertiary: rgba(145, 198, 250,1 ) !important;
@@ -35,7 +36,8 @@ export default {
     overflow: hidden;
     padding: 0px;
     margin: 0px;
-    border: 3px solid @primary;
+    border: 2px solid @neutral;
+    box-shadow: 0px 0px 0px 3px @primary;
 
     #inner-wrapper {
       height: 100%;
@@ -49,7 +51,7 @@ export default {
       height: 50%;
 
       background-color: @secondary;
-      color: white;
+      color: @neutral;
     }
 
     #hemi-bot {
