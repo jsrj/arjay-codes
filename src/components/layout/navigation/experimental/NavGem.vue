@@ -12,9 +12,9 @@
         <Logo id="ac-logo" />
         
         <!-- Purely Aesthetic element group -->
-        <Droplet :top-margin="0" />
+        <Droplet :top-margin="1" />
         <Droplet large secondary />
-        <Droplet :bottom-margin="0" />
+        <Droplet :bottom-margin="-2" />
         <!-- Purely Aesthetic element group -->
         <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)">
           <v-sheet id="menu-icon" flat>
@@ -69,6 +69,9 @@ export default {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
+  }
+  #ac-logo {
+    margin-bottom: 3px;
   }
   #menu-badge {
     overflow: hidden;
