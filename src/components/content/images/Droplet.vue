@@ -1,17 +1,11 @@
 <template>
-    <!-- Large w/ Applied colors -->
-    <div v-if="large && primary" class="droplet large primary"></div>
-    <div v-else-if="large && secondary" class="droplet large secondary"></div>
-    <div v-else-if="large && transparent" class="droplet large transparent"></div>
-
-    <!-- Large w/out applied colors -->
-    <div v-else-if="large" class="droplet large"></div>
-
-    <div v-else-if="primary && !secondary" class="droplet primary"></div>
-    <div v-else-if="secondary && !primary" class="droplet secondary"></div>
-
-    <!-- Default droplet -->
-    <div v-else class="droplet"></div>
+  <div 
+    :class="this.dropletClasses" 
+    :style="{
+      marginTop: `${topMarginValue}px`,
+      marginBottom: `${bottomMarginValue}px`
+    }"
+  />
 </template>
 
 <script>
@@ -24,6 +18,24 @@ export default {
     'transparent': Boolean,
     'top-margin': Number,
     'bottom-margin': Number
+  },
+  mounted() {
+    this.dropletClasses = (`
+      droplet ${this.$props.large ? 'large' : ''} ${
+          this.$props.primary ? 'primary' 
+          :
+          this.$props.secondary ? 'secondary'
+          :
+          this.$props.transparent ? 'transparent'
+          : ''
+    }`);                
+  },
+  data() {
+    return {
+      dropletClasses: null,
+      topMarginValue: this.$props.marginTop || 4,
+      bottomMarginValue: this.$props.marginBottom || 4
+    }
   }
 }
 </script>
@@ -47,6 +59,7 @@ export default {
 
   .large {
     padding: @spacingScale * @spacingMultiplier;
+    border: @spacingScale * @spacingMultiplier solid black;
   }
   .primary {
     border-color: black !important;
