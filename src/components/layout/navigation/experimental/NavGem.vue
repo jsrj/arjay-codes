@@ -12,9 +12,9 @@
         <Logo id="ac-logo" />
         
         <!-- Purely Aesthetic element group -->
-        <Droplet :top-margin="1" />
-        <Droplet large secondary v-tooltip.right-end="'PAGE NAME'"/>
-        <Droplet :bottom-margin="-2" />
+        <Droplet class="droplet" :top-margin="1" />
+        <Droplet class="droplet" large secondary v-tooltip.right-end="'PAGE NAME'"/>
+        <Droplet class="droplet" :bottom-margin="-2" />
         <!-- Purely Aesthetic element group -->
         <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)">
           <v-sheet id="menu-icon" flat>
@@ -71,7 +71,15 @@ export default {
     align-items: center;
   }
   #ac-logo {
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
     margin-bottom: 3px;
+  }
+  .droplet {
+    @media screen and (max-width: 800px) {
+      display: none;
+    }
   }
   #menu-badge {
     overflow: hidden;
