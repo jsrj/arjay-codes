@@ -13,7 +13,7 @@
         
         <!-- Purely Aesthetic element group -->
         <Droplet :top-margin="1" />
-        <Droplet large secondary />
+        <Droplet large secondary v-tooltip.right-end="'PAGE NAME'"/>
         <Droplet :bottom-margin="-2" />
         <!-- Purely Aesthetic element group -->
         <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)">
