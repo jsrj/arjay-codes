@@ -21,14 +21,14 @@ export default {
   },
   mounted() {
     this.dropletClasses = (`
-      droplet ${this.$props.large ? 'large' : ''} ${
+      ${this.$props.large ? 'large' : ''} ${
           this.$props.primary ? 'primary' 
           :
           this.$props.secondary ? 'secondary'
           :
           this.$props.transparent ? 'transparent'
           : ''
-    }`);                
+    } droplet`);
   },
   data() {
     return {
