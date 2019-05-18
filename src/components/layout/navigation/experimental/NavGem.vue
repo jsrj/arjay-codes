@@ -13,15 +13,13 @@
         
         <!-- Purely Aesthetic element group -->
         <Droplet class="droplet" />
-        <Droplet class="droplet" large secondary v-tooltip.right-end="'PAGE NAME'"/>
+        <Droplet class="droplet" large secondary v-tooltip.right-end="'PAGE NAME'" />
         <Droplet class="droplet" />
 
         <!-- Purely Aesthetic element group -->
         <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)">
           <v-sheet id="menu-icon" flat>
-            <div class="h-bar"></div>
-            <div class="h-bar"></div>
-            <div class="h-bar"></div>
+            <v-icon name="bars"></v-icon>
           </v-sheet>
         </v-btn>
       </template>
@@ -100,17 +98,6 @@ export default {
     flex-direction: column;
     background-color: @secondary;
     z-index: 1 !important;
-
-    .h-bar {
-      width: 1.25rem;
-      height: 1px;
-
-      margin: 1px;
-      padding: 0px;
-
-      border: 2px solid black;
-      border-radius: 1em;
-    }
   }
 </style>
 
