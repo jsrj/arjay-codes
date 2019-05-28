@@ -15,42 +15,43 @@
         <Droplet class="droplet" />
         <Droplet class="droplet" large secondary v-tooltip.right-end="'PAGE NAME'" />
         <Droplet class="droplet" />
+        
 
-        <!-- Purely Aesthetic element group -->
-        <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)">
-          <v-sheet id="menu-icon" flat>
-            <v-icon name="bars"></v-icon>
-          </v-sheet>
-        </v-btn>
+        <!-- Full Screen Navigation Menu Dialog, Activator and content -->
+        <v-dialog v-model="showMenu" fullscreen>
+          <template v-slot:activator="{ on }">
+            <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)" v-on="on">
+              <v-sheet id="menu-icon" flat>
+                <v-icon name="bars"></v-icon>
+              </v-sheet>
+            </v-btn>
+          </template>
+          <v-btn small fab flat @click="showMenu = false">X</v-btn>
+        </v-dialog>
       </template>
-
-      <!-- NavGem menu items #START -->
-      <!-- <v-btn
-        color="rgba(255, 166, 0, 1)"
-        v-for="n in 4" 
-        :key="n"
-      >
-        <v-icon>ICON_NAME</v-icon>
-      </v-btn> -->
-      <!-- NavGem menu items #END -->
-    </v-speed-dial>
+    </v-speed-dial> 
   </div>
 </template>
 
 <script>
 import Logo from "@/components/content/images/Logo.vue";
 import Droplet from "@/components/content/images/Droplet.vue";
+import { RadialMenu, RadialMenuItem } from "vue-radial-menu";
 
 export default {
   name: "NavGem",
   components: {
     Logo,
-    Droplet
+    Droplet,
+    RadialMenu,
+    RadialMenuItem
   },
   props: {},
   methods: {},
   data () {
-    return {}
+    return {
+      showMenu: false
+    }
   },
   created () {},
   mounted() {}
