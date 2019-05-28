@@ -18,7 +18,7 @@
         
 
         <!-- Full Screen Navigation Menu Dialog, Activator and content -->
-        <v-dialog v-model="showMenu" transition="slide-x-transition" fullscreen>
+        <v-dialog v-model="showMenu" transition="slide-x-transition" fullscreen scrollable>
 
           <!-- Activator -->
           <template v-slot:activator="{ on }">
@@ -31,17 +31,18 @@
           <!-- /Activator -->
           
           <!-- Fullscreen Menu Content -->
-          <v-sheet dark id="menu">
+          <v-card dark id="menu">
             <!-- Close Button -->
-            <v-layout id="close-button-row">
-              <v-btn small fab flat @click="showMenu = false">
+            <v-card-title>
+              <v-btn small fab flat fixed right top @click="showMenu = false">
                 <v-icon name="times" />
               </v-btn>
-            </v-layout>
+            </v-card-title>
+            <!-- </v-layout> -->
             <!-- /Close Button -->
 
             <!-- Links Container -->
-            <v-layout id="menu-links">
+            <v-card-text id="menu-links">
               <v-layout class="link-item">
                 <v-btn>Link</v-btn>
               </v-layout>
@@ -57,16 +58,16 @@
               <v-layout class="link-item">
                 <v-btn>Link</v-btn>
               </v-layout>
-            </v-layout>
+            </v-card-text>
             <!-- /Links Container -->
             
             <!-- Social Links & Message Container -->
-            <v-layout id="menu-footer">
+            <v-card-actions id="menu-footer">
               <v-container fluid id="footer-links"></v-container>
               <v-container fluid id="message"></v-container>
-            </v-layout>
+            </v-card-actions>
             <!-- /Social Links & Message Container -->
-          </v-sheet>
+          </v-card>
           <!-- /Fullscreen Menu Content -->
 
         </v-dialog>
@@ -123,6 +124,7 @@ export default {
   }
 
   #menu {
+    padding-top: 25vh;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
