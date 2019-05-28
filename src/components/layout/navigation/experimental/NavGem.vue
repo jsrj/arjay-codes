@@ -18,7 +18,7 @@
         
 
         <!-- Full Screen Navigation Menu Dialog, Activator and content -->
-        <v-dialog v-model="showMenu" fullscreen>
+        <v-dialog v-model="showMenu" origin="left">
           <template v-slot:activator="{ on }">
             <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)" v-on="on">
               <v-sheet id="menu-icon" flat>
@@ -36,15 +36,12 @@
 <script>
 import Logo from "@/components/content/images/Logo.vue";
 import Droplet from "@/components/content/images/Droplet.vue";
-import { RadialMenu, RadialMenuItem } from "vue-radial-menu";
 
 export default {
   name: "NavGem",
   components: {
     Logo,
-    Droplet,
-    RadialMenu,
-    RadialMenuItem
+    Droplet
   },
   props: {},
   methods: {},
