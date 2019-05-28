@@ -33,7 +33,7 @@
           <!-- Fullscreen Menu Content -->
           <v-card dark id="menu">
             <!-- Close Button -->
-            <v-card-title>
+            <v-card-title id="close-button-row">
               <v-btn small fab flat fixed right top @click="showMenu = false">
                 <v-icon name="times" />
               </v-btn>
@@ -63,8 +63,9 @@
             
             <!-- Social Links & Message Container -->
             <v-card-actions id="menu-footer">
-              <v-container fluid id="footer-links"></v-container>
-              <v-container fluid id="message"></v-container>
+              <v-btn>Social Link</v-btn>
+              <!-- <v-container fluid id="footer-links"></v-container>
+              <v-container fluid id="message"></v-container> -->
             </v-card-actions>
             <!-- /Social Links & Message Container -->
           </v-card>
@@ -131,12 +132,12 @@ export default {
     border-radius: 0px;
 
     #close-button-row {
-      display: flex;
-      flex-flow: row-reverse;
-      width: 100%;
-      padding-bottom: 5%;
+      flex-direction: row-reverse;
+      min-height: 70px;
+      background-color: lime;
     }
     #menu-links {
+      background-color: purple;
       display: flex;
       flex-flow: column;
 
@@ -146,6 +147,7 @@ export default {
       }
     }
     #menu-footer {
+      background-color: orange;
       #footer-links {}
       #message {}
     }
