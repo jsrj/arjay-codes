@@ -143,13 +143,13 @@ export default {
 
     #close-button-row {
       flex-direction: row-reverse;
-      min-height: 70px;
-      background-color: lime;
+      min-height: 50px;
+      max-height: 70px;
     }
     #menu-links {
-      background-color: purple;
       display: flex;
       flex-flow: column;
+      margin: auto 0;
 
       .link-item {
         display: flex;
@@ -157,7 +157,12 @@ export default {
       }
     }
     #menu-footer {
-      background-color: orange;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      max-height: 52px;
       #footer-links {}
       #message {}
     }
