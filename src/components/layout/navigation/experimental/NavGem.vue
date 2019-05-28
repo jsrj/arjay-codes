@@ -18,7 +18,9 @@
         
 
         <!-- Full Screen Navigation Menu Dialog, Activator and content -->
-        <v-dialog v-model="showMenu" origin="left">
+        <v-dialog v-model="showMenu" transition="slide-x-transition" fullscreen>
+
+          <!-- Activator -->
           <template v-slot:activator="{ on }">
             <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)" v-on="on">
               <v-sheet id="menu-icon" flat>
@@ -26,6 +28,24 @@
               </v-sheet>
             </v-btn>
           </template>
+          <!-- /Activator -->
+          
+          <!-- Fullscreen Menu Content -->
+          <v-sheet dark id="menu">
+            <!-- Close Button -->
+            <v-btn small fab flat fixed right top @click="showMenu = false">
+              <v-icon name="times" />
+            </v-btn>
+            <!-- /Close Button -->
+
+            <!-- Links Container -->
+            <!-- /Links Container -->
+            
+            <!-- Social Links & Message Container -->
+            <!-- /Social Links & Message Container -->
+          </v-sheet>
+          <!-- /Fullscreen Menu Content -->
+
         </v-dialog>
       </template>
     </v-speed-dial> 
@@ -66,6 +86,7 @@ export default {
     flex-direction: column;
     align-items: center;
   }
+
   #ac-logo {
     @media screen and (max-width: 800px) {
       display: none;
@@ -76,6 +97,13 @@ export default {
     @media screen and (max-width: 800px) {
       display: none;
     }
+  }
+
+  #menu {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 0px;
   }
   #menu-badge {
     overflow: hidden;
