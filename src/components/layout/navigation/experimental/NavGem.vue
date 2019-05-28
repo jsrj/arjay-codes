@@ -33,15 +33,38 @@
           <!-- Fullscreen Menu Content -->
           <v-sheet dark id="menu">
             <!-- Close Button -->
-            <v-btn small fab flat fixed right top @click="showMenu = false">
-              <v-icon name="times" />
-            </v-btn>
+            <v-layout id="close-button-row">
+              <v-btn small fab flat @click="showMenu = false">
+                <v-icon name="times" />
+              </v-btn>
+            </v-layout>
             <!-- /Close Button -->
 
             <!-- Links Container -->
+            <v-layout id="menu-links">
+              <v-layout class="link-item">
+                <v-btn>Link</v-btn>
+              </v-layout>
+              <v-layout class="link-item">
+                <v-btn>Link</v-btn>
+              </v-layout>
+              <v-layout class="link-item">
+                <v-btn>Link</v-btn>
+              </v-layout>
+              <v-layout class="link-item">
+                <v-btn>Link</v-btn>
+              </v-layout>
+              <v-layout class="link-item">
+                <v-btn>Link</v-btn>
+              </v-layout>
+            </v-layout>
             <!-- /Links Container -->
             
             <!-- Social Links & Message Container -->
+            <v-layout id="menu-footer">
+              <v-container fluid id="footer-links"></v-container>
+              <v-container fluid id="message"></v-container>
+            </v-layout>
             <!-- /Social Links & Message Container -->
           </v-sheet>
           <!-- /Fullscreen Menu Content -->
@@ -104,7 +127,29 @@ export default {
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.9);
     border-radius: 0px;
+
+    #close-button-row {
+      display: flex;
+      flex-flow: row-reverse;
+      width: 100%;
+      padding-bottom: 5%;
+    }
+    #menu-links {
+      display: flex;
+      flex-flow: column;
+
+      .link-item {
+        display: flex;
+        flex-flow: row-reverse;
+      }
+    }
+    #menu-footer {
+      #footer-links {}
+      #message {}
+    }
   }
+
+
   #menu-badge {
     overflow: hidden;
     background-color: @secondary;
