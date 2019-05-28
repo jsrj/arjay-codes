@@ -26,7 +26,6 @@
               </v-sheet>
             </v-btn>
           </template>
-          <v-btn small fab flat @click="showMenu = false">X</v-btn>
         </v-dialog>
       </template>
     </v-speed-dial> 
