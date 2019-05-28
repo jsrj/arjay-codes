@@ -43,20 +43,20 @@
 
             <!-- Links Container -->
             <v-card-text id="menu-links">
-              <v-layout class="link-item">
-                <v-btn>Link</v-btn>
-              </v-layout>
-              <v-layout class="link-item">
-                <v-btn>Link</v-btn>
-              </v-layout>
-              <v-layout class="link-item">
-                <v-btn>Link</v-btn>
-              </v-layout>
-              <v-layout class="link-item">
-                <v-btn>Link</v-btn>
-              </v-layout>
-              <v-layout class="link-item">
-                <v-btn>Link</v-btn>
+              <v-layout
+                v-for="(link, index) in links"
+                :key="`${link.name.toLowerCase()}-${index}`"
+                class="link-item"
+              >
+                <v-btn
+                  append
+                  flat
+                  tag="a"
+                  :to="link.url || '#'"
+                  @click="showMenu = false"
+                >
+                  {{link.name}}
+                </v-btn>
               </v-layout>
             </v-card-text>
             <!-- /Links Container -->
@@ -91,7 +91,17 @@ export default {
   methods: {},
   data () {
     return {
-      showMenu: false
+      showMenu: false,
+      links: [
+        {
+          name: 'Home',
+          url: '/'
+        },
+        {
+          name: 'About',
+          url: '/about'
+        }
+      ]
     }
   },
   created () {},
