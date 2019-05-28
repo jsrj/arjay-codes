@@ -6,7 +6,7 @@
         <img src="@/components/content/images/static/headshot.jpg">
       </div>
       <SocialLinks class="component" />
-      <hr />
+      <v-divider />
       <PortfolioLinks class="component" />
     </div>
     <TopReturnButton />

@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import Vuetify from "vuetify";
 import vueHeadful from "vue-headful";
+import VTooltip from "v-tooltip";
 import AuthPlugin from "./plugins/auth";
 import HighlightJs from "./directives/highlight";
 import Icon from "vue-awesome/components/Icon";
@@ -21,6 +22,7 @@ Vue.config.productionTip = true;
 Vue.use(Vuetify, {
   iconfont: "mdi"
 });
+Vue.use(VTooltip);
 Vue.use(AuthPlugin);
 
 // Vue Directive declarations

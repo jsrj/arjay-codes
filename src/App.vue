@@ -1,18 +1,21 @@
 <template>
   <v-app id="root">
-    <Navbar />
+    <!-- <Navbar /> -->
+    <NavGem />
     <ViewWrapper :title="title" />
   </v-app>
 </template>
 
 <script>
-import Navbar from './components/layout/navigation/Navbar.vue';
+// import Navbar from './components/layout/navigation/Navbar.vue';
+import NavGem from "@/components/layout/navigation/experimental/NavGem.vue";
 import Footer from './components/layout/Footer.vue';
 import ViewWrapper from './components/layout/ViewWrapper.vue';
 
 export default {
   components: {
-    Navbar,
+    // Navbar,
+    NavGem,
     ViewWrapper,
     Footer
   },

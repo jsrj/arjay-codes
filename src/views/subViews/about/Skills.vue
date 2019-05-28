@@ -96,9 +96,6 @@ export default {
           name: "And many more!",
           logoSrc: "https://media.giphy.com/media/qKltgF7Aw515K/giphy.gif",
           descriptionText: [
-            "\"...",
-
-            "...\""
           ]
         }
       ],
