@@ -52,6 +52,7 @@
                   append
                   flat
                   tag="a"
+                  active-class="active-link"
                   :to="link.url || '#'"
                   @click="showMenu = false"
                 >
@@ -154,6 +155,18 @@ export default {
       .link-item {
         display: flex;
         flex-flow: row-reverse;
+      }
+      .link-item > a::before {
+        background-color: transparent;
+      }
+      .link-item > a {
+        border-right: 2px solid @secondary;
+      }
+      .link-item > a:hover {
+        border-color: @tertiary;
+      }
+      .active-link {
+        color: @tertiary;
       }
     }
     #menu-footer {
