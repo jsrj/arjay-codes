@@ -64,7 +64,7 @@
             
             <!-- Social Links & Message Container -->
             <v-card-actions id="menu-footer">
-              <v-btn>Social Link</v-btn>
+              <SocialLinks />
               <!-- <v-container fluid id="footer-links"></v-container>
               <v-container fluid id="message"></v-container> -->
             </v-card-actions>
@@ -81,12 +81,14 @@
 <script>
 import Logo from "@/components/content/images/Logo.vue";
 import Droplet from "@/components/content/images/Droplet.vue";
+import SocialLinks from "@/components/layout/navigation/SocialLinks.vue";
 
 export default {
   name: "NavGem",
   components: {
     Logo,
-    Droplet
+    Droplet,
+    SocialLinks
   },
   props: {},
   methods: {},
@@ -139,7 +141,8 @@ export default {
     padding-top: 25vh;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0.82;
+    background-image: linear-gradient(to right, rgb(74, 154, 245) , rgb(0, 0, 0));
     border-radius: 0px;
 
     #close-button-row {
