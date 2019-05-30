@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.335584a7ed37b84071918f005af67afd.js"
+  "/precache-manifest.683d118ff0bcbd4edbae1da1ff9d128d.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "arjay-codes"});
