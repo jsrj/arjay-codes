@@ -55,6 +55,7 @@
                   active-class="active-link"
                   :to="link.url || '#'"
                   @click="showMenu = false"
+                  :class="link.cta && 'prominent'"
                 >
                   {{link.name}}
                 </v-btn>
@@ -98,11 +99,18 @@ export default {
       links: [
         {
           name: 'Home',
-          url: '/'
+          url: '/',
+          cta: false
         },
         {
           name: 'About',
-          url: '/about'
+          url: '/about',
+          cta: false
+        },
+        {
+          name: 'Get Started',
+          url: '#',
+          cta: true
         }
       ]
     }
@@ -142,7 +150,7 @@ export default {
     width: 100vw;
     height: 100vh;
     opacity: 0.82;
-    background-image: linear-gradient(to right, rgb(74, 154, 245) , rgb(0, 0, 0));
+    background-image: linear-gradient(to right, @secondary , @primary);
     border-radius: 0px;
 
     #close-button-row {
