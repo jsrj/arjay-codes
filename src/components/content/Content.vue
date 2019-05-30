@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import axios from "axios";
 
 export default {
   name: "Content",
@@ -16,8 +15,10 @@ export default {
   methods: {
     getBaconIpsum: async () => {
       try {
-        let baconIpsum = await axios.get('https://baconipsum.com/api/?type=meat-and-filler?paras=1');
-        return baconIpsum.data[0];
+        return await fetch('https://baconipsum.com/api/?type=meat-and-filler?paras=1')
+        .then(response => {
+          return response.json()
+        });
       } catch (e) {
         console.error(e);
       }
@@ -26,7 +27,7 @@ export default {
   beforeMount() {
     if (!this.populateWith) {
       this.getBaconIpsum().then(content => {
-        this.contentText = content;
+        this.contentText = content[0];
       });
     } else {
       this.contentText = this.populateWith;
