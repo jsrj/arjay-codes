@@ -179,6 +179,16 @@ export default {
       .active-link {
         color: @tertiary;
       }
+      .prominent::before {
+        opacity: 1;
+        background-color: @secondary;
+        color: @primary;
+      }
+      .prominent {
+        color: @primary;
+        font-size: 12pt !important;
+        font-weight: 900;
+      }
     }
     #menu-footer {
       position: fixed;
