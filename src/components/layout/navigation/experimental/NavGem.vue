@@ -52,8 +52,10 @@
                   append
                   flat
                   tag="a"
+                  active-class="active-link"
                   :to="link.url || '#'"
                   @click="showMenu = false"
+                  :class="link.cta && 'prominent'"
                 >
                   {{link.name}}
                 </v-btn>
@@ -63,7 +65,7 @@
             
             <!-- Social Links & Message Container -->
             <v-card-actions id="menu-footer">
-              <v-btn>Social Link</v-btn>
+              <SocialLinks />
               <!-- <v-container fluid id="footer-links"></v-container>
               <v-container fluid id="message"></v-container> -->
             </v-card-actions>
@@ -80,12 +82,14 @@
 <script>
 import Logo from "@/components/content/images/Logo.vue";
 import Droplet from "@/components/content/images/Droplet.vue";
+import SocialLinks from "@/components/layout/navigation/SocialLinks.vue";
 
 export default {
   name: "NavGem",
   components: {
     Logo,
-    Droplet
+    Droplet,
+    SocialLinks
   },
   props: {},
   methods: {},
@@ -95,11 +99,18 @@ export default {
       links: [
         {
           name: 'Home',
-          url: '/'
+          url: '/',
+          cta: false
         },
         {
           name: 'About',
-          url: '/about'
+          url: '/about',
+          cta: false
+        },
+        {
+          name: 'Get Started',
+          url: '#',
+          cta: true
         }
       ]
     }
@@ -138,26 +149,54 @@ export default {
     padding-top: 25vh;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.9);
+    opacity: 0.82;
+    background-image: linear-gradient(to right, @secondary , @primary);
     border-radius: 0px;
 
     #close-button-row {
       flex-direction: row-reverse;
-      min-height: 70px;
-      background-color: lime;
+      min-height: 50px;
+      max-height: 70px;
     }
     #menu-links {
-      background-color: purple;
       display: flex;
       flex-flow: column;
+      margin: auto 0;
 
       .link-item {
         display: flex;
         flex-flow: row-reverse;
       }
+      .link-item > a::before {
+        background-color: transparent;
+      }
+      .link-item > a {
+        border-right: 2px solid @secondary;
+      }
+      .link-item > a:hover {
+        border-color: @tertiary;
+      }
+      .active-link {
+        color: @tertiary;
+      }
+      .prominent::before {
+        opacity: 1;
+        background-color: @secondary;
+        color: @primary;
+      }
+      .prominent {
+        color: @primary;
+        font-size: 12pt !important;
+        font-weight: 900;
+      }
     }
     #menu-footer {
-      background-color: orange;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      max-height: 52px;
       #footer-links {}
       #message {}
     }
