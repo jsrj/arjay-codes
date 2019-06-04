@@ -5,16 +5,6 @@
       :subTitle="subTitle" 
       :description="description" 
     />
-    <!-- <Header /> -->
-    <Action />
-    <BaseContent 
-      v-bind:key="index"
-      v-for="(content, index) in contents" 
-      :head="content.head" 
-      :block="content.block" 
-      :index="index"
-    />
-    <LastAction :panels="lastActionPanels" />
   </div>
 </template>
 
@@ -75,5 +65,5 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
+<style lang="less" scoped>
 </style>
