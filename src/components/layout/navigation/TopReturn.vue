@@ -5,7 +5,6 @@
     :fixed="true"
     :right="true"
     :bottom="true"
-    v-on="on"
     v-on:click.native="scrollToTop"
   >
     <v-icon name="chevron-up" />
