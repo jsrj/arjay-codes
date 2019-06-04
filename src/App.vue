@@ -2,7 +2,7 @@
   <v-app id="root">
     <!-- <Navbar /> -->
     <NavGem />
-    <ViewWrapper :title="title" />
+    <router-view :title="title" />
   </v-app>
 </template>
 
@@ -10,13 +10,11 @@
 // import Navbar from './components/layout/navigation/Navbar.vue';
 import NavGem from "@/components/layout/navigation/experimental/NavGem.vue";
 import Footer from './components/layout/Footer.vue';
-import ViewWrapper from './components/layout/ViewWrapper.vue';
 
 export default {
   components: {
     // Navbar,
     NavGem,
-    ViewWrapper,
     Footer
   },
   data() {
