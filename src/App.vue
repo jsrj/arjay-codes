@@ -1,7 +1,7 @@
 <template>
-  <v-app id="root">
-    
-    <!-- Top-Row -->
+  <v-app id="app">
+    <v-container fluid id="root">
+      <!-- Top-Row -->
     <v-layout fluid id="top-row">
       <v-layout id="logo-container">
         <Logo id="ac-logo" />
@@ -33,6 +33,7 @@
       <!-- Right Gutter -->
     </v-layout>
     <!-- Bot-Row -->
+    </v-container>
   </v-app>
 </template>
 
@@ -72,7 +73,7 @@ export default {
   @neutralDarkColor:  rgba(78 , 78 , 78 , 1) !important;
   @primaryColor:      rgba(255, 166, 0  , 1) !important;
   @secondaryColor:    rgba(145, 198, 250, 1) !important;
-  #root {
+  #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -83,6 +84,11 @@ export default {
     background-color: @neutralColor;
     border: 7px solid @neutralLightColor;
     color: @neutralDarkColor;
+
+    #root {
+      margin: 0px;
+      padding: 0px;
+    }
   }
 
   #top-row {
