@@ -19,7 +19,7 @@ export default {
     return {
       dummyLinks: [
         {
-          name: "BIO",
+          name: "ABOUT",
           routeTo: "/about/bio"
         },
         {
@@ -31,16 +31,12 @@ export default {
         //   routeTo: "#"
         // },
         {
-          name: "SKILLS",
-          routeTo: "/about/skills"
+          name: "BLOG",
+          routeTo: "/about/blog"
         },
         {
           name: "CONTACT",
           routeTo: "/about/contact"
-        },
-        {
-          name: "BLOG",
-          routeTo: "/about/blog"
         }
       ]
     }
