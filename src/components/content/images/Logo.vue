@@ -1,6 +1,6 @@
 <template>
   <div id="logo">
-    <v-btn fab large flat :loading="loading" class="outer-border" to="/">
+    <v-btn fab flat fixed top left :loading="loading" class="outer-border" to="/">
       <div id="inner-wrapper">
         <div id="hemi-top">
           <span>Arjay</span>
@@ -32,6 +32,9 @@ export default {
   @secondary: rgba(255, 166, 0, 1) !important;
   @tertiary: rgba(145, 198, 250,1 ) !important;
 
+  span {
+    font-size: 0.8rem;
+  }
   .outer-border {
     overflow: hidden;
     padding: 0px;
