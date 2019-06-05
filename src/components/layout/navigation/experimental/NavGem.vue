@@ -11,18 +11,24 @@
       <template v-slot:activator>
         <Logo id="ac-logo" />
         
-        <!-- Purely Aesthetic element group -->
-        <Droplet class="droplet" />
-        <Droplet class="droplet" large secondary v-tooltip.right-end="'PAGE NAME'" />
-        <Droplet class="droplet" />
+        <!-- <Droplet class="droplet" />
+        <Droplet class="droplet" large secondary />
+        <Droplet class="droplet" /> -->
         
 
         <!-- Full Screen Navigation Menu Dialog, Activator and content -->
-        <v-dialog v-model="showMenu" transition="slide-x-transition" fullscreen scrollable>
+        <v-dialog v-model="showMenu" transition="fade" fullscreen scrollable>
 
           <!-- Activator -->
           <template v-slot:activator="{ on }">
-            <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)" v-on="on">
+            <v-btn 
+              small fab flat fixed right top 
+              id="opener"
+              class="menu-badge"
+              :style="{'display':(!showMenu)? '' : 'none'}" 
+              color="rgba(255, 166, 0, 1)" 
+              v-on="on"
+            >
               <v-sheet id="menu-icon" flat>
                 <v-icon name="bars"></v-icon>
               </v-sheet>
@@ -34,7 +40,7 @@
           <v-card dark id="menu">
             <!-- Close Button -->
             <v-card-title id="close-button-row">
-              <v-btn small fab flat fixed right top @click="showMenu = false">
+              <v-btn small fab flat fixed right top @click="showMenu = false" class="menu-badge">
                 <v-icon name="times" />
               </v-btn>
             </v-card-title>
@@ -128,9 +134,13 @@ export default {
   @scaleY: 10vh;
 
   #container {
-    display: inline-flex;
+    display: flex;
     flex-direction: column;
+    flex-grow: 1;
     align-items: center;
+    height: 100vh;
+    top: 5px;
+    left: 5px;
   }
 
   #ac-logo {
@@ -203,14 +213,19 @@ export default {
   }
 
 
-  #menu-badge {
+  .menu-badge {
     overflow: hidden;
+    opacity: 1;
     background-color: @secondary;
 
     margin: 0px;
 
     border: 3px solid black;
     border-radius: 100%;
+    color: @primary !important;
+  }
+  #opener {
+    // top: 45%;
   }
   #menu-icon::before{
     color: transparent;
