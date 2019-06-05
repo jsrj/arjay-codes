@@ -9,7 +9,6 @@
     >
       <!-- NavGem primary display element -->
       <template v-slot:activator>
-        <Logo id="ac-logo" />
         
         <!-- <Droplet class="droplet" />
         <Droplet class="droplet" large secondary />
