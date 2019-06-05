@@ -1,27 +1,16 @@
 <template>
   <div id="nav-gem">
     <!-- Positioning and behavior element -->
-    <v-speed-dial fixed top left
-      id="container"
-      direction="right"
-      transition="slide-x"
-      :open-on-hover="true"
-    >
+    <v-container>
       <!-- NavGem primary display element -->
       <template v-slot:activator>
-        
-        <!-- <Droplet class="droplet" />
-        <Droplet class="droplet" large secondary />
-        <Droplet class="droplet" /> -->
-        
-
         <!-- Full Screen Navigation Menu Dialog, Activator and content -->
         <v-dialog v-model="showMenu" transition="fade" fullscreen scrollable>
 
           <!-- Activator -->
           <template v-slot:activator="{ on }">
             <v-btn 
-              small fab flat fixed right top 
+              small fab flat
               id="opener"
               class="menu-badge"
               :style="{'display':(!showMenu)? '' : 'none'}" 
@@ -39,7 +28,7 @@
           <v-card dark id="menu">
             <!-- Close Button -->
             <v-card-title id="close-button-row">
-              <v-btn small fab flat fixed right top @click="showMenu = false" class="menu-badge">
+              <v-btn small fab flat @click="showMenu = false" class="menu-badge">
                 <v-icon name="times" />
               </v-btn>
             </v-card-title>
@@ -80,7 +69,7 @@
 
         </v-dialog>
       </template>
-    </v-speed-dial> 
+    </v-container> 
   </div>
 </template>
 
@@ -133,13 +122,13 @@ export default {
   @scaleY: 10vh;
 
   #container {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    align-items: center;
-    height: 100vh;
-    top: 5px;
-    left: 5px;
+    // display: flex;
+    // flex-direction: column;
+    // flex-grow: 1;
+    // align-items: center;
+    // height: 100vh;
+    // top: 5px;
+    // left: 5px;
   }
 
   #ac-logo {
