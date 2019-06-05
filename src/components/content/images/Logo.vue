@@ -50,15 +50,15 @@ export default {
       width: auto;
       height: 50%;
 
-      background-color: @secondary;
-      color: @neutral;
+      background-color: @neutral;
+      color: @primary;
     }
 
     #hemi-bot {
       display: flex;
       flex-direction: column;
-      background-color: @primary;
-      color: @secondary;
+      background-color: orangered;
+      color: @neutral;
       width: auto;
       height: 50%;
       span {
