@@ -2,12 +2,9 @@
 <v-container>
   <v-btn fab small flat
     id="back-to-top"
-    :fixed="true"
-    :right="true"
-    :bottom="true"
     v-on:click.native="scrollToTop"
   >
-    <v-icon name="chevron-up" />
+    <v-icon name="level-up-alt" />
   </v-btn>
 </v-container>
 </template>
