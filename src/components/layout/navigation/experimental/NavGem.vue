@@ -1,7 +1,7 @@
 <template>
   <div id="nav-gem">
     <!-- Positioning and behavior element -->
-    <v-container>
+    <v-speed-dial id="container">
       <!-- NavGem primary display element -->
       <template v-slot:activator>
         <!-- Full Screen Navigation Menu Dialog, Activator and content -->
@@ -69,7 +69,7 @@
 
         </v-dialog>
       </template>
-    </v-container> 
+    </v-speed-dial> 
   </div>
 </template>
 
