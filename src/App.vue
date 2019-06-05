@@ -2,37 +2,37 @@
   <v-app id="app">
     <v-container fluid id="root">
       <!-- Top-Row -->
-    <v-layout fluid id="top-row">
-      <v-layout id="logo-container">
-        <Logo id="ac-logo" />
-      </v-layout>
-      <v-layout id="navg-container">
-        <NavGem />
-      </v-layout>
-    </v-layout>
-    <!-- Top-Row -->
+      <v-container fluid id="top-row">
+        <v-layout id="logo-container">
+          <Logo id="ac-logo" />
+        </v-layout>
+        <v-layout id="navg-container">
+          <NavGem />
+        </v-layout>
+      </v-container>
+      <!-- Top-Row -->
 
-    <!-- Bot-Row -->
-    <v-layout id="bot-row">
-      <!-- Left Gutter -->
-      <v-layout id="left" class="gutter">
-        <TopReturn />
-      </v-layout>
-      <!-- Left Gutter -->
+      <!-- Bot-Row -->
+      <v-container fluid id="bot-row">
+        <!-- Left Gutter -->
+        <v-layout id="left" class="gutter">
+          <TopReturn />
+        </v-layout>
+        <!-- Left Gutter -->
 
-      <!-- Center Content -->
-      <v-layout fluid id="center-content">
-        <router-view :title="title" />
-      </v-layout>
-      <!-- Center Content -->
+        <!-- Center Content -->
+        <v-layout id="center-content">
+          <router-view :title="title" />
+        </v-layout>
+        <!-- Center Content -->
 
-      <!-- Right Gutter -->
-      <v-layout id="right" class="gutter">
+        <!-- Right Gutter -->
+        <v-layout id="right" class="gutter">
 
-      </v-layout>
-      <!-- Right Gutter -->
-    </v-layout>
-    <!-- Bot-Row -->
+        </v-layout>
+        <!-- Right Gutter -->
+      </v-container>
+      <!-- Bot-Row -->
     </v-container>
   </v-app>
 </template>
@@ -79,7 +79,7 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
 
-    height: 100vh !important;
+    // height: 100vh !important;
 
     background-color: @neutralColor;
     border: 7px solid @neutralLightColor;
@@ -95,7 +95,6 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-
     margin: 0px;
     padding: 0px;
     border: 2px solid blue;
@@ -113,9 +112,7 @@ export default {
   #bot-row {
     display: flex;
     flex-direction: row;
-
     padding: 0px;
-
     border: 2px solid red;
 
     .gutter {
