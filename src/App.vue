@@ -19,29 +19,7 @@ export default {
   },
   data() {
     return {
-      title: "Arjay | Codes",
-      socialLinks: [
-        {
-          name: 'Facebook',
-          href: 'https://www.facebook.com/arjay.codes/',
-          iconName: ''
-        },
-        {
-          name: 'Twitter',
-          href: 'https://twitter.com/codesarjay',
-          iconName: ''
-        },
-        {
-          name: 'Instagram',
-          href: 'https://www.instagram.com/arjay.codes/',
-          iconName: ''
-        },
-        {
-          name: 'Github',
-          href: 'https://github.com/jsrj',
-          iconName: ''
-        }
-      ]
+      title: "Arjay | Codes"
     }
   },
   async created() {
@@ -64,5 +42,6 @@ export default {
   text-align: center;
   color: #2c3e50;
   height: 100% !important;
+  /* background-color: rgba(98, 27, 193, 1); */
 }
 </style>
