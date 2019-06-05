@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div id="home">
     <Meta 
       :title="title" 
       :subTitle="subTitle" 
@@ -10,19 +10,11 @@
 
 <script>
 // @ is an alias to /src
-import Header from '../components/layout/Header.vue';
-import Action from '../components/layout/Action.vue';
-import BaseContent from '../components/content/BaseContent.vue';
-import LastAction from '@/components/layout/LastAction.vue';
 import Meta from '../components/helpers/Meta.vue';
 
 export default {
   name: "Home",
   components: {
-    Header,
-    Action,
-    BaseContent,
-    LastAction,
     Meta
   },
   props: {
@@ -65,5 +57,10 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+  #home {
+    width: 100vw;
+    height: 100vh;
+    // background-color: #366ed8;
+  }
 </style>
