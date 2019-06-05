@@ -35,12 +35,17 @@ export default {
   span {
     font-size: 0.8rem;
   }
+  .outer-border:hover {
+    transform: rotate(0deg);
+    transition: transform 0.4s;
+  }
   .outer-border {
     overflow: hidden;
     padding: 0px;
     margin: 0px;
     border: 2px solid @neutral;
     box-shadow: 0px 0px 0px 3px @primary;
+    transform: rotate(-45deg);
 
     #inner-wrapper {
       height: 100%;
