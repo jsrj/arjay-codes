@@ -1,12 +1,12 @@
 <template>
-<v-container>
-  <v-btn fab small flat
-    id="back-to-top"
-    v-on:click.native="scrollToTop"
-  >
-    <v-icon name="level-up-alt" />
-  </v-btn>
-</v-container>
+  <v-layout>
+    <v-btn fab small flat
+      id="back-to-top"
+      v-on:click.native="scrollToTop"
+    >
+      <v-icon name="level-up-alt" />
+    </v-btn>
+  </v-layout>
 </template>
 
 <script>
@@ -26,20 +26,20 @@ export default {
 
 <style lang="less" scoped>
   @primary: rgba(51, 51, 51, 1);
-  @secondary: rgba(255, 166, 0, 1);
+  @highlight: rgba(255, 166, 0, 1);
 
   #back-to-top::before {
     color: transparent !important;
     background-color: transparent !important;
   }
   #back-to-top {
-    color: @secondary;
-    background-color: @primary;
-  }
-  #back-to-top:hover {
+    margin: 0 auto;
     color: @primary;
-    background-color: @secondary;
   }
+  // #back-to-top:hover {
+  //   color: @primary;
+  //   background-color: @secondary;
+  // }
 </style>
 
 
