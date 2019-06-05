@@ -1,19 +1,19 @@
 <template>
   <v-app id="root">
-
+    
     <!-- Top-Row -->
-    <v-container fluid id="top-row">
-      <v-container id="logo-container">
+    <v-layout fluid id="top-row">
+      <v-layout id="logo-container">
         <Logo id="ac-logo" />
-      </v-container>
-      <v-container id="navg-container">
+      </v-layout>
+      <v-layout id="navg-container">
         <NavGem />
-      </v-container>
-    </v-container>
+      </v-layout>
+    </v-layout>
     <!-- Top-Row -->
 
     <!-- Bot-Row -->
-    <v-container fluid id="bot-row">
+    <v-layout id="bot-row">
       <!-- Left Gutter -->
       <v-layout id="left" class="gutter">
         <TopReturn />
@@ -28,10 +28,10 @@
 
       <!-- Right Gutter -->
       <v-layout id="right" class="gutter">
-        <TopReturn />
+
       </v-layout>
       <!-- Right Gutter -->
-    </v-container>
+    </v-layout>
     <!-- Bot-Row -->
   </v-app>
 </template>
@@ -78,6 +78,8 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
 
+    height: 100vh !important;
+
     background-color: @neutralColor;
     border: 7px solid @neutralLightColor;
     color: @neutralDarkColor;
@@ -87,7 +89,10 @@ export default {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    border: 2px solid black;
+
+    margin: 0px;
+    padding: 0px;
+    border: 2px solid blue;
 
     #logo-container {
       display: flex;
@@ -105,25 +110,28 @@ export default {
 
     padding: 0px;
 
-    border: 2px solid black;
+    border: 2px solid red;
 
     .gutter {
       display: flex;
-      flex-direction: column;
       flex: 1;
 
       margin: 0px;
       padding: 0px;
 
-      width: 100px !important;
-      border: 2px solid black;
+      border: 2px solid orange;
     }
-    #left {}
+    #left {
+      display: flex;
+      flex-direction: column-reverse;
+      justify-content: flex-start;
+    }
     #right {}
     #center-content {
       flex: 15;
       margin: 0px;
       padding: 0px;
+      border: 2px solid lime;
     }
   }
 </style>
