@@ -43,9 +43,8 @@
       <!-- Center Content -->
       <!-- Right Gutter -->
       <v-layout id="right" class="gutter">
-        <!-- Navigation & Hamburger -->
-        <!-- <PortfolioLinks v-if="windowWidth > 600" /> -->
-        <NavGem />
+        <!-- Navigation & Hamburger -->   
+        <NavGem id="nav" />
         <!-- Navigation & Hamburger -->
       </v-layout>
       <!-- Right Gutter -->
@@ -152,9 +151,22 @@ export default {
       flex: 0.5 0;
     }
   }
+  @media screen and (max-width: 600px) {
+    #right {
+      padding: 0px 6px;
+      border-left: 2px dotted @neutralDarkColor;
+    }
+  }
   #right {
     display: flex;
     flex-direction: column;
+    flex: 1;
+    #nav {
+      margin-top: 45vh;
+      display: flex;
+      // transform: rotate(90deg);
+      z-index: 2;
+    }
   }
   #right > * {
     flex: 1;
@@ -164,5 +176,9 @@ export default {
     margin: 0px;
     padding: 0px;
     max-height: 98vh;
+    overflow: scroll;
+    scrollbar-width: 0px;
+    scrollbar-base-color: transparent;
+    scrollbar-color: transparent;
   }
 </style>
