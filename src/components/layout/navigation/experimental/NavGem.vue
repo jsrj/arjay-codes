@@ -9,9 +9,8 @@
 
           <!-- Activator -->
           <template v-slot:activator="{ on }">
-            <v-btn fab flat
+            <v-btn fab flat small
               id="opener"
-              class="menu-badge"
               :style="{'display':(!showMenu)? '' : 'none'}" 
               color="rgba(255, 166, 0, 1)" 
               v-on="on"
@@ -130,18 +129,6 @@ export default {
     // left: 5px;
   }
 
-  #ac-logo {
-    @media screen and (max-width: 800px) {
-      display: none;
-    }
-    margin: 3px;
-  }
-  .droplet {
-    @media screen and (max-width: 800px) {
-      display: none;
-    }
-  }
-
   #menu {
     padding-top: 25vh;
     width: 100vw;
@@ -205,8 +192,6 @@ export default {
     opacity: 1;
     background-color: @secondary;
 
-    margin: 0px;
-
     border: 3px solid black;
     border-radius: 100%;
     color: @primary !important;
@@ -221,7 +206,7 @@ export default {
   #menu-icon {
     display: flex;
     flex-direction: column;
-    background-color: @secondary;
+    background-color: transparent;
     z-index: 1 !important;
   }
 </style>
