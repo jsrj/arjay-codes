@@ -82,11 +82,15 @@ export default {
 
 <style lang="less">
   @neutralLightColor: rgba(245, 245, 245, 1) !important;
-  @neutralColor:      rgba(246, 238, 227, 1) !important;
+  @neutralColor:      rgba(256, 238, 207, 1) !important;
   @detailColor:       rgba(232, 60 , 56 , 1) !important;
   @neutralDarkColor:  rgba(78 , 78 , 78 , 1) !important;
   @primaryColor:      rgba(255, 166, 0  , 1) !important;
   @secondaryColor:    rgba(145, 198, 250, 1) !important;
+
+  body {
+    background-color: @neutralLightColor;
+  }
   #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -98,6 +102,7 @@ export default {
 
     background-color: @neutralColor;
     border: 7px solid @neutralLightColor;
+    border-radius: 25px;
     color: @neutralDarkColor;
 
     #root {
@@ -118,6 +123,7 @@ export default {
     border: 2px solid orange;
   }
   #left {
+    border: none;
     #logo {
       flex: 1 0;
     }
