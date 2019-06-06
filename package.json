@@ -67,7 +67,7 @@
     "vue-template-compiler": "^2.5.21"
   },
   "prettier": {
-    "singleQuote": false,
+    "singleQuote": true,
     "semi": true
   },
   "eslintConfig": {

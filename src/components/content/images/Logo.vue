@@ -1,6 +1,6 @@
 <template>
   <div id="logo">
-    <v-btn fab large flat :loading="loading" class="outer-border" to="/">
+    <v-btn app fab flat :loading="loading" class="outer-border" to="/">
       <div id="inner-wrapper">
         <div id="hemi-top">
           <span>Arjay</span>
@@ -32,12 +32,18 @@ export default {
   @secondary: rgba(255, 166, 0, 1) !important;
   @tertiary: rgba(145, 198, 250,1 ) !important;
 
+  span {
+    font-size: 0.8rem;
+  }
+  .outer-border:hover {
+    transform: rotate(0deg);
+    transition: transform 0.4s;
+  }
   .outer-border {
     overflow: hidden;
-    padding: 0px;
-    margin: 0px;
     border: 2px solid @neutral;
     box-shadow: 0px 0px 0px 3px @primary;
+    transform: rotate(-45deg);
 
     #inner-wrapper {
       height: 100%;
@@ -50,15 +56,15 @@ export default {
       width: auto;
       height: 50%;
 
-      background-color: @secondary;
-      color: @neutral;
+      background-color: @neutral;
+      color: @primary;
     }
 
     #hemi-bot {
       display: flex;
       flex-direction: column;
-      background-color: @primary;
-      color: @secondary;
+      background-color: orangered;
+      color: @neutral;
       width: auto;
       height: 50%;
       span {

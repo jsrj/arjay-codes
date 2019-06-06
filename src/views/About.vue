@@ -1,16 +1,15 @@
 <template>
-  <div class="about">
+  <v-container class="about">
     <div id="column-container">
-      <router-view />
+    <h1>ABOUT ME</h1>
+    <Content />
+    <Content />
+      <v-divider />
       <div id="headshot" class="component">
         <img src="@/components/content/images/static/headshot.jpg">
       </div>
-      <SocialLinks class="component" />
-      <v-divider />
-      <PortfolioLinks class="component" />
     </div>
-    <TopReturnButton />
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -72,16 +71,16 @@ export default {
   /* Styles by ID      */
   #column-container {
     margin: @centered;
-    padding: 0px 6vw;
-    width: @innerContentWidth;
+    // padding: 0px 6vw;
+    // width: @innerContentWidth;
   }
 
   #headshot {
     display: flex;
     height: 100%;
     width: @headshotWidth;
-
     margin: @centered;
+    margin-top: 25px;
     padding: @outerPadding;
 
     overflow: hidden;

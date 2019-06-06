@@ -51,7 +51,6 @@ export default {
     height: @spacingScale;
 
     padding: @spacingScale / @spacingMultiplier;
-    margin: @spacingScale * @spacingMultiplier;
     background-color: black;
     border: @spacingScale solid black;
     border-radius: 100%;

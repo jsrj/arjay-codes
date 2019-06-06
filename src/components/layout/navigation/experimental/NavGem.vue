@@ -1,28 +1,20 @@
 <template>
   <div id="nav-gem">
     <!-- Positioning and behavior element -->
-    <v-speed-dial fixed top left
-      id="container"
-      direction="right"
-      transition="slide-x"
-      :open-on-hover="true"
-    >
+    <v-speed-dial app id="container">
       <!-- NavGem primary display element -->
       <template v-slot:activator>
-        <Logo id="ac-logo" />
-        
-        <!-- Purely Aesthetic element group -->
-        <Droplet class="droplet" />
-        <Droplet class="droplet" large secondary v-tooltip.right-end="'PAGE NAME'" />
-        <Droplet class="droplet" />
-        
-
         <!-- Full Screen Navigation Menu Dialog, Activator and content -->
-        <v-dialog v-model="showMenu" transition="slide-x-transition" fullscreen scrollable>
+        <v-dialog v-model="showMenu" transition="fade" fullscreen scrollable>
 
           <!-- Activator -->
           <template v-slot:activator="{ on }">
-            <v-btn small fab flat id="menu-badge" color="rgba(255, 166, 0, 1)" v-on="on">
+            <v-btn fab flat small
+              id="opener"
+              :style="{'display':(!showMenu)? '' : 'none'}" 
+              color="rgba(255, 166, 0, 1)" 
+              v-on="on"
+            >
               <v-sheet id="menu-icon" flat>
                 <v-icon name="bars"></v-icon>
               </v-sheet>
@@ -34,7 +26,7 @@
           <v-card dark id="menu">
             <!-- Close Button -->
             <v-card-title id="close-button-row">
-              <v-btn small fab flat fixed right top @click="showMenu = false">
+              <v-btn small fab flat @click="showMenu = false" class="menu-badge">
                 <v-icon name="times" />
               </v-btn>
             </v-card-title>
@@ -65,7 +57,7 @@
             
             <!-- Social Links & Message Container -->
             <v-card-actions id="menu-footer">
-              <SocialLinks />
+              <!-- <SocialLinks /> -->
               <!-- <v-container fluid id="footer-links"></v-container>
               <v-container fluid id="message"></v-container> -->
             </v-card-actions>
@@ -128,21 +120,13 @@ export default {
   @scaleY: 10vh;
 
   #container {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #ac-logo {
-    @media screen and (max-width: 800px) {
-      display: none;
-    }
-    margin: 3px;
-  }
-  .droplet {
-    @media screen and (max-width: 800px) {
-      display: none;
-    }
+    // display: flex;
+    // flex-direction: column;
+    // flex-grow: 1;
+    // align-items: center;
+    // height: 100vh;
+    // top: 5px;
+    // left: 5px;
   }
 
   #menu {
@@ -150,7 +134,7 @@ export default {
     width: 100vw;
     height: 100vh;
     opacity: 0.82;
-    background-image: linear-gradient(to right, @secondary , @primary);
+    background-image: linear-gradient(to right, @tertiary , transparent);
     border-radius: 0px;
 
     #close-button-row {
@@ -203,14 +187,17 @@ export default {
   }
 
 
-  #menu-badge {
+  .menu-badge {
     overflow: hidden;
+    opacity: 1;
     background-color: @secondary;
-
-    margin: 0px;
 
     border: 3px solid black;
     border-radius: 100%;
+    color: @primary !important;
+  }
+  #opener {
+    // top: 45%;
   }
   #menu-icon::before{
     color: transparent;
@@ -219,7 +206,7 @@ export default {
   #menu-icon {
     display: flex;
     flex-direction: column;
-    background-color: @secondary;
+    background-color: transparent;
     z-index: 1 !important;
   }
 </style>
