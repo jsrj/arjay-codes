@@ -1,38 +1,50 @@
 <template>
   <v-app id="app">
     <v-container fluid id="root">
-      <!-- Top-Row -->
-      <v-container fluid id="top-row">
-        <v-layout id="logo-container">
-          <Logo id="ac-logo" />
+      <!-- Left Gutter -->
+      <v-layout fluid id="left" class="gutter">
+        <!-- Logo -->
+        <v-layout id="logo">
+          <Logo />
         </v-layout>
-        <v-layout id="navg-container">
-          <NavGem />
-        </v-layout>
-      </v-container>
-      <!-- Top-Row -->
+        <!-- Logo -->
 
-      <!-- Bot-Row -->
-      <v-container fluid id="bot-row">
-        <!-- Left Gutter -->
-        <v-layout id="left" class="gutter">
+        <!-- Vertical Social Links -->
+        <v-layout id="vertical-social-links">
+          <span class="social-link">
+            <strong>FB</strong>
+          </span>
+          <Droplet secondary />
+          <span class="social-link">
+            <strong>IG</strong>
+          </span>
+          <droplet primary />
+          <span class="social-link">
+            <strong>GH</strong>
+          </span>
+          <Droplet secondary />
+          <span class="social-link">
+            <strong>LI</strong>
+          </span>
+        </v-layout>
+        <!-- Vertical Social Links -->
+
+        <!-- Top Return -->
+        <v-layout id="top-return">
           <TopReturn />
         </v-layout>
-        <!-- Left Gutter -->
-
-        <!-- Center Content -->
-        <v-layout id="center-content">
-          <router-view :title="title" />
-        </v-layout>
-        <!-- Center Content -->
-
-        <!-- Right Gutter -->
-        <v-layout id="right" class="gutter">
-
-        </v-layout>
-        <!-- Right Gutter -->
-      </v-container>
-      <!-- Bot-Row -->
+        <!-- Top Return -->
+      </v-layout>
+      <!-- Left Gutter -->
+      <!-- Center Content -->
+      <v-layout id="center-content">
+        <router-view :title="title" />
+      </v-layout>
+      <!-- Center Content -->
+      <!-- Right Gutter -->
+      <v-layout id="right" class="gutter">
+      </v-layout>
+      <!-- Right Gutter -->
     </v-container>
   </v-app>
 </template>
@@ -40,12 +52,14 @@
 <script>
 // import Navbar from './components/layout/navigation/Navbar.vue';
 import Logo   from './components/content/images/Logo.vue';
-import NavGem from "@/components/layout/navigation/experimental/NavGem.vue";
+import Droplet from './components/content/images/Droplet.vue';
+import NavGem from './components/layout/navigation/experimental/NavGem.vue';
 import TopReturn from './components/layout/navigation/TopReturn.vue';
 
 export default {
   components: {
     Logo,
+    Droplet,
     NavGem,
     TopReturn
   },
@@ -79,62 +93,60 @@ export default {
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
 
-    // height: 100vh !important;
+    height: 100vh !important;
+    overflow: hidden;
 
     background-color: @neutralColor;
     border: 7px solid @neutralLightColor;
     color: @neutralDarkColor;
 
     #root {
-      margin: 0px;
-      padding: 0px;
-    }
-  }
-
-  #top-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    margin: 0px;
-    padding: 0px;
-    border: 2px solid blue;
-
-    #logo-container {
       display: flex;
       flex-direction: row;
-    }
-    #navg-container {
-      display: flex;
-      flex-direction: row-reverse;
+      margin: 0px;
+      padding: 0px;
     }
   }
 
-  #bot-row {
-    display: flex;
-    flex-direction: row;
+  .gutter {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    max-width: 72px;
+    max-height: 98vh;
+    border: 2px solid orange;
+  }
+  #left {
+    #logo {
+      flex: 1 0;
+    }
+    #vertical-social-links {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 15 0;
+      z-index: 2;
+      .social-link {
+        font-family: 'Share Tech Mono', monospace;
+        // font-family: 'Major Mono Display', monospace;
+        transform: rotate(90deg);
+      }
+      .droplet {
+        margin: 0px;
+      }
+    }
+    #top-return {
+      flex: 0.5 0;
+    }
+  }
+  #right {}
+  #center-content {
+    flex: 15;
+    margin: 0px;
     padding: 0px;
-    border: 2px solid red;
-
-    .gutter {
-      display: flex;
-      flex: 1;
-
-      margin: 0px;
-      padding: 0px;
-
-      border: 2px solid orange;
-    }
-    #left {
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: flex-start;
-    }
-    #right {}
-    #center-content {
-      flex: 15;
-      margin: 0px;
-      padding: 0px;
-      border: 2px solid lime;
-    }
+    max-height: 98vh;
+    border: 2px solid lime;
   }
 </style>
