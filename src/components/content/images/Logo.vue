@@ -1,6 +1,6 @@
 <template>
   <div id="logo">
-    <v-btn fab flat :loading="loading" class="outer-border" to="/">
+    <v-btn app fab flat :loading="loading" class="outer-border" to="/">
       <div id="inner-wrapper">
         <div id="hemi-top">
           <span>Arjay</span>
@@ -41,8 +41,6 @@ export default {
   }
   .outer-border {
     overflow: hidden;
-    padding: 0px;
-    margin: 0px;
     border: 2px solid @neutral;
     box-shadow: 0px 0px 0px 3px @primary;
     transform: rotate(-45deg);
