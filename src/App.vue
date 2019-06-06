@@ -43,6 +43,10 @@
       <!-- Center Content -->
       <!-- Right Gutter -->
       <v-layout id="right" class="gutter">
+        <!-- Navigation & Hamburger -->
+        <!-- <PortfolioLinks v-if="windowWidth > 600" /> -->
+        <NavGem />
+        <!-- Navigation & Hamburger -->
       </v-layout>
       <!-- Right Gutter -->
     </v-container>
@@ -54,6 +58,7 @@
 import Logo   from './components/content/images/Logo.vue';
 import Droplet from './components/content/images/Droplet.vue';
 import NavGem from './components/layout/navigation/experimental/NavGem.vue';
+import PortfolioLinks from './components/layout/navigation/sublinks/PortfolioSublinks.vue';
 import TopReturn from './components/layout/navigation/TopReturn.vue';
 
 export default {
@@ -61,11 +66,13 @@ export default {
     Logo,
     Droplet,
     NavGem,
+    PortfolioLinks,
     TopReturn
   },
   data() {
     return {
-      title: "Arjay | Codes"
+      title: "Arjay | Codes",
+      windowWidth: (window.innerWidth > 0) ? window.innerWidth : screen.width
     }
   },
   async created() {
@@ -120,10 +127,8 @@ export default {
     flex: 1;
     max-width: 72px;
     max-height: 98vh;
-    border: 2px solid orange;
   }
   #left {
-    border: none;
     #logo {
       flex: 1 0;
     }
@@ -147,12 +152,17 @@ export default {
       flex: 0.5 0;
     }
   }
-  #right {}
+  #right {
+    display: flex;
+    flex-direction: column;
+  }
+  #right > * {
+    flex: 1;
+  }
   #center-content {
     flex: 15;
     margin: 0px;
     padding: 0px;
     max-height: 98vh;
-    border: 2px solid lime;
   }
 </style>
