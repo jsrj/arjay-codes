@@ -1,9 +1,18 @@
 <template>
-  <div id="portfolio-sublinks">
-    <v-btn append flat :ripple="false" :value="1" class="link" active-class="link btn-active" v-for="(link, index) in dummyLinks" :key="index" tag="a" :to="link.routeTo">
-      <span>{{link.name}}</span>
+  <v-layout id="portfolio-sublinks">
+    <v-btn append flat 
+      :ripple="false" 
+      :value="1" 
+      class="link" 
+      active-class="link btn-active" 
+      v-for="(link, index) in dummyLinks" 
+        :key="index" 
+      tag="a" 
+      :to="link.routeTo"
+    >
+      <strong><span>{{link.name}}</span></strong>
     </v-btn>
-  </div>
+  </v-layout>
 </template>
 
 <script>
@@ -60,11 +69,21 @@ export default {
     color: @tertiary;
     background-color: @primary;
   }
+  .link {
+    font-family: 'Share Tech Mono', monospace;
+  }
   .btn-active {
     color: @primary;
     background-color: @secondary;
   }
   /* Styles by ID      */
+  #portfolio-sublinks {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    right: 0;
+    flex: 1;
+  }
 </style>
 
 
