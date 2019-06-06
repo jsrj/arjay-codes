@@ -57,7 +57,7 @@
             
             <!-- Social Links & Message Container -->
             <v-card-actions id="menu-footer">
-              <SocialLinks />
+              <!-- <SocialLinks /> -->
               <!-- <v-container fluid id="footer-links"></v-container>
               <v-container fluid id="message"></v-container> -->
             </v-card-actions>
@@ -134,7 +134,7 @@ export default {
     width: 100vw;
     height: 100vh;
     opacity: 0.82;
-    background-image: linear-gradient(to right, @secondary , @primary);
+    background-image: linear-gradient(to right, @tertiary , transparent);
     border-radius: 0px;
 
     #close-button-row {
