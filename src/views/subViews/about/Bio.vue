@@ -1,8 +1,6 @@
 <template>
   <div id="about-bio">
-    <h1>ABOUT ME</h1>
-    <Content />
-    <Content />
+
   </div>
 </template>
 
