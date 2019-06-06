@@ -1,6 +1,9 @@
 <template>
   <v-container class="about">
     <div id="column-container">
+    <h1>ABOUT ME</h1>
+    <Content />
+    <Content />
       <v-divider />
       <div id="headshot" class="component">
         <img src="@/components/content/images/static/headshot.jpg">
