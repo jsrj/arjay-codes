@@ -47,7 +47,7 @@
                   active-class="active-link"
                   :to="link.url || '#'"
                   @click="showMenu = false"
-                  :class="link.cta && 'prominent'"
+                  :class="`menu-link ${link.cta && 'prominent'}`"
                 >
                   {{link.name}}
                 </v-btn>
@@ -100,8 +100,23 @@ export default {
           cta: false
         },
         {
-          name: 'Get Started',
-          url: '#',
+          name: "PROJECTS",
+          url: "/about/projects",
+          cta: false
+        },
+        {
+          name: "SERVICES",
+          url: "#",
+          cta: false
+        },
+        {
+          name: "BLOG",
+          url: "/about/blog",
+          cta: false
+        },
+        {
+          name: "GET IN TOUCH",
+          url: "/about/contact",
           cta: true
         }
       ]
