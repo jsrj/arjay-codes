@@ -1,13 +1,12 @@
 <template>
-  <div class="about">
+  <v-container class="about">
     <div id="column-container">
-      <router-view />
       <v-divider />
       <div id="headshot" class="component">
         <img src="@/components/content/images/static/headshot.jpg">
       </div>
     </div>
-  </div>
+  </v-container>
 </template>
 
 <script>
@@ -69,8 +68,8 @@ export default {
   /* Styles by ID      */
   #column-container {
     margin: @centered;
-    padding: 0px 6vw;
-    width: @innerContentWidth;
+    // padding: 0px 6vw;
+    // width: @innerContentWidth;
   }
 
   #headshot {
