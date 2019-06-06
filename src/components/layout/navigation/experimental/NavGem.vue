@@ -1,7 +1,7 @@
 <template>
   <div id="nav-gem">
     <!-- Positioning and behavior element -->
-    <v-speed-dial id="container">
+    <v-speed-dial app id="container">
       <!-- NavGem primary display element -->
       <template v-slot:activator>
         <!-- Full Screen Navigation Menu Dialog, Activator and content -->
@@ -9,8 +9,7 @@
 
           <!-- Activator -->
           <template v-slot:activator="{ on }">
-            <v-btn 
-              small fab flat
+            <v-btn fab flat
               id="opener"
               class="menu-badge"
               :style="{'display':(!showMenu)? '' : 'none'}" 
