@@ -27,14 +27,15 @@ export default {
 <style lang="less" scoped>
   @primary: rgba(51, 51, 51, 1);
   @highlight: rgba(255, 166, 0, 1);
+  @detail: rgba(232, 60 , 56 , 1);
 
   #back-to-top::before {
     color: transparent !important;
     background-color: transparent !important;
   }
   #back-to-top {
-    margin: 0 auto;
-    color: @primary;
+    // margin: 0 auto;
+    color: @detail;
   }
   // #back-to-top:hover {
   //   color: @primary;
