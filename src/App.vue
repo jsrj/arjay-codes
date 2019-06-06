@@ -48,7 +48,7 @@
         <NavGem id="nav" />
         <!-- Navigation & Hamburger -->
 
-        <v-btn app fixed bottom right id="cta">GET STARTED</v-btn>
+        <v-btn app fixed bottom right id="cta"><strong>GET STARTED</strong></v-btn>
       </v-layout>
       <!-- Right Gutter -->
     </v-container>
@@ -126,8 +126,7 @@ export default {
     flex-direction: column;
     align-items: center;
     border-radius: 25px;
-    border: 2px solid @neutralDarkColor;
-    background-color: @primaryColor;
+    background-color: @detailColor;
     color: @neutralLightColor;
   }
   .gutter {
@@ -186,7 +185,7 @@ export default {
     flex: 15;
     margin: 0px;
     padding: 0px;
-    max-height: 92vh;
+    height: 89vh;
     overflow: scroll;
     scrollbar-width: 0px;
     scrollbar-base-color: transparent;
