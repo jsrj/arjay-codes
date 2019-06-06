@@ -39,6 +39,7 @@
       <!-- Center Content -->
       <v-layout id="center-content">
         <router-view :title="title" />
+        <v-divider id="bottom-spacer" />
       </v-layout>
       <!-- Center Content -->
       <!-- Right Gutter -->
@@ -46,6 +47,8 @@
         <!-- Navigation & Hamburger -->   
         <NavGem id="nav" />
         <!-- Navigation & Hamburger -->
+
+        <v-btn app fixed bottom right id="cta">GET STARTED</v-btn>
       </v-layout>
       <!-- Right Gutter -->
     </v-container>
@@ -118,7 +121,15 @@ export default {
       padding: 0px;
     }
   }
-
+  #cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    border: 2px solid @neutralDarkColor;
+    background-color: @primaryColor;
+    color: @neutralLightColor;
+  }
   .gutter {
     display: inline-flex;
     flex-direction: column;
@@ -175,10 +186,16 @@ export default {
     flex: 15;
     margin: 0px;
     padding: 0px;
-    max-height: 98vh;
+    max-height: 92vh;
     overflow: scroll;
     scrollbar-width: 0px;
     scrollbar-base-color: transparent;
     scrollbar-color: transparent;
+
+    #bottom-spacer {
+      position: fixed;
+      bottom: 32px;
+      width: 50vw;
+    }
   }
 </style>
