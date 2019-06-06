@@ -2,14 +2,11 @@
   <div class="about">
     <div id="column-container">
       <router-view />
+      <v-divider />
       <div id="headshot" class="component">
         <img src="@/components/content/images/static/headshot.jpg">
       </div>
-      <SocialLinks class="component" />
-      <v-divider />
-      <PortfolioLinks class="component" />
     </div>
-    <TopReturnButton />
   </div>
 </template>
 
@@ -80,8 +77,8 @@ export default {
     display: flex;
     height: 100%;
     width: @headshotWidth;
-
     margin: @centered;
+    margin-top: 25px;
     padding: @outerPadding;
 
     overflow: hidden;
