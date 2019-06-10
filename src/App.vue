@@ -1,13 +1,13 @@
 <template>
   <v-app id="app">
     <v-container fluid id="root">
+
       <!-- Left Gutter -->
       <v-layout fluid id="left" class="gutter">
         <!-- Logo -->
         <v-layout id="logo">
           <Logo />
         </v-layout>
-        <!-- Logo -->
 
         <!-- Vertical Social Links -->
         <v-layout id="vertical-social-links">
@@ -27,30 +27,29 @@
             <strong>LI</strong>
           </span>
         </v-layout>
-        <!-- Vertical Social Links -->
 
         <!-- Top Return -->
         <v-layout id="top-return">
           <TopReturn />
         </v-layout>
-        <!-- Top Return -->
       </v-layout>
-      <!-- Left Gutter -->
+
+
       <!-- Center Content -->
       <v-layout id="center-content">
         <router-view :title="title" />
         <v-divider id="bottom-spacer" />
       </v-layout>
-      <!-- Center Content -->
+
+
       <!-- Right Gutter -->
       <v-layout id="right" class="gutter">
         <!-- Navigation & Hamburger -->   
         <NavGem id="nav" />
-        <!-- Navigation & Hamburger -->
-
         <v-btn app fixed bottom right id="cta"><strong>GET STARTED</strong></v-btn>
       </v-layout>
-      <!-- Right Gutter -->
+
+
     </v-container>
   </v-app>
 </template>
@@ -98,7 +97,7 @@ export default {
   @secondaryColor:    rgba(145, 198, 250, 1) !important;
 
   body {
-    background-color: @neutralLightColor;
+    background-color: @neutralDarkColor;
   }
   #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -110,7 +109,7 @@ export default {
     overflow: hidden;
 
     background-color: @neutralColor;
-    border: 7px solid @neutralLightColor;
+    border: 7px solid @neutralDarkColor;
     border-radius: 25px;
     color: @neutralDarkColor;
 
@@ -195,6 +194,7 @@ export default {
       position: fixed;
       bottom: 32px;
       width: 50vw;
+      border-color: @neutralDarkColor;
     }
   }
 </style>

@@ -47,7 +47,7 @@
                   active-class="active-link"
                   :to="link.url || '#'"
                   @click="showMenu = false"
-                  :class="link.cta && 'prominent'"
+                  :class="`menu-link ${link.cta && 'prominent'}`"
                 >
                   {{link.name}}
                 </v-btn>
@@ -57,9 +57,8 @@
             
             <!-- Social Links & Message Container -->
             <v-card-actions id="menu-footer">
-              <!-- <SocialLinks /> -->
-              <!-- <v-container fluid id="footer-links"></v-container>
-              <v-container fluid id="message"></v-container> -->
+              <v-layout> Made with〘☕️ && ❤️〙by&nbsp;<a href="http://github.com/jsrj" target="_blank" color="orange">@jsrj</a></v-layout>
+              <v-layout fluid id="message">&copy; Copyright 2019, Arjay|Codes</v-layout>
             </v-card-actions>
             <!-- /Social Links & Message Container -->
           </v-card>
@@ -100,8 +99,23 @@ export default {
           cta: false
         },
         {
-          name: 'Get Started',
-          url: '#',
+          name: "PROJECTS",
+          url: "/about/projects",
+          cta: false
+        },
+        {
+          name: "SERVICES",
+          url: "#",
+          cta: false
+        },
+        {
+          name: "BLOG",
+          url: "/about/blog",
+          cta: false
+        },
+        {
+          name: "GET IN TOUCH",
+          url: "/about/contact",
           cta: true
         }
       ]
@@ -160,6 +174,9 @@ export default {
       .link-item > a:hover {
         border-color: @tertiary;
       }
+      .link-item.menu-link {
+        font-family: 'Major Mono Display', monospace;
+      }
       .active-link {
         color: @tertiary;
       }
@@ -175,14 +192,25 @@ export default {
       }
     }
     #menu-footer {
+      display: flex;
+      flex-direction: column;
+
       position: fixed;
       bottom: 0;
       left: 0;
 
       width: 100%;
       max-height: 52px;
-      #footer-links {}
-      #message {}
+
+      background-color: rgba(21, 21, 21, 1);
+      border-top: 1px dashed white;
+      box-shadow: 0px 0px 12px 8px skyblue;
+      font-size: 7pt;
+
+      a {
+        color: orange;
+        font-size: 10pt;
+      }
     }
   }
 
