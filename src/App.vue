@@ -97,7 +97,7 @@ export default {
   @secondaryColor:    rgba(145, 198, 250, 1) !important;
 
   body {
-    background-color: @neutralLightColor;
+    background-color: @neutralDarkColor;
   }
   #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -109,7 +109,7 @@ export default {
     overflow: hidden;
 
     background-color: @neutralColor;
-    border: 7px solid @neutralLightColor;
+    border: 7px solid @neutralDarkColor;
     border-radius: 25px;
     color: @neutralDarkColor;
 
@@ -194,6 +194,7 @@ export default {
       position: fixed;
       bottom: 32px;
       width: 50vw;
+      border-color: @neutralDarkColor;
     }
   }
 </style>
