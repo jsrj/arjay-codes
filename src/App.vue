@@ -45,7 +45,7 @@
       <v-layout id="right" class="gutter">
         <!-- Navigation & Hamburger -->   
         <NavGem id="nav" />
-        <v-btn app fixed bottom right id="cta"><strong>GET STARTED</strong></v-btn>
+        <v-btn app fixed bottom right id="cta"><strong>LET'S CHAT</strong></v-btn>
       </v-layout>
 
 
