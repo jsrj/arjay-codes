@@ -1,7 +1,7 @@
 <template>
   <v-app id="app">
     <v-container fluid id="root">
-
+      <v-layout fixed id="shadow-text"><strong>{AC}</strong></v-layout>
       <!-- Left Gutter -->
       <v-layout fluid id="left" class="gutter">
         <!-- Logo -->
@@ -46,7 +46,7 @@
       <v-layout id="right" class="gutter">
         <!-- Navigation & Hamburger -->   
         <NavGem id="nav" />
-        <v-btn app fixed bottom right id="cta"><strong>GET STARTED</strong></v-btn>
+        <v-btn app fixed bottom right id="cta"><strong>LET'S CHAT</strong></v-btn>
       </v-layout>
 
 
@@ -97,7 +97,7 @@ export default {
   @secondaryColor:    rgba(145, 198, 250, 1) !important;
 
   body {
-    background-color: @neutralDarkColor;
+    background-color: @neutralLightColor;
   }
   #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -108,9 +108,7 @@ export default {
     height: 100vh !important;
     overflow: hidden;
 
-    background-color: @neutralColor;
-    border: 7px solid @neutralDarkColor;
-    border-radius: 25px;
+    background-color: @neutralLightColor;
     color: @neutralDarkColor;
 
     #root {
@@ -119,6 +117,22 @@ export default {
       margin: 0px;
       padding: 0px;
     }
+  }
+  #shadow-text {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid lime;
+    background-color: transparent;
+    color: white;
+    font-size: 25rem;
+    font-family: 'Major Mono Display', monospace !important;
+    z-index: 0;
   }
   #cta {
     display: flex;
@@ -189,6 +203,7 @@ export default {
     scrollbar-width: 0px;
     scrollbar-base-color: transparent;
     scrollbar-color: transparent;
+    z-index: 1;
 
     #bottom-spacer {
       position: fixed;
