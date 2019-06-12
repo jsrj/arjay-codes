@@ -1,6 +1,7 @@
 <template>
   <v-app id="app">
     <v-container fluid id="root">
+      <v-layout fixed id="shadow-text"><strong>{AC}</strong></v-layout>
       <!-- Left Gutter -->
       <v-layout fluid id="left" class="gutter">
         <!-- Logo -->
@@ -116,6 +117,21 @@ export default {
       margin: 0px;
       padding: 0px;
     }
+  }
+  #shadow-text {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    border: 2px solid lime;
+    background-color: transparent;
+    color: white;
+    font-size: 25rem;
+    font-family: 'Major Mono Display', monospace !important;
   }
   #cta {
     display: flex;
