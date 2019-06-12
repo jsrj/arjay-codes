@@ -132,6 +132,7 @@ export default {
     color: white;
     font-size: 25rem;
     font-family: 'Major Mono Display', monospace !important;
+    z-index: 0;
   }
   #cta {
     display: flex;
@@ -202,6 +203,7 @@ export default {
     scrollbar-width: 0px;
     scrollbar-base-color: transparent;
     scrollbar-color: transparent;
+    z-index: 1;
 
     #bottom-spacer {
       position: fixed;
