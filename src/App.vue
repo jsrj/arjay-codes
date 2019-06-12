@@ -1,7 +1,6 @@
 <template>
   <v-app id="app">
     <v-container fluid id="root">
-
       <!-- Left Gutter -->
       <v-layout fluid id="left" class="gutter">
         <!-- Logo -->
@@ -97,7 +96,7 @@ export default {
   @secondaryColor:    rgba(145, 198, 250, 1) !important;
 
   body {
-    background-color: @neutralDarkColor;
+    background-color: @neutralLightColor;
   }
   #app {
     font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -108,9 +107,7 @@ export default {
     height: 100vh !important;
     overflow: hidden;
 
-    background-color: @neutralColor;
-    border: 7px solid @neutralDarkColor;
-    border-radius: 25px;
+    background-color: @neutralLightColor;
     color: @neutralDarkColor;
 
     #root {
